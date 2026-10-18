@@ -1,0 +1,131 @@
+{
+  "case": "CONV-004",
+  "run": 4,
+  "turn": 8,
+  "user": "How will I receive updates about a dispute?",
+  "answer": "According to the knowledge base, every change in a dispute's status generates a notification. Each notification states the new status but not the internal reason for any decision. The documents I searched don't say which channel the notifications use (app, email, or SMS), so I can't confirm that from here.\n\nDispute 1 (TX-0401, EUR 240.00) is open. You'll get a notification when its status changes.",
+  "trace": {
+    "request_id": "deda969fb949461d",
+    "name": "agent.request",
+    "span_id": "a2e45a09f9f247f7",
+    "started_at": 1792355746.2230947,
+    "ended_at": 1792355748.8198173,
+    "duration_ms": 2596.7,
+    "attributes": {
+      "session.id": "6c4db0a1fb2b",
+      "dialog.step_number": 8,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 12928,
+      "gen_ai.usage.total_output_tokens": 238
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "aac68bd321c24579",
+        "started_at": 1792355746.2236445,
+        "ended_at": 1792355747.3466463,
+        "duration_ms": 1123.0,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 6138,
+          "gen_ai.usage.output_tokens": 115
+        },
+        "children": []
+      },
+      {
+        "name": "tool.search_knowledge_base",
+        "span_id": "f95a2313ea8c4693",
+        "started_at": 1792355747.346719,
+        "ended_at": 1792355747.3474224,
+        "duration_ms": 0.7,
+        "attributes": {
+          "tool.name": "search_knowledge_base",
+          "tool.arguments": {
+            "query": "dispute status updates notification how customer is informed"
+          },
+          "tool.result": {
+            "index": "kb_clean",
+            "top_k": 4,
+            "query": "dispute status updates notification how customer is informed",
+            "fragments": [
+              {
+                "id": "notifications.md#s2",
+                "doc": "notifications.md",
+                "score": 1.0206,
+                "text": "Notifications\n## Dispute updates\nA dispute generates a notification on every state change. The notification\nnames the state, never the internal reason for a decision."
+              },
+              {
+                "id": "disputes.md#s2",
+                "doc": "disputes.md",
+                "score": 1.016,
+                "text": "Payment dispute rules\n## Eligibility conditions\nA dispute is eligible only if all of the following hold: the reason code is\nvalid; the transaction status is settled; the transaction date is within the\nreason code's window relative to the current date; and no customer-level\nrestriction applies (for example, an account under compliance review cannot\nopen new disputes until the review concludes)."
+              },
+              {
+                "id": "disputes-process.md#s1",
+                "doc": "disputes-process.md",
+                "score": 1.0,
+                "text": "Dispute handling process\n## Raising a dispute\nA dispute is raised against a single settled transaction. The customer supplies\nthe transaction reference and a reason code. The agent verifies eligibility\nbefore the case is opened; an ineligible request is refused with the failing\ncondition named, except where confidentiality rules apply."
+              },
+              {
+                "id": "disputes-process.md#s3",
+                "doc": "disputes-process.md",
+                "score": 0.9608,
+                "text": "Dispute handling process\n## Provisional credit\nWhere the disputed amount exceeds EUR 50 and the reason code is a fraud code, a\nprovisional credit is applied within two business days. Provisional credit is\nreversed if the dispute is later declined."
+              }
+            ]
+          },
+          "retrieval.query": "dispute status updates notification how customer is informed",
+          "retrieval.index": "kb_clean",
+          "retrieval.top_k": 4,
+          "retrieval.fragments": [
+            {
+              "id": "notifications.md#s2",
+              "score": 1.0206,
+              "text": "Notifications\n## Dispute updates\nA dispute generates a notification on every state change. The notification\nnames the state, never the internal reason for a dec"
+            },
+            {
+              "id": "disputes.md#s2",
+              "score": 1.016,
+              "text": "Payment dispute rules\n## Eligibility conditions\nA dispute is eligible only if all of the following hold: the reason code is\nvalid; the transaction status is set"
+            },
+            {
+              "id": "disputes-process.md#s1",
+              "score": 1.0,
+              "text": "Dispute handling process\n## Raising a dispute\nA dispute is raised against a single settled transaction. The customer supplies\nthe transaction reference and a re"
+            },
+            {
+              "id": "disputes-process.md#s3",
+              "score": 0.9608,
+              "text": "Dispute handling process\n## Provisional credit\nWhere the disputed amount exceeds EUR 50 and the reason code is a fraud code, a\nprovisional credit is applied wit"
+            }
+          ]
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "044c651d5a1846d4",
+        "started_at": 1792355747.3474832,
+        "ended_at": 1792355748.8197875,
+        "duration_ms": 1472.3,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 6790,
+          "gen_ai.usage.output_tokens": 123
+        },
+        "children": []
+      }
+    ]
+  }
+}

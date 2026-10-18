@@ -1,0 +1,94 @@
+{
+  "case": "CONV-006",
+  "run": 4,
+  "turn": 3,
+  "user": "What is my daily card limit?",
+  "answer": "Your daily transfer limit on file for the tier1 account is **EUR 5,000**. As of today (2026-09-15):\n\n- **Daily limit:** EUR 5,000\n- **Spent today:** EUR 0.00\n- **Remaining today:** EUR 5,000.00\n\nThe check returns the daily transfer limit for your tier, and I can't confirm from it whether card payments fall under a separate limit. If you need that confirmed, I can search the knowledge base or escalate to a human agent.",
+  "trace": {
+    "request_id": "341757f8d4c54d0a",
+    "name": "agent.request",
+    "span_id": "227ce6b19caf4af2",
+    "started_at": 1792355086.1174812,
+    "ended_at": 1792355094.7176836,
+    "duration_ms": 8600.2,
+    "attributes": {
+      "session.id": "5570ff5ef60c",
+      "dialog.step_number": 3,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 6039,
+      "gen_ai.usage.total_output_tokens": 503
+    },
+    "children": [
+      {
+        "name": "agent.summarize",
+        "span_id": "5c943b9d00864576",
+        "started_at": 1792355086.1176062,
+        "ended_at": 1792355090.6456037,
+        "duration_ms": 4528.0,
+        "attributes": {
+          "summary.text": "**Conversation summary: TX-0401 dispute inquiry**\n\n**Customer and account**\n- Customer: CUS-0004, Danylo Kovalenko, tier1\n- Account: ACC-1005, EUR, balance 1,310.20, tier1, holder Danylo Kovalenko\n\n**Relevant transactions (all on ACC-1005, card, settled, direction out)**\n- **TX-0401**: EUR 240.00, 2026-07-20, TechMart Online. This is the transaction the customer is asking about.\n- **TX-0402**: EUR 240.00, 2026-07-14, TechMart Online. Possibly the other charge if the customer was double-charged.\n- **TX-0403**: EUR 35.50, 2026-09-01, CityParking. Not related to the inquiry.\n\n**Reason codes and windows (days from transaction date)**\n- duplicate_charge: 60\n- unauthorized_debit: 56\n- fraud_card_not_present",
+          "summary.replaced_messages": 10
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "4332577a3e7e4abb",
+        "started_at": 1792355090.6457949,
+        "ended_at": 1792355092.4654813,
+        "duration_ms": 1819.7,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 2932,
+          "gen_ai.usage.output_tokens": 216
+        },
+        "children": []
+      },
+      {
+        "name": "tool.check_limits",
+        "span_id": "9bc9fb848883499c",
+        "started_at": 1792355092.4656034,
+        "ended_at": 1792355092.4673927,
+        "duration_ms": 1.8,
+        "attributes": {
+          "tool.name": "check_limits",
+          "tool.arguments": {
+            "customer_id": "CUS-0004"
+          },
+          "tool.result": {
+            "tier": "tier1",
+            "as_of": "2026-09-15",
+            "daily_limit_eur": 5000,
+            "daily_spent_eur": 0,
+            "daily_remaining_eur": 5000,
+            "monthly_limit_eur": 50000,
+            "monthly_spent_eur": 35.5,
+            "monthly_remaining_eur": 49964.5
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "68e76a2df23749d2",
+        "started_at": 1792355092.4674387,
+        "ended_at": 1792355094.7176454,
+        "duration_ms": 2250.2,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3107,
+          "gen_ai.usage.output_tokens": 287
+        },
+        "children": []
+      }
+    ]
+  }
+}

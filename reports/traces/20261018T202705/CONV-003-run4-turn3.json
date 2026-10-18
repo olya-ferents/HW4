@@ -1,0 +1,59 @@
+{
+  "case": "CONV-003",
+  "run": 4,
+  "turn": 3,
+  "user": "Fine. Back to that charge — what do I do next?",
+  "answer": "To open the dispute, I need your explicit go-ahead. Filing is irreversible.\n\n**What I'd file:**\n- **Charge:** EUR 180, TechMart Online, card transaction\n- **Reason code:** `service_not_rendered`, based on the earlier charge to the same merchant\n- **Eligibility:** Confirmed. The dispute window closes in mid-September 2026.\n\n**Before you confirm, please check that this is accurate:** you should not have received the service or goods paid for by this charge. If you did receive them, or the charges are for something you've been provided, tell me and we'll look at another option.\n\nIf that's correct, reply \"yes, open the dispute\" and I'll file it for EUR 180 against that charge.",
+  "trace": {
+    "request_id": "36296331fa5746d5",
+    "name": "agent.request",
+    "span_id": "53a1cb3761454815",
+    "started_at": 1792355506.371318,
+    "ended_at": 1792355512.1995564,
+    "duration_ms": 5828.2,
+    "attributes": {
+      "session.id": "51e370433664",
+      "dialog.step_number": 3,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 2961,
+      "gen_ai.usage.total_output_tokens": 743
+    },
+    "children": [
+      {
+        "name": "agent.summarize",
+        "span_id": "40cdf07d21744294",
+        "started_at": 1792355506.3715239,
+        "ended_at": 1792355507.7346416,
+        "duration_ms": 1363.1,
+        "attributes": {
+          "summary.text": "Summary: Customer asked for the reason code for a EUR 180 TechMart Online card charge on their account and whether it can be disputed. Assistant identified service_not_rendered (a matching earlier charge to the same merchant) and confirmed via eligibility check that the dispute is eligible, with a deadline in mid-September 2026. The dispute has not been filed; the assistant is awaiting the customer's confirmation to open it, since filing is irreversible.",
+          "summary.replaced_messages": 12
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "6aff3d363f304683",
+        "started_at": 1792355507.7347066,
+        "ended_at": 1792355512.1995413,
+        "duration_ms": 4464.8,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 2961,
+          "gen_ai.usage.output_tokens": 743
+        },
+        "children": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "case": "CONV-005",
+  "run": 3,
+  "turn": 6,
+  "user": "Is that the full transaction amount?",
+  "answer": "Yes. TX-0401 is EUR 240.00, the full amount of the charge to TechMart Online on 20 July 2026. The dispute would be for that full amount unless you ask for a smaller one.\n\nI have not opened the dispute. Reply \"yes, open the dispute for TX-0401\" to proceed, or tell me a different amount.",
+  "trace": {
+    "request_id": "dd1815b24a68413c",
+    "name": "agent.request",
+    "span_id": "9f5fb33405854cec",
+    "started_at": 1792355888.0763133,
+    "ended_at": 1792355889.8518894,
+    "duration_ms": 1775.6,
+    "attributes": {
+      "session.id": "ad61027828e2",
+      "dialog.step_number": 6,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 4948,
+      "gen_ai.usage.total_output_tokens": 212
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "412631f81b694b0b",
+        "started_at": 1792355888.0766766,
+        "ended_at": 1792355889.851859,
+        "duration_ms": 1775.2,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 4948,
+          "gen_ai.usage.output_tokens": 212
+        },
+        "children": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "case": "CONV-006",
+  "run": 2,
+  "turn": 7,
+  "user": "What amount will be disputed for TX-0401?",
+  "answer": "The dispute on TX-0401 would be for **EUR 240.00**, the full amount of the charge. That is the default, and I have not opened anything yet.\n\nReply **\"confirm\"** and I'll open a duplicate_charge dispute for EUR 240.00 on TX-0401. If you want a smaller amount, tell me the figure. The deadline is 18 September 2026.",
+  "trace": {
+    "request_id": "a19db35dbc05425d",
+    "name": "agent.request",
+    "span_id": "972b22ddd4734c1d",
+    "started_at": 1792356033.2786803,
+    "ended_at": 1792356035.0950675,
+    "duration_ms": 1816.4,
+    "attributes": {
+      "session.id": "03cbe4ad4fc5",
+      "dialog.step_number": 7,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 5816,
+      "gen_ai.usage.total_output_tokens": 264
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "33471d66e8f84210",
+        "started_at": 1792356033.2789867,
+        "ended_at": 1792356035.0950406,
+        "duration_ms": 1816.1,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 5816,
+          "gen_ai.usage.output_tokens": 264
+        },
+        "children": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "case": "CONV-003",
+  "run": 4,
+  "turn": 5,
+  "user": "And I still have time to file, right?",
+  "answer": "Yes. As of today (15 September 2026), both reason codes are still open:\n\n- **duplicate_charge:** deadline **18 September 2026**, which is 3 days away.\n- **service_not_rendered:** deadline **18 October 2026**.\n\nBoth checks passed for TX-0401 (20 July) and TX-0402 (14 July). Tell me which charge, which reason code, and \"yes, open the dispute,\" and I'll file it for EUR 240.00. If you want the duplicate_charge route, please confirm soon.",
+  "trace": {
+    "request_id": "cde8c88c6afd40c6",
+    "name": "agent.request",
+    "span_id": "4d2a9e14d6d34f47",
+    "started_at": 1792355527.6528366,
+    "ended_at": 1792355530.0553374,
+    "duration_ms": 2402.5,
+    "attributes": {
+      "session.id": "51e370433664",
+      "dialog.step_number": 5,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 4579,
+      "gen_ai.usage.total_output_tokens": 422
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "ed7da945019e4bcc",
+        "started_at": 1792355527.6532822,
+        "ended_at": 1792355530.055303,
+        "duration_ms": 2402.0,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 4579,
+          "gen_ai.usage.output_tokens": 422
+        },
+        "children": []
+      }
+    ]
+  }
+}

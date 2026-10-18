@@ -1,0 +1,47 @@
+{
+  "case": "CONV-005",
+  "run": 1,
+  "turn": 4,
+  "user": "What information do you need before filing the dispute?",
+  "answer": "To file, I only need your confirmation. I already have the transaction reference (TX-0401), the reason code (duplicate charge), and the eligibility result.\n\nBy default the dispute covers the full amount of TX-0401. If the duplicate charge was for a different amount than the original, tell me the amount and I'll file for that figure instead.\n\nOnce you confirm, I'll open the dispute. It is irreversible once filed, and the filing deadline is 18 September 2026.",
+  "trace": {
+    "request_id": "5c16b63f594f4568",
+    "name": "agent.request",
+    "span_id": "219c7b58b25942a9",
+    "started_at": 1792355817.157596,
+    "ended_at": 1792355819.904426,
+    "duration_ms": 2746.8,
+    "attributes": {
+      "session.id": "b7fa663bfe02",
+      "dialog.step_number": 4,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 4019,
+      "gen_ai.usage.total_output_tokens": 364
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "d5768cc344044976",
+        "started_at": 1792355817.1578894,
+        "ended_at": 1792355819.9043975,
+        "duration_ms": 2746.5,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 4019,
+          "gen_ai.usage.output_tokens": 364
+        },
+        "children": []
+      }
+    ]
+  }
+}

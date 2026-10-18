@@ -1,0 +1,172 @@
+{
+  "case": "CONV-005",
+  "run": 5,
+  "turn": 3,
+  "user": "What is the filing deadline for TX-0401?",
+  "answer": "The filing deadline for TX-0401 is **18 September 2026**.\n\n- Transaction date: 20 July 2026\n- Duplicate-charge window: 60 days\n- Today's date in our system: 15 September 2026, so the dispute must be filed within the next 3 days.\n\nThe eligibility check for a duplicate-charge dispute on TX-0401 passed. No dispute has been opened yet. If you want me to file it now, reply to confirm and I will open it.",
+  "trace": {
+    "request_id": "008bba5f409a4166",
+    "name": "agent.request",
+    "span_id": "99a01666e7bd465a",
+    "started_at": 1792355934.018536,
+    "ended_at": 1792355940.6502795,
+    "duration_ms": 6631.7,
+    "attributes": {
+      "session.id": "1dbe44da7aa0",
+      "dialog.step_number": 3,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 6760,
+      "gen_ai.usage.total_output_tokens": 741
+    },
+    "children": [
+      {
+        "name": "agent.summarize",
+        "span_id": "14c1f36169944db2",
+        "started_at": 1792355934.0188236,
+        "ended_at": 1792355936.1446192,
+        "duration_ms": 2125.8,
+        "attributes": {
+          "summary.text": "Customer believes they were charged twice for the same purchase and asked whether the disputed transaction qualifies for a duplicate-charge dispute. The assistant confirmed it does, based on the eligibility check. No dispute has been filed. The assistant is waiting for the customer to confirm before opening it.",
+          "summary.replaced_messages": 12
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "0dc02921bf4b4c33",
+        "started_at": 1792355936.1446533,
+        "ended_at": 1792355938.5961082,
+        "duration_ms": 2451.5,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 2907,
+          "gen_ai.usage.output_tokens": 403
+        },
+        "children": []
+      },
+      {
+        "name": "tool.check_dispute_eligibility",
+        "span_id": "07d4d94bd2364038",
+        "started_at": 1792355938.5963175,
+        "ended_at": 1792355938.5974076,
+        "duration_ms": 1.1,
+        "attributes": {
+          "tool.name": "check_dispute_eligibility",
+          "tool.arguments": {
+            "transaction_id": "TX-0401",
+            "reason_code": "duplicate_charge"
+          },
+          "tool.result": {
+            "eligible": true,
+            "reason_code": "duplicate_charge",
+            "window_days": 60,
+            "tx_date": "2026-07-20",
+            "as_of": "2026-09-15",
+            "deadline": "2026-09-18",
+            "checks": {
+              "reason_code": "pass",
+              "tx_status": "pass",
+              "window": "pass",
+              "compliance_hold": "pass"
+            }
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "tool.search_knowledge_base",
+        "span_id": "a474a9752c134abb",
+        "started_at": 1792355938.5974796,
+        "ended_at": 1792355938.5987117,
+        "duration_ms": 1.2,
+        "attributes": {
+          "tool.name": "search_knowledge_base",
+          "tool.arguments": {
+            "query": "dispute filing deadline window duplicate charge"
+          },
+          "tool.result": {
+            "index": "kb_clean",
+            "top_k": 4,
+            "query": "dispute filing deadline window duplicate charge",
+            "fragments": [
+              {
+                "id": "disputes.md#s1",
+                "doc": "disputes.md",
+                "score": 0.7538,
+                "text": "Payment dispute rules\n## Reason codes and chargeback windows\nEach reason code has a window in days from the transaction date. A dispute opened after the window closes is not eligible.\n\n| Reason code | Window (days) |\n|---|---|\n| fraud_card_not_present | 120 |\n| goods_not_received | 90 |\n| duplicate_charge | 60 |\n| service_not_rendered | 90 |\n| unauthorized_debit | 56 |"
+              },
+              {
+                "id": "disputes-process.md#s6",
+                "doc": "disputes-process.md",
+                "score": 0.5303,
+                "text": "Dispute handling process\n## Withdrawing a dispute\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\nfinal; the same transaction cannot be disputed again under the same reason code."
+              },
+              {
+                "id": "glossary.md#s7",
+                "doc": "glossary.md",
+                "score": 0.4714,
+                "text": "Glossary\n## Provisional credit\nA temporary refund applied while a dispute is reviewed; reversed if the dispute\nis declined."
+              },
+              {
+                "id": "disputes-process.md#s1",
+                "doc": "disputes-process.md",
+                "score": 0.4286,
+                "text": "Dispute handling process\n## Raising a dispute\nA dispute is raised against a single settled transaction. The customer supplies\nthe transaction reference and a reason code. The agent verifies eligibility\nbefore the case is opened; an ineligible request is refused with the failing\ncondition named, except where confidentiality rules apply."
+              }
+            ]
+          },
+          "retrieval.query": "dispute filing deadline window duplicate charge",
+          "retrieval.index": "kb_clean",
+          "retrieval.top_k": 4,
+          "retrieval.fragments": [
+            {
+              "id": "disputes.md#s1",
+              "score": 0.7538,
+              "text": "Payment dispute rules\n## Reason codes and chargeback windows\nEach reason code has a window in days from the transaction date. A dispute opened after the window "
+            },
+            {
+              "id": "disputes-process.md#s6",
+              "score": 0.5303,
+              "text": "Dispute handling process\n## Withdrawing a dispute\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\nfinal; the same transaction can"
+            },
+            {
+              "id": "glossary.md#s7",
+              "score": 0.4714,
+              "text": "Glossary\n## Provisional credit\nA temporary refund applied while a dispute is reviewed; reversed if the dispute\nis declined."
+            },
+            {
+              "id": "disputes-process.md#s1",
+              "score": 0.4286,
+              "text": "Dispute handling process\n## Raising a dispute\nA dispute is raised against a single settled transaction. The customer supplies\nthe transaction reference and a re"
+            }
+          ]
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "f880d01772164a4a",
+        "started_at": 1792355938.5988142,
+        "ended_at": 1792355940.650235,
+        "duration_ms": 2051.4,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3853,
+          "gen_ai.usage.output_tokens": 338
+        },
+        "children": []
+      }
+    ]
+  }
+}

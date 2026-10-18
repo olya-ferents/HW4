@@ -1,0 +1,47 @@
+{
+  "case": "CONV-002",
+  "run": 2,
+  "turn": 5,
+  "user": "Fine. Back to that charge — what do I do next?",
+  "answer": "To open the dispute, I need your explicit go-ahead. Here is what I would file:\n\n- **Transaction:** TX-0401, EUR 180.00 to TechMart Online\n- **Reason code:** service_not_rendered\n- **Amount:** EUR 180.00 (the full transaction amount)\n\nThe eligibility check passed for this reason code, but the filing deadline is in mid-September 2026. Today's date on your account record is 15 September 2026, so the window may close very soon. I can't confirm the exact cut-off from what I have.\n\nOnce you confirm, I'll open the dispute. Filing is irreversible, so please only reply yes if you want it filed under service_not_rendered. If you'd rather use a different reason, or the service was in fact delivered, tell me and we'll look at the options instead.",
+  "trace": {
+    "request_id": "62805eb7268b4b99",
+    "name": "agent.request",
+    "span_id": "519ebc5799354aaf",
+    "started_at": 1792355280.6912558,
+    "ended_at": 1792355285.2931464,
+    "duration_ms": 4601.9,
+    "attributes": {
+      "session.id": "3c9a0e451529",
+      "dialog.step_number": 5,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 4568,
+      "gen_ai.usage.total_output_tokens": 847
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "14e09dade83a498e",
+        "started_at": 1792355280.6918926,
+        "ended_at": 1792355285.2931197,
+        "duration_ms": 4601.2,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 4568,
+          "gen_ai.usage.output_tokens": 847
+        },
+        "children": []
+      }
+    ]
+  }
+}

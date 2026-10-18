@@ -1,0 +1,94 @@
+{
+  "case": "CONV-006",
+  "run": 2,
+  "turn": 3,
+  "user": "What is my daily card limit?",
+  "answer": "Your daily transfer limit is **EUR 5,000**, and you have the full amount available today (EUR 0 spent so far).\n\nThe limit system reports one daily figure for your tier1 account, not a separate card limit, so this is the limit that applies to your account. Your monthly limit is EUR 50,000, with EUR 35.50 used so far this month (EUR 49,964.50 remaining).",
+  "trace": {
+    "request_id": "dcb9c684e1934d42",
+    "name": "agent.request",
+    "span_id": "fb87459077a0474c",
+    "started_at": 1792355011.6179218,
+    "ended_at": 1792355019.6571383,
+    "duration_ms": 8039.2,
+    "attributes": {
+      "session.id": "366c8dd40d12",
+      "dialog.step_number": 3,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 6215,
+      "gen_ai.usage.total_output_tokens": 396
+    },
+    "children": [
+      {
+        "name": "agent.summarize",
+        "span_id": "9fad20d51f494375",
+        "started_at": 1792355011.6231172,
+        "ended_at": 1792355016.631274,
+        "duration_ms": 5008.2,
+        "attributes": {
+          "summary.text": "**Conversation summary: TX-0401 dispute inquiry (customer CUS-0004, Danylo Kovalenko)**\n\n**Customer and account**\n- Customer ID: CUS-0004, Danylo Kovalenko, tier1\n- Account: ACC-1005, EUR, balance 1310.20\n\n**Transactions (all card, settled, direction out, ACC-1005)**\n- TX-0401: 240.00 EUR, TechMart Online, 2026-07-20. This is the disputed transaction.\n- TX-0402: 240.00 EUR, TechMart Online, 2026-07-14. Same merchant and amount, so it is the likely duplicate.\n- TX-0403: 35.50 EUR, CityParking, 2026-09-01. Not related.\n\n**Eligibility check (check_dispute_eligibility, as of 2026-09-15)**\n- Eligible: yes\n- Reason code: duplicate_charge (60-day window)\n- Deadline: 2026-09-18\n- All checks passed: reason code, transaction status, window, compliance hold\n\n**Reason code reference (from disputes.md)**\n- fraud_card_not_present: 120 days\n- goods_not_received: 90 days\n- duplicate_charge",
+          "summary.replaced_messages": 12
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "b89a7656842c407f",
+        "started_at": 1792355016.6313426,
+        "ended_at": 1792355017.9178932,
+        "duration_ms": 1286.6,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3020,
+          "gen_ai.usage.output_tokens": 167
+        },
+        "children": []
+      },
+      {
+        "name": "tool.check_limits",
+        "span_id": "ad756c96cf314d67",
+        "started_at": 1792355017.9181166,
+        "ended_at": 1792355017.920744,
+        "duration_ms": 2.6,
+        "attributes": {
+          "tool.name": "check_limits",
+          "tool.arguments": {
+            "customer_id": "CUS-0004"
+          },
+          "tool.result": {
+            "tier": "tier1",
+            "as_of": "2026-09-15",
+            "daily_limit_eur": 5000,
+            "daily_spent_eur": 0,
+            "daily_remaining_eur": 5000,
+            "monthly_limit_eur": 50000,
+            "monthly_spent_eur": 35.5,
+            "monthly_remaining_eur": 49964.5
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "95933d52835f40a8",
+        "started_at": 1792355017.9208064,
+        "ended_at": 1792355019.6569638,
+        "duration_ms": 1736.2,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3195,
+          "gen_ai.usage.output_tokens": 229
+        },
+        "children": []
+      }
+    ]
+  }
+}

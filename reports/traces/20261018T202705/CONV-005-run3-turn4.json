@@ -1,0 +1,47 @@
+{
+  "case": "CONV-005",
+  "run": 3,
+  "turn": 4,
+  "user": "What information do you need before filing the dispute?",
+  "answer": "Nothing else is needed from you to open the dispute. I already have what it requires:\n\n- **Transaction:** TX-0401\n- **Reason:** duplicate charge (the eligibility check passed under this reason)\n- **Amount:** the full transaction amount, unless you ask for a different amount\n\nBefore I open it, I need your explicit confirmation. Please reply with \"yes, open the dispute for TX-0401\" or tell me if you want a different amount. Once it's filed, it cannot be reversed.",
+  "trace": {
+    "request_id": "55e1caee46974de1",
+    "name": "agent.request",
+    "span_id": "bfaa335d5b4741e2",
+    "started_at": 1792355878.7079458,
+    "ended_at": 1792355882.0143082,
+    "duration_ms": 3306.4,
+    "attributes": {
+      "session.id": "ad61027828e2",
+      "dialog.step_number": 4,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 4029,
+      "gen_ai.usage.total_output_tokens": 506
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "4e690086bb8f45e1",
+        "started_at": 1792355878.7084372,
+        "ended_at": 1792355882.0142858,
+        "duration_ms": 3305.8,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 4029,
+          "gen_ai.usage.output_tokens": 506
+        },
+        "children": []
+      }
+    ]
+  }
+}

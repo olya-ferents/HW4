@@ -1,0 +1,47 @@
+{
+  "case": "CONV-005",
+  "run": 4,
+  "turn": 6,
+  "user": "Is that the full transaction amount?",
+  "answer": "Yes. TX-0401 is a settled card payment of **EUR 240.00** to TechMart Online, dated 20 July 2026. The full amount is the default for the dispute.",
+  "trace": {
+    "request_id": "1830ca5425184462",
+    "name": "agent.request",
+    "span_id": "07722247ef3046e8",
+    "started_at": 1792355916.890736,
+    "ended_at": 1792355918.2158585,
+    "duration_ms": 1325.1,
+    "attributes": {
+      "session.id": "8778200866a9",
+      "dialog.step_number": 6,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 4187,
+      "gen_ai.usage.total_output_tokens": 126
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "03e31696a3d14705",
+        "started_at": 1792355916.8911765,
+        "ended_at": 1792355918.2157469,
+        "duration_ms": 1324.6,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 4187,
+          "gen_ai.usage.output_tokens": 126
+        },
+        "children": []
+      }
+    ]
+  }
+}

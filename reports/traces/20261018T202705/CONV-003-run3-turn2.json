@@ -1,0 +1,47 @@
+{
+  "case": "CONV-003",
+  "run": 3,
+  "turn": 2,
+  "user": "Can I dispute it?",
+  "answer": "I can check that, but I need to know why you want to dispute it. Eligibility depends on the reason code, and each code has its own rules.\n\nWhich of these matches what happened?\n\n- **Charged twice for the same purchase** (TX-0402 may be the duplicate): duplicate_charge\n- **You didn't make or authorize this card payment, and suspect fraud**: fraud_card_not_present\n- **You didn't authorize the debit at all**: unauthorized_debit\n- **You paid but never received the goods**: goods_not_received\n- **You paid for a service that wasn't provided**: service_not_rendered\n\nOnce you choose one, I'll run the eligibility check. I won't open a dispute until you confirm.",
+  "trace": {
+    "request_id": "33372075a42244ae",
+    "name": "agent.request",
+    "span_id": "026d65c16d524a61",
+    "started_at": 1792355471.4618323,
+    "ended_at": 1792355474.3211339,
+    "duration_ms": 2859.3,
+    "attributes": {
+      "session.id": "c8db0994f18a",
+      "dialog.step_number": 2,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 3673,
+      "gen_ai.usage.total_output_tokens": 466
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "c8134079c21c48a9",
+        "started_at": 1792355471.462253,
+        "ended_at": 1792355474.3210955,
+        "duration_ms": 2858.8,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3673,
+          "gen_ai.usage.output_tokens": 466
+        },
+        "children": []
+      }
+    ]
+  }
+}

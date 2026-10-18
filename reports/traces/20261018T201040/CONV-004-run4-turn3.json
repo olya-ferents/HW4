@@ -1,0 +1,137 @@
+{
+  "case": "CONV-004",
+  "run": 4,
+  "turn": 3,
+  "user": "What is my daily card limit?",
+  "answer": "Your daily limit on file for your tier (tier1) is **EUR 5,000**. As of today (2026-09-15) you have spent EUR 0 of it, so EUR 5,000 remains.\n\nThe limit tool reports this as the daily transfer limit. I don't have a separate card-specific figure, so if you need the card limit specifically, I can escalate to a human agent.\n\nYour monthly limit is EUR 50,000, with EUR 35.50 used so far this month.",
+  "trace": {
+    "request_id": "d8a10a1ffece417b",
+    "name": "agent.request",
+    "span_id": "26dadcd53fb44d7e",
+    "started_at": 1792354717.6846483,
+    "ended_at": 1792354726.9178739,
+    "duration_ms": 9233.2,
+    "attributes": {
+      "session.id": "b24c82cf891d",
+      "dialog.step_number": 3,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 9862,
+      "gen_ai.usage.total_output_tokens": 572
+    },
+    "children": [
+      {
+        "name": "agent.summarize",
+        "span_id": "cb057af02d884a9b",
+        "started_at": 1792354717.6847248,
+        "ended_at": 1792354722.1797454,
+        "duration_ms": 4495.0,
+        "attributes": {
+          "summary.text": "**Conversation summary: TX-0401 dispute inquiry**\n\n**Customer:** CUS-0004, Danylo Kovalenko, tier1\n**Account:** ACC-1005, EUR, balance 1,310.20, tier1\n\n**Transactions on ACC-1005 (all card, direction out, status settled):**\n- TX-0401: 240.00 EUR, TechMart Online, 2026-07-20. This is the disputed transaction.\n- TX-0402: 240.00 EUR, TechMart Online, 2026-07-14. Same amount and merchant, possibly the duplicate charge.\n- TX-0403: 35.50 EUR, CityParking, 2026-09-01. Not related to the dispute.\n\n**Eligibility checks for TX-0401 (as of 2026-09-15):**\n- **duplicate_charge:** Eligible. Window is 60 days, closing 2026-09-18. Reason code, transaction status, window, and compliance hold all passed.\n- **unauthorized_debit:** Not eligible. Window is 56 days and expired 2026-09-14.\n\n**Reason code options the customer was given:** duplicate_charge (60 days), unauthorized_debit (56 days), fraud_card_not_present (120 days), goods_not_received (90 days), service_not_rendered (90 days).\n\n**Status:** No dispute has been opened. The agent asked the customer to confirm with \"yes\" before opening a duplicate_charge dispute for TX-0401 (240.00 EUR). The customer has not yet answered.\n\n**Commitments made",
+          "summary.replaced_messages": 13
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "a5ee5698e9164c19",
+        "started_at": 1792354722.1798384,
+        "ended_at": 1792354723.5019407,
+        "duration_ms": 1322.1,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3127,
+          "gen_ai.usage.output_tokens": 178
+        },
+        "children": []
+      },
+      {
+        "name": "tool.get_account",
+        "span_id": "7e63511faf234f55",
+        "started_at": 1792354723.5020342,
+        "ended_at": 1792354723.503413,
+        "duration_ms": 1.4,
+        "attributes": {
+          "tool.name": "get_account",
+          "tool.arguments": {},
+          "tool.result": {
+            "customer": {
+              "id": "CUS-0004",
+              "name": "Danylo Kovalenko",
+              "tier": "tier1"
+            },
+            "accounts": [
+              {
+                "id": "ACC-1005",
+                "customer_id": "CUS-0004",
+                "currency": "EUR",
+                "balance": 1310.2,
+                "tier": "tier1",
+                "holder": "Danylo Kovalenko"
+              }
+            ]
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "d96d2762f0814c6f",
+        "started_at": 1792354723.503512,
+        "ended_at": 1792354724.4364262,
+        "duration_ms": 932.9,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3280,
+          "gen_ai.usage.output_tokens": 56
+        },
+        "children": []
+      },
+      {
+        "name": "tool.check_limits",
+        "span_id": "dd9db5c960394376",
+        "started_at": 1792354724.4368267,
+        "ended_at": 1792354724.4388459,
+        "duration_ms": 2.0,
+        "attributes": {
+          "tool.name": "check_limits",
+          "tool.arguments": {
+            "customer_id": "CUS-0004"
+          },
+          "tool.result": {
+            "tier": "tier1",
+            "as_of": "2026-09-15",
+            "daily_limit_eur": 5000,
+            "daily_spent_eur": 0,
+            "daily_remaining_eur": 5000,
+            "monthly_limit_eur": 50000,
+            "monthly_spent_eur": 35.5,
+            "monthly_remaining_eur": 49964.5
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "f6f5b74795dd4034",
+        "started_at": 1792354724.4389734,
+        "ended_at": 1792354726.9178576,
+        "duration_ms": 2478.9,
+        "attributes": {
+          "agent.loop_step": 2,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3455,
+          "gen_ai.usage.output_tokens": 338
+        },
+        "children": []
+      }
+    ]
+  }
+}

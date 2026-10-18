@@ -1,0 +1,47 @@
+{
+  "case": "CONV-004",
+  "run": 2,
+  "turn": 9,
+  "user": "Back to that charge: which transaction, amount, and reason code are we discussing?",
+  "answer": "We're discussing:\n\n- **Transaction:** TX-0401, a card payment to TechMart Online on 20 July 2026. It's settled.\n- **Amount:** EUR 240.00.\n- **Reason code:** `duplicate_charge`. The eligibility check ran on this code and passed.\n\nNothing has been filed. You haven't yet confirmed that you want TX-0401 disputed rather than TX-0402 (the 14 July charge of the same amount), or that both charges were for the same TechMart purchase. The dispute deadline is 18 September 2026.",
+  "trace": {
+    "request_id": "152099150e1246e2",
+    "name": "agent.request",
+    "span_id": "24ea18cc54e74a7c",
+    "started_at": 1792355650.749255,
+    "ended_at": 1792355653.5095072,
+    "duration_ms": 2760.3,
+    "attributes": {
+      "session.id": "1288c50abf77",
+      "dialog.step_number": 9,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 6719,
+      "gen_ai.usage.total_output_tokens": 453
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "b96ba314000344bd",
+        "started_at": 1792355650.749656,
+        "ended_at": 1792355653.5094752,
+        "duration_ms": 2759.8,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 6719,
+          "gen_ai.usage.output_tokens": 453
+        },
+        "children": []
+      }
+    ]
+  }
+}

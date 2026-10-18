@@ -1,0 +1,47 @@
+{
+  "case": "CONV-006",
+  "run": 1,
+  "turn": 7,
+  "user": "What amount will be disputed for TX-0401?",
+  "answer": "For TX-0401, the TechMart Online charge of **EUR 240.00** on 20 July 2026, the dispute would default to the full EUR 240.00. I can't open it yet, because I need two things from you:\n\n1. **Reason code.** Which applies: duplicate charge, card not present fraud, goods not received, service not rendered, or unauthorized debit?\n2. **Confirmation** that TX-0401 is the charge you want to dispute.\n\nOnce you give me both, I'll check eligibility first. If it's eligible, I'll open the dispute for EUR 240.00 unless you ask for a different amount. If it isn't eligible, I'll tell you why and what your next step is.",
+  "trace": {
+    "request_id": "5a2fd8332073425d",
+    "name": "agent.request",
+    "span_id": "c5dd7f377b8642f7",
+    "started_at": 1792355990.8632295,
+    "ended_at": 1792355993.2242186,
+    "duration_ms": 2361.0,
+    "attributes": {
+      "session.id": "97816453d414",
+      "dialog.step_number": 7,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 6194,
+      "gen_ai.usage.total_output_tokens": 384
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "2a87d1c844f0488b",
+        "started_at": 1792355990.8636553,
+        "ended_at": 1792355993.224186,
+        "duration_ms": 2360.5,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 6194,
+          "gen_ai.usage.output_tokens": 384
+        },
+        "children": []
+      }
+    ]
+  }
+}

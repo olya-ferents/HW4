@@ -1,0 +1,165 @@
+{
+  "case": "CONV-003",
+  "run": 4,
+  "turn": 3,
+  "user": "Fine. Back to that charge — what do I do next?",
+  "answer": "I've confirmed your account, **ACC-1005** (EUR, the only account on your profile). Your recent transactions include two identical 240.00 EUR card charges to **TechMart Online**:\n\n- **TX-0402**, 14 July 2026, 240.00 EUR (settled)\n- **TX-0401**, 20 July 2026, 240.00 EUR (settled)\n\nIf you only intended to pay once, TX-0401 looks like a duplicate charge.\n\nDispute eligibility for TX-0401, as of 15 September 2026:\n\n| Reason code | Eligible | Deadline |\n|---|---|---|\n| duplicate_charge | Yes | **18 September 2026** |\n| fraud_card_not_present | Yes | 17 November 2026 |\n| goods_not_received | Yes | 18 October 2026 |\n| service_not_rendered | Yes | 18 October 2026 |\n| unauthorized_debit | No, window closed 14 September 2026 | — |\n\n**Next steps:**\n1. **Choose a reason code.** If the issue is the double charge, choose duplicate_charge. It has the nearest deadline, so I'd recommend it if it fits. If you didn't receive the goods or service, or you didn't authorise the payment, tell me and I'll use the matching code.\n2. **Confirm the amount.** I'll dispute the full 240.00 EUR unless you want a different amount.\n3. **Confirm the dispute.** I",
+  "trace": {
+    "request_id": "7df7df1f29114602",
+    "name": "agent.request",
+    "span_id": "31369d9912834689",
+    "started_at": 1792354520.593816,
+    "ended_at": 1792354534.9899175,
+    "duration_ms": 14396.1,
+    "attributes": {
+      "session.id": "319815d3983f",
+      "dialog.step_number": 3,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 10118,
+      "gen_ai.usage.total_output_tokens": 1685
+    },
+    "children": [
+      {
+        "name": "agent.summarize",
+        "span_id": "f7685237b7d74caf",
+        "started_at": 1792354520.594005,
+        "ended_at": 1792354525.4787123,
+        "duration_ms": 4884.7,
+        "attributes": {
+          "summary.text": "**Case summary: TX-0401 dispute eligibility**\n\n- **Customer ID:** Not provided in this conversation.\n- **Account ID(s):** Not provided.\n- **Transaction:** TX-0401, 240.00 EUR, transaction date 2026-07-20.\n- **Status as of:** 2026-09-15.\n- **Dispute status:** No dispute has been opened. The customer has not yet chosen a reason code.\n\n**Eligibility results (all checks passed for the reason codes below except where noted):**\n\n| Reason code | Window (days) | Eligible | Deadline |\n|---|---|---|---|\n| duplicate_charge | 60 | Yes | 2026-09-18 |\n| fraud_card_not_present | 120 | Yes | 2026-11-17 |\n| goods_not_received | 90 | Yes | 2026-10-18 |\n| service_not_rendered | 90 | Yes | 2026-10-18 |\n| unauthorized_debit | 56 | No, window expired 2026-09-14 | — |\n\nAll eligible codes passed the reason_code, tx_status, and compliance_hold checks.\n\n**Pending from the customer:** Choice of reason code. duplicate_charge is the soonest deadline (three days).\n\n**Commitment made:** Once the customer chooses a reason code, the agent said they would open the dispute for the full 240.00 EUR, unless the customer requests a different amount.\n\n**Relevant policy notes:**\n- Review target is 10 business days for card reason codes and 20 business days for transfer reason codes. Complex cases involving a foreign acquirer may take up",
+          "summary.replaced_messages": 12
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "f2a2fbea36b44029",
+        "started_at": 1792354525.4788866,
+        "ended_at": 1792354527.6615796,
+        "duration_ms": 2182.7,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3149,
+          "gen_ai.usage.output_tokens": 309
+        },
+        "children": []
+      },
+      {
+        "name": "tool.get_account",
+        "span_id": "98599831962245d1",
+        "started_at": 1792354527.6616237,
+        "ended_at": 1792354527.662041,
+        "duration_ms": 0.4,
+        "attributes": {
+          "tool.name": "get_account",
+          "tool.arguments": {},
+          "tool.result": {
+            "customer": {
+              "id": "CUS-0004",
+              "name": "Danylo Kovalenko",
+              "tier": "tier1"
+            },
+            "accounts": [
+              {
+                "id": "ACC-1005",
+                "customer_id": "CUS-0004",
+                "currency": "EUR",
+                "balance": 1310.2,
+                "tier": "tier1",
+                "holder": "Danylo Kovalenko"
+              }
+            ]
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "4566446b4c5e404e",
+        "started_at": 1792354527.662109,
+        "ended_at": 1792354529.856988,
+        "duration_ms": 2194.9,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3302,
+          "gen_ai.usage.output_tokens": 352
+        },
+        "children": []
+      },
+      {
+        "name": "tool.get_transactions",
+        "span_id": "40fbdf5a78d64714",
+        "started_at": 1792354529.857085,
+        "ended_at": 1792354529.8586037,
+        "duration_ms": 1.5,
+        "attributes": {
+          "tool.name": "get_transactions",
+          "tool.arguments": {
+            "account_id": "ACC-1005",
+            "limit": 20
+          },
+          "tool.result": {
+            "transactions": [
+              {
+                "id": "TX-0403",
+                "account_id": "ACC-1005",
+                "date": "2026-09-01",
+                "amount": 35.5,
+                "currency": "EUR",
+                "merchant": "CityParking",
+                "direction": "out",
+                "transfer_type": "card",
+                "status": "settled"
+              },
+              {
+                "id": "TX-0401",
+                "account_id": "ACC-1005",
+                "date": "2026-07-20",
+                "amount": 240.0,
+                "currency": "EUR",
+                "merchant": "TechMart Online",
+                "direction": "out",
+                "transfer_type": "card",
+                "status": "settled"
+              },
+              {
+                "id": "TX-0402",
+                "account_id": "ACC-1005",
+                "date": "2026-07-14",
+                "amount": 240.0,
+                "currency": "EUR",
+                "merchant": "TechMart Online",
+                "direction": "out",
+                "transfer_type": "card",
+                "status": "settled"
+              }
+            ]
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "3bd48c1ba0c846a0",
+        "started_at": 1792354529.858688,
+        "ended_at": 1792354534.989886,
+        "duration_ms": 5131.2,
+        "attributes": {
+          "agent.loop_step": 2,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3667,
+          "gen_ai.usage.output_tokens": 1024
+        },
+        "children": []
+      }
+    ]
+  }
+}

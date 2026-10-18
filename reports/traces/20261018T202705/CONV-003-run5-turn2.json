@@ -1,0 +1,47 @@
+{
+  "case": "CONV-003",
+  "run": 5,
+  "turn": 2,
+  "user": "Can I dispute it?",
+  "answer": "I can check eligibility once I know the reason. Which of these matches what happened with TX-0401?\n\n- **Duplicate charge:** the same purchase was charged more than once. TX-0402 is a matching EUR 240.00 payment to TechMart Online from 2026-07-14.\n- **Unauthorised card payment:** you did not make this online card payment.\n- **Goods not received:** you paid, but nothing arrived.\n- **Service not rendered:** you paid, but the service was not provided.\n- **Unauthorised debit:** the money left your account without your authorisation.\n\nTell me which applies and I'll check whether TX-0401 can be disputed under that code. I won't file anything without your confirmation.",
+  "trace": {
+    "request_id": "ae2abf0781364aa2",
+    "name": "agent.request",
+    "span_id": "2766a890c5334727",
+    "started_at": 1792355537.8307476,
+    "ended_at": 1792355540.355578,
+    "duration_ms": 2524.8,
+    "attributes": {
+      "session.id": "436f556c8fa6",
+      "dialog.step_number": 2,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 3690,
+      "gen_ai.usage.total_output_tokens": 389
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "b4c5de467e3b419e",
+        "started_at": 1792355537.8312283,
+        "ended_at": 1792355540.3555596,
+        "duration_ms": 2524.3,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3690,
+          "gen_ai.usage.output_tokens": 389
+        },
+        "children": []
+      }
+    ]
+  }
+}

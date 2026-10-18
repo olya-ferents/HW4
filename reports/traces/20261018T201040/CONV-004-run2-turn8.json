@@ -1,0 +1,128 @@
+{
+  "case": "CONV-004",
+  "run": 2,
+  "turn": 8,
+  "user": "How will I receive updates about a dispute?",
+  "answer": "I couldn't find the notification channel or the update schedule in the knowledge base, so I can't tell you how updates will reach you. I can confirm one related rule: for a fraud reason code (fraud_card_not_present) on a disputed amount above EUR 50, a provisional credit is applied within two business days. TX-0401 is EUR 240, so that rule would apply if you choose that code. The credit is reversed if the dispute is later declined.\n\nFor the notification channel and review timelines, you can:\n- Ask me to search the knowledge base again with a narrower question, or\n- Ask to be connected to a human agent, who can confirm how updates are sent.\n\nWhich reason code applies to TX-0401? Once you choose, I'll re-check eligibility before opening anything.",
+  "trace": {
+    "request_id": "0137ad8bd8064a0b",
+    "name": "agent.request",
+    "span_id": "657dac319a7448c1",
+    "started_at": 1792354655.2347891,
+    "ended_at": 1792354660.5824454,
+    "duration_ms": 5347.7,
+    "attributes": {
+      "session.id": "b04cba37aec3",
+      "dialog.step_number": 8,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 12062,
+      "gen_ai.usage.total_output_tokens": 844
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "ab51cb82b913462c",
+        "started_at": 1792354655.2349012,
+        "ended_at": 1792354657.0778754,
+        "duration_ms": 1843.0,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 5707,
+          "gen_ai.usage.output_tokens": 269
+        },
+        "children": []
+      },
+      {
+        "name": "tool.search_knowledge_base",
+        "span_id": "a82bfe5c66cf4686",
+        "started_at": 1792354657.0779068,
+        "ended_at": 1792354657.0783484,
+        "duration_ms": 0.4,
+        "attributes": {
+          "tool.name": "search_knowledge_base",
+          "tool.arguments": {
+            "query": "dispute status notifications how customer is notified"
+          },
+          "tool.result": {
+            "index": "kb_clean",
+            "top_k": 4,
+            "query": "dispute status notifications how customer is notified",
+            "fragments": [
+              {
+                "id": "disputes.md#s2",
+                "doc": "disputes.md",
+                "score": 1.016,
+                "text": "Payment dispute rules\n## Eligibility conditions\nA dispute is eligible only if all of the following hold: the reason code is\nvalid; the transaction status is settled; the transaction date is within the\nreason code's window relative to the current date; and no customer-level\nrestriction applies (for example, an account under compliance review cannot\nopen new disputes until the review concludes)."
+              },
+              {
+                "id": "disputes-process.md#s1",
+                "doc": "disputes-process.md",
+                "score": 1.0,
+                "text": "Dispute handling process\n## Raising a dispute\nA dispute is raised against a single settled transaction. The customer supplies\nthe transaction reference and a reason code. The agent verifies eligibility\nbefore the case is opened; an ineligible request is refused with the failing\ncondition named, except where confidentiality rules apply."
+              },
+              {
+                "id": "disputes-process.md#s3",
+                "doc": "disputes-process.md",
+                "score": 0.9608,
+                "text": "Dispute handling process\n## Provisional credit\nWhere the disputed amount exceeds EUR 50 and the reason code is a fraud code, a\nprovisional credit is applied within two business days. Provisional credit is\nreversed if the dispute is later declined."
+              },
+              {
+                "id": "glossary.md#s7",
+                "doc": "glossary.md",
+                "score": 0.9428,
+                "text": "Glossary\n## Provisional credit\nA temporary refund applied while a dispute is reviewed; reversed if the dispute\nis declined."
+              }
+            ]
+          },
+          "retrieval.query": "dispute status notifications how customer is notified",
+          "retrieval.index": "kb_clean",
+          "retrieval.top_k": 4,
+          "retrieval.fragments": [
+            {
+              "id": "disputes.md#s2",
+              "score": 1.016,
+              "text": "Payment dispute rules\n## Eligibility conditions\nA dispute is eligible only if all of the following hold: the reason code is\nvalid; the transaction status is set"
+            },
+            {
+              "id": "disputes-process.md#s1",
+              "score": 1.0,
+              "text": "Dispute handling process\n## Raising a dispute\nA dispute is raised against a single settled transaction. The customer supplies\nthe transaction reference and a re"
+            },
+            {
+              "id": "disputes-process.md#s3",
+              "score": 0.9608,
+              "text": "Dispute handling process\n## Provisional credit\nWhere the disputed amount exceeds EUR 50 and the reason code is a fraud code, a\nprovisional credit is applied wit"
+            },
+            {
+              "id": "glossary.md#s7",
+              "score": 0.9428,
+              "text": "Glossary\n## Provisional credit\nA temporary refund applied while a dispute is reviewed; reversed if the dispute\nis declined."
+            }
+          ]
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "be1d5e5e319145d2",
+        "started_at": 1792354657.0784922,
+        "ended_at": 1792354660.5823896,
+        "duration_ms": 3503.9,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 6355,
+          "gen_ai.usage.output_tokens": 575
+        },
+        "children": []
+      }
+    ]
+  }
+}

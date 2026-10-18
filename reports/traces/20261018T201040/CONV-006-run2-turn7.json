@@ -1,0 +1,44 @@
+{
+  "case": "CONV-006",
+  "run": 2,
+  "turn": 7,
+  "user": "What amount will be disputed for TX-0401?",
+  "answer": "The disputed amount for **TX-0401** will be **EUR 240.00**, the full transaction amount, unless you ask for a different amount. I haven't opened the dispute yet.\n\nTo proceed, please confirm that TX-0401 (EUR 240.00, TechMart Online, 2026-07-20) is the duplicate of TX-0402 and that you want the full EUR 240.00 disputed. The eligibility deadline is 2026-09-18.",
+  "trace": {
+    "request_id": "001de78b58c4493a",
+    "name": "agent.request",
+    "span_id": "3cadc9deb10d4593",
+    "started_at": 1792355030.1112425,
+    "ended_at": 1792355032.153962,
+    "duration_ms": 2042.7,
+    "attributes": {
+      "session.id": "366c8dd40d12",
+      "dialog.step_number": 7,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 4879,
+      "gen_ai.usage.total_output_tokens": 306
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "996a5968ab064bd9",
+        "started_at": 1792355030.1113794,
+        "ended_at": 1792355032.1539195,
+        "duration_ms": 2042.5,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 4879,
+          "gen_ai.usage.output_tokens": 306
+        },
+        "children": []
+      }
+    ]
+  }
+}

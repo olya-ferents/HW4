@@ -1,0 +1,128 @@
+{
+  "case": "CONV-006",
+  "run": 2,
+  "turn": 1,
+  "user": "Give me reason code for transaction TX-0401 with amount 240.00 EUR.",
+  "answer": "I can't tell you which reason code applies to TX-0401 without knowing why you're disputing it. The codes are:\n\n| Reason code | Use when | Window (days from transaction date) |\n|---|---|---|\n| duplicate_charge | You were charged more than once for the same purchase | 60 |\n| fraud_card_not_present | A card payment was made without your authorization (online, phone, etc.) | 120 |\n| goods_not_received | You paid for goods that were never delivered | 90 |\n| service_not_rendered | You paid for a service that was not provided | 90 |\n| unauthorized_debit | A direct debit or transfer was taken without your authorization | 56 |\n\nTell me what happened with TX-0401 and I'll match it to the right code. I'll then check whether the dispute is eligible before opening anything. If you'd like, I can also check the account's transaction history to confirm the details of the 240.00 EUR payment.",
+  "trace": {
+    "request_id": "ae56b8c4a6da4a55",
+    "name": "agent.request",
+    "span_id": "690ee05d99a54bcb",
+    "started_at": 1792354997.6982725,
+    "ended_at": 1792355002.3511467,
+    "duration_ms": 4652.9,
+    "attributes": {
+      "session.id": "366c8dd40d12",
+      "dialog.step_number": 1,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 5953,
+      "gen_ai.usage.total_output_tokens": 767
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "2421c8cf73534086",
+        "started_at": 1792354997.6983736,
+        "ended_at": 1792354999.4972918,
+        "duration_ms": 1798.9,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 2617,
+          "gen_ai.usage.output_tokens": 271
+        },
+        "children": []
+      },
+      {
+        "name": "tool.search_knowledge_base",
+        "span_id": "34fa8c42352c4842",
+        "started_at": 1792354999.4973235,
+        "ended_at": 1792354999.4978514,
+        "duration_ms": 0.5,
+        "attributes": {
+          "tool.name": "search_knowledge_base",
+          "tool.arguments": {
+            "query": "dispute reason codes duplicate_charge fraud_card_not_present goods_not_received service_not_rendered unauthorized_debit"
+          },
+          "tool.result": {
+            "index": "kb_clean",
+            "top_k": 4,
+            "query": "dispute reason codes duplicate_charge fraud_card_not_present goods_not_received service_not_rendered unauthorized_debit",
+            "fragments": [
+              {
+                "id": "disputes.md#s1",
+                "doc": "disputes.md",
+                "score": 1.6583,
+                "text": "Payment dispute rules\n## Reason codes and chargeback windows\nEach reason code has a window in days from the transaction date. A dispute opened after the window closes is not eligible.\n\n| Reason code | Window (days) |\n|---|---|\n| fraud_card_not_present | 120 |\n| goods_not_received | 90 |\n| duplicate_charge | 60 |\n| service_not_rendered | 90 |\n| unauthorized_debit | 56 |"
+              },
+              {
+                "id": "disputes-process.md#s4",
+                "doc": "disputes-process.md",
+                "score": 0.7625,
+                "text": "Dispute handling process\n## Review timelines\nThe review target is 10 business days for card reason codes and 20 business\ndays for transfer reason codes. Complex cases involving a foreign acquirer may\nrun to 45 calendar days; the customer is notified when that happens."
+              },
+              {
+                "id": "disputes-process.md#s6",
+                "doc": "disputes-process.md",
+                "score": 0.7071,
+                "text": "Dispute handling process\n## Withdrawing a dispute\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\nfinal; the same transaction cannot be disputed again under the same reason code."
+              },
+              {
+                "id": "notifications.md#s2",
+                "doc": "notifications.md",
+                "score": 0.6124,
+                "text": "Notifications\n## Dispute updates\nA dispute generates a notification on every state change. The notification\nnames the state, never the internal reason for a decision."
+              }
+            ]
+          },
+          "retrieval.query": "dispute reason codes duplicate_charge fraud_card_not_present goods_not_received service_not_rendered unauthorized_debit",
+          "retrieval.index": "kb_clean",
+          "retrieval.top_k": 4,
+          "retrieval.fragments": [
+            {
+              "id": "disputes.md#s1",
+              "score": 1.6583,
+              "text": "Payment dispute rules\n## Reason codes and chargeback windows\nEach reason code has a window in days from the transaction date. A dispute opened after the window "
+            },
+            {
+              "id": "disputes-process.md#s4",
+              "score": 0.7625,
+              "text": "Dispute handling process\n## Review timelines\nThe review target is 10 business days for card reason codes and 20 business\ndays for transfer reason codes. Complex"
+            },
+            {
+              "id": "disputes-process.md#s6",
+              "score": 0.7071,
+              "text": "Dispute handling process\n## Withdrawing a dispute\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\nfinal; the same transaction can"
+            },
+            {
+              "id": "notifications.md#s2",
+              "score": 0.6124,
+              "text": "Notifications\n## Dispute updates\nA dispute generates a notification on every state change. The notification\nnames the state, never the internal reason for a dec"
+            }
+          ]
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "76a726880ef143a0",
+        "started_at": 1792354999.497933,
+        "ended_at": 1792355002.3511035,
+        "duration_ms": 2853.2,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3336,
+          "gen_ai.usage.output_tokens": 496
+        },
+        "children": []
+      }
+    ]
+  }
+}

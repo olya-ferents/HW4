@@ -1,0 +1,137 @@
+{
+  "case": "CONV-004",
+  "run": 2,
+  "turn": 3,
+  "user": "What is my daily card limit?",
+  "answer": "Your daily limit on file for your tier (tier1) is **EUR 5,000**. As of 2026-09-15 you have not used any of it today, so the full EUR 5,000 remains.\n\nMy limit data covers transfer limits in general and does not break out a separate card-specific daily limit. If you need that figure, I can search the knowledge base for card limit rules or escalate to a human agent.",
+  "trace": {
+    "request_id": "4064c9b46a5a4999",
+    "name": "agent.request",
+    "span_id": "c9a0ac81caf2401e",
+    "started_at": 1792354630.8534973,
+    "ended_at": 1792354639.3423615,
+    "duration_ms": 8488.9,
+    "attributes": {
+      "session.id": "b04cba37aec3",
+      "dialog.step_number": 3,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 10219,
+      "gen_ai.usage.total_output_tokens": 373
+    },
+    "children": [
+      {
+        "name": "agent.summarize",
+        "span_id": "e523613f384c40af",
+        "started_at": 1792354630.853707,
+        "ended_at": 1792354634.9442024,
+        "duration_ms": 4090.5,
+        "attributes": {
+          "summary.text": "**Support conversation summary: TX-0401 dispute eligibility**\n\n- **Transaction:** TX-0401, EUR 240.00, dated 2026-07-20. Status passed the tx_status check. Compliance hold check passed.\n- **Customer ID / account ID:** Not provided. Agent said it would need the account the transaction was made from if the customer has more than one.\n- **Eligibility check as of 2026-09-15:**\n\n| Reason code | Window (days) | Eligible | Deadline to open |\n|---|---|---|---|\n| duplicate_charge | 60 | Yes | 2026-09-18 (earliest) |\n| fraud_card_not_present | 120 | Yes | 2026-11-17 |\n| goods_not_received | 90 | Yes | 2026-10-18 |\n| service_not_rendered | 90 | Yes | 2026-10-18 |\n| unauthorized_debit | 56 | No | Window expired 2026-09-14 |\n\n- **Reason codes offered to the customer** (customer must choose; agent cannot infer from TX ID): duplicate_charge (charged twice), fraud_card_not_present (used without involvement, online/phone), goods_not_received, service_not_rendered, unauthorized_debit (ineligible).\n- **Commitments made:** Agent will not file any dispute until the customer confirms the reason code. Once confirmed, agent will open the dispute.\n- **Not yet done:** No dispute has been filed. No reason code has been selected.\n\n**Relevant policy notes:**\n- Review target: 10 business days for card reason codes; 20 business days for transfer codes. Complex foreign-acquirer cases may take up to 45 calendar days, and the customer is notified if so.\n- Withdrawal is final. The same transaction cannot be disputed again under the same reason code.\n- Each state change generates a customer notification. Notifications name the state, not the internal reason for a decision.",
+          "summary.replaced_messages": 12
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "17f665def6fc4c5b",
+        "started_at": 1792354634.944304,
+        "ended_at": 1792354636.3750284,
+        "duration_ms": 1430.7,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3246,
+          "gen_ai.usage.output_tokens": 84
+        },
+        "children": []
+      },
+      {
+        "name": "tool.get_account",
+        "span_id": "febc06c6ef394cd8",
+        "started_at": 1792354636.375099,
+        "ended_at": 1792354636.3759634,
+        "duration_ms": 0.9,
+        "attributes": {
+          "tool.name": "get_account",
+          "tool.arguments": {},
+          "tool.result": {
+            "customer": {
+              "id": "CUS-0004",
+              "name": "Danylo Kovalenko",
+              "tier": "tier1"
+            },
+            "accounts": [
+              {
+                "id": "ACC-1005",
+                "customer_id": "CUS-0004",
+                "currency": "EUR",
+                "balance": 1310.2,
+                "tier": "tier1",
+                "holder": "Danylo Kovalenko"
+              }
+            ]
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "23300b6cbad24e0f",
+        "started_at": 1792354636.3760514,
+        "ended_at": 1792354637.2955327,
+        "duration_ms": 919.5,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3399,
+          "gen_ai.usage.output_tokens": 56
+        },
+        "children": []
+      },
+      {
+        "name": "tool.check_limits",
+        "span_id": "6abaefc2ff2a466c",
+        "started_at": 1792354637.295629,
+        "ended_at": 1792354637.2968407,
+        "duration_ms": 1.2,
+        "attributes": {
+          "tool.name": "check_limits",
+          "tool.arguments": {
+            "customer_id": "CUS-0004"
+          },
+          "tool.result": {
+            "tier": "tier1",
+            "as_of": "2026-09-15",
+            "daily_limit_eur": 5000,
+            "daily_spent_eur": 0,
+            "daily_remaining_eur": 5000,
+            "monthly_limit_eur": 50000,
+            "monthly_spent_eur": 35.5,
+            "monthly_remaining_eur": 49964.5
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "ce19809e82f04197",
+        "started_at": 1792354637.2969563,
+        "ended_at": 1792354639.3423316,
+        "duration_ms": 2045.4,
+        "attributes": {
+          "agent.loop_step": 2,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3574,
+          "gen_ai.usage.output_tokens": 233
+        },
+        "children": []
+      }
+    ]
+  }
+}

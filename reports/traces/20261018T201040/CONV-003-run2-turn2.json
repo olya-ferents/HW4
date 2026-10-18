@@ -1,0 +1,44 @@
+{
+  "case": "CONV-003",
+  "run": 2,
+  "turn": 2,
+  "user": "Can I dispute it?",
+  "answer": "Yes, it may be possible, but I need to know what went wrong with the payment first. Eligibility depends on the reason code, and each code has its own window. Which of these describes your situation?\n\n- **Charged twice:** the same payment appeared more than once (duplicate_charge, 60-day window)\n- **Card used without your permission:** a card payment you did not authorize, online or by phone (fraud_card_not_present, 120-day window)\n- **Debit you did not authorize:** money taken from your account without your authorization (unauthorized_debit, 56-day window)\n- **Goods not delivered:** you paid for items that never arrived (goods_not_received, 90-day window)\n- **Service not provided:** you paid for a service that was not delivered (service_not_rendered, 90-day window)\n\nOnce you choose, I'll check whether TX-0401 is eligible. I won't open a dispute until that check passes and you confirm.",
+  "trace": {
+    "request_id": "d5ddfb57b77c4191",
+    "name": "agent.request",
+    "span_id": "c7e4fc68add1478f",
+    "started_at": 1792354456.628649,
+    "ended_at": 1792354459.5392396,
+    "duration_ms": 2910.6,
+    "attributes": {
+      "session.id": "08e985d129a4",
+      "dialog.step_number": 2,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 3656,
+      "gen_ai.usage.total_output_tokens": 497
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "ccf4bda163b94b6b",
+        "started_at": 1792354456.6292365,
+        "ended_at": 1792354459.539205,
+        "duration_ms": 2910.0,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3656,
+          "gen_ai.usage.output_tokens": 497
+        },
+        "children": []
+      }
+    ]
+  }
+}

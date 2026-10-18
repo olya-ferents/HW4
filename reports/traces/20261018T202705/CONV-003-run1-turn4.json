@@ -1,0 +1,47 @@
+{
+  "case": "CONV-003",
+  "run": 1,
+  "turn": 4,
+  "user": "Amount 240 euro, as I said at the start.",
+  "answer": "Thank you, that matches the transaction on record: TX-0401, 240.00 EUR to TechMart Online on 20 July 2026, under service_not_rendered. The dispute is still not filed.\n\nTo file it, please reply **\"yes, file the dispute\"**. Once you confirm, I will open it for TX-0401 for 240.00 EUR. The deadline is 18 October 2026.",
+  "trace": {
+    "request_id": "9671ce792dcb465a",
+    "name": "agent.request",
+    "span_id": "1b6cc9f87e3346cb",
+    "started_at": 1792355432.3317206,
+    "ended_at": 1792355434.4752295,
+    "duration_ms": 2143.5,
+    "attributes": {
+      "session.id": "00c633aa6f05",
+      "dialog.step_number": 4,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 3990,
+      "gen_ai.usage.total_output_tokens": 337
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "ffc98aa3988c4fc5",
+        "started_at": 1792355432.332001,
+        "ended_at": 1792355434.4751985,
+        "duration_ms": 2143.2,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3990,
+          "gen_ai.usage.output_tokens": 337
+        },
+        "children": []
+      }
+    ]
+  }
+}

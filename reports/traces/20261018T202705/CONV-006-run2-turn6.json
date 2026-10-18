@@ -1,0 +1,90 @@
+{
+  "case": "CONV-006",
+  "run": 2,
+  "turn": 6,
+  "user": "Will the dispute cover the full charge?",
+  "answer": "Yes. If you confirm, the dispute would cover the **full EUR 240.00** charge on TX-0401 (20 July 2026). The dispute amount defaults to the transaction amount, and you can ask for a smaller amount if you prefer.\n\nI've now checked eligibility for **TX-0401 under duplicate_charge**. The result is **eligible**:\n- Transaction status: settled (pass)\n- Dispute window: 60 days from 20 July (pass)\n- Compliance check: pass\n- **Deadline: 18 September 2026**, three days from today (15 September)\n\nThe dispute has not been opened. To proceed, please reply with:\n1. **Confirmation** to open a duplicate_charge dispute on TX-0401 for EUR 240.00. Or tell me a different amount.\n2. Or, if you want to dispute the other payment or use service_not_rendered instead, tell me which one and I'll check eligibility first.",
+  "trace": {
+    "request_id": "9b4cfe8454294177",
+    "name": "agent.request",
+    "span_id": "732fc8e148f54d38",
+    "started_at": 1792356027.317325,
+    "ended_at": 1792356033.2706983,
+    "duration_ms": 5953.4,
+    "attributes": {
+      "session.id": "03cbe4ad4fc5",
+      "dialog.step_number": 6,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 10770,
+      "gen_ai.usage.total_output_tokens": 987
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "5db118f45e244195",
+        "started_at": 1792356027.3180666,
+        "ended_at": 1792356029.667434,
+        "duration_ms": 2349.4,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 5278,
+          "gen_ai.usage.output_tokens": 416
+        },
+        "children": []
+      },
+      {
+        "name": "tool.check_dispute_eligibility",
+        "span_id": "e9a290709c064f99",
+        "started_at": 1792356029.6674943,
+        "ended_at": 1792356029.6690562,
+        "duration_ms": 1.6,
+        "attributes": {
+          "tool.name": "check_dispute_eligibility",
+          "tool.arguments": {
+            "transaction_id": "TX-0401",
+            "reason_code": "duplicate_charge"
+          },
+          "tool.result": {
+            "eligible": true,
+            "reason_code": "duplicate_charge",
+            "window_days": 60,
+            "tx_date": "2026-07-20",
+            "as_of": "2026-09-15",
+            "deadline": "2026-09-18",
+            "checks": {
+              "reason_code": "pass",
+              "tx_status": "pass",
+              "window": "pass",
+              "compliance_hold": "pass"
+            }
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "e8b16e03411242c6",
+        "started_at": 1792356029.6691613,
+        "ended_at": 1792356033.2706623,
+        "duration_ms": 3601.5,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 5492,
+          "gen_ai.usage.output_tokens": 571
+        },
+        "children": []
+      }
+    ]
+  }
+}

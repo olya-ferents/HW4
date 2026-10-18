@@ -1,0 +1,44 @@
+{
+  "case": "CONV-004",
+  "run": 5,
+  "turn": 9,
+  "user": "Back to that charge: which transaction, amount, and reason code are we discussing?",
+  "answer": "We are discussing:\n\n- **Transaction:** TX-0401\n- **Amount:** EUR 240.00\n- **Merchant:** TechMart Online\n- **Date:** 2026-07-20\n- **Reason code:** not yet chosen\n\nI also need to correct my earlier deadline table. I miscounted two of the windows:\n\n- **Goods not received** (90 days) closes on 2026-10-18, so 33 days remain, not 35.\n- **Unauthorised card payment** (120 days, fraud_card_not_present) closes on 2026-11-17, so 63 days remain, not 65.\n\nThe other figures are unchanged: duplicate charge closes on 2026-09-18 (3 days left), service not rendered closes on 2026-10-18 (33 days left), and unauthorised debit closed on 2026-09-14.\n\nWhich reason applies to TX-0401? Once you tell me, I'll run the eligibility check and wait for your confirmation before opening anything.",
+  "trace": {
+    "request_id": "5a9d62b7611740db",
+    "name": "agent.request",
+    "span_id": "4ffaff20dde44d79",
+    "started_at": 1792354785.7924793,
+    "ended_at": 1792354790.0844018,
+    "duration_ms": 4291.9,
+    "attributes": {
+      "session.id": "d1110ece5116",
+      "dialog.step_number": 9,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 7349,
+      "gen_ai.usage.total_output_tokens": 803
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "ba0d55399d5a4092",
+        "started_at": 1792354785.792647,
+        "ended_at": 1792354790.0842986,
+        "duration_ms": 4291.7,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 7349,
+          "gen_ai.usage.output_tokens": 803
+        },
+        "children": []
+      }
+    ]
+  }
+}

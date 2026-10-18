@@ -1,0 +1,44 @@
+{
+  "case": "CONV-004",
+  "run": 2,
+  "turn": 6,
+  "user": "Amount 240 euro, as I said at the start.",
+  "answer": "The amount matches TX-0401: EUR 240.00, dated 2026-07-20, on ACC-1005.\n\nI still need the reason code before I can open a dispute. Which one applies?\n\n- **duplicate_charge**: you were charged twice for the same purchase (open by 2026-09-18)\n- **fraud_card_not_present**: the card was used online or by phone without your involvement (open by 2026-11-17)\n- **goods_not_received**: you paid but did not receive the goods (open by 2026-10-18)\n- **service_not_rendered**: you paid but the service was not provided (open by 2026-10-18)\n\nunauthorized_debit is no longer available because its window closed on 2026-09-14.\n\nReply with the code, and I'll re-check eligibility and then open the dispute.",
+  "trace": {
+    "request_id": "ceacabc007094978",
+    "name": "agent.request",
+    "span_id": "11860a29ef434fe9",
+    "started_at": 1792354649.4926577,
+    "ended_at": 1792354652.9647737,
+    "duration_ms": 3472.1,
+    "attributes": {
+      "session.id": "b04cba37aec3",
+      "dialog.step_number": 6,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 5257,
+      "gen_ai.usage.total_output_tokens": 554
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "98e2c15d27d748c5",
+        "started_at": 1792354649.4928734,
+        "ended_at": 1792354652.964759,
+        "duration_ms": 3471.9,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 5257,
+          "gen_ai.usage.output_tokens": 554
+        },
+        "children": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "case": "CONV-006",
+  "run": 1,
+  "turn": 3,
+  "user": "What is my daily card limit?",
+  "answer": "Your daily transfer limit on file for your tier1 account is EUR 5,000.00. As of today (2026-09-15) you have not spent anything against it, so the full EUR 5,000.00 remains available.\n\nFor reference, your monthly limit is EUR 50,000.00, with EUR 35.50 used so far this month and EUR 49,964.50 remaining.",
+  "trace": {
+    "request_id": "6e6111dcce544cbd",
+    "name": "agent.request",
+    "span_id": "e0146ecffeb64fe1",
+    "started_at": 1792354977.801474,
+    "ended_at": 1792354985.6475425,
+    "duration_ms": 7846.1,
+    "attributes": {
+      "session.id": "d9747c5c5d7c",
+      "dialog.step_number": 3,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 6731,
+      "gen_ai.usage.total_output_tokens": 506
+    },
+    "children": [
+      {
+        "name": "agent.summarize",
+        "span_id": "c1340ae388234b4d",
+        "started_at": 1792354977.8016596,
+        "ended_at": 1792354982.188736,
+        "duration_ms": 4387.1,
+        "attributes": {
+          "summary.text": "**Case summary: TX-0401 dispute inquiry (not yet opened)**\n\n- **Customer:** CUS-0004, Danylo Kovalenko, tier1\n- **Account:** ACC-1005, EUR, balance 1310.20, holder Danylo Kovalenko\n- **Disputed transaction:** TX-0401, EUR 240.00 out, card, TechMart Online, dated 2026-07-20, status settled\n- **Related transactions on ACC-1005:**\n  - TX-0402: EUR 240.00 out, card, TechMart Online, 2026-07-14, settled (same merchant and amount as TX-0401)\n  - TX-0403: EUR 35.50 out, card, CityParking, 2026-09-01, settled (not related)\n- **Eligibility check (as of 2026-09-15):** TX-0401 is eligible for **duplicate_charge**. Window is 60 days, deadline **2026-09-18**. All checks passed: reason code, transaction status, window, compliance hold.\n- **Reason code windows from the KB:** fraud_card_not_present 120 days, goods_not_received 90, duplicate_charge 60, service_not_rendered 90, unauthorized_debit 56.\n- **Note:** A duplicate_charge dispute on TX-0402 (dated 2026-07-14) would have had a 60-day deadline of about 2026-09-12, which has already passed as of 2026-09-15. I did not check eligibility for TX-0402.\n- **Review timelines:** 10 business days for card reason codes. Foreign-acquirer cases can take up to 45 calendar days, and the customer is notified if so.\n- **Withdrawal:** A dispute can be withdrawn before resolution, but withdrawal is final and the same transaction cannot be re-disputed under the same reason code.\n\n**Status:** No dispute has been opened. Disputes cannot be reversed, so I am waiting for the customer to confirm:\n1. That TX-0401 is a duplicate of T",
+          "summary.replaced_messages": 11
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "5e310ac02fdd406d",
+        "started_at": 1792354982.188907,
+        "ended_at": 1792354984.443798,
+        "duration_ms": 2254.9,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3278,
+          "gen_ai.usage.output_tokens": 386
+        },
+        "children": []
+      },
+      {
+        "name": "tool.check_limits",
+        "span_id": "e457db11191d431f",
+        "started_at": 1792354984.4438636,
+        "ended_at": 1792354984.4450567,
+        "duration_ms": 1.2,
+        "attributes": {
+          "tool.name": "check_limits",
+          "tool.arguments": {
+            "customer_id": "CUS-0004"
+          },
+          "tool.result": {
+            "tier": "tier1",
+            "as_of": "2026-09-15",
+            "daily_limit_eur": 5000,
+            "daily_spent_eur": 0,
+            "daily_remaining_eur": 5000,
+            "monthly_limit_eur": 50000,
+            "monthly_spent_eur": 35.5,
+            "monthly_remaining_eur": 49964.5
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "48592dab66874efa",
+        "started_at": 1792354984.445169,
+        "ended_at": 1792354985.6474745,
+        "duration_ms": 1202.3,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3453,
+          "gen_ai.usage.output_tokens": 120
+        },
+        "children": []
+      }
+    ]
+  }
+}

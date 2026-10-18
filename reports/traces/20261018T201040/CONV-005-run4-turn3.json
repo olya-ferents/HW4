@@ -1,0 +1,56 @@
+{
+  "case": "CONV-005",
+  "run": 4,
+  "turn": 3,
+  "user": "What is the filing deadline for TX-0401?",
+  "answer": "The filing deadline for TX-0401 is **18 September 2026**. The 60-day duplicate_charge window runs from the transaction date of 20 July 2026, and the eligibility check was run as of 15 September 2026, so about three days remain.\n\nThe dispute has not been opened yet. Before I file it, please confirm:\n1. That TX-0401 (240.00 EUR) is the transaction you want to dispute under the duplicate_charge reason.\n2. That the full 240.00 EUR is the amount to dispute.\n3. Which of your accounts TX-0401 belongs to.\n\nOnce you confirm, I will open the dispute and send you the reference number.",
+  "trace": {
+    "request_id": "5d1b701ef75b44fc",
+    "name": "agent.request",
+    "span_id": "4369bcabf0d74d9f",
+    "started_at": 1792354908.8620462,
+    "ended_at": 1792354917.1520166,
+    "duration_ms": 8290.0,
+    "attributes": {
+      "session.id": "b4cda05851cd",
+      "dialog.step_number": 3,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 3240,
+      "gen_ai.usage.total_output_tokens": 491
+    },
+    "children": [
+      {
+        "name": "agent.summarize",
+        "span_id": "8f8c4e4bd5fb418f",
+        "started_at": 1792354908.8621979,
+        "ended_at": 1792354913.917863,
+        "duration_ms": 5055.7,
+        "attributes": {
+          "summary.text": "**Conversation summary: TX-0401 duplicate charge dispute**\n\n**Customer request:** The customer asked for the reason code for TX-0401 (240.00 EUR). They said they were charged twice for the same purchase and asked whether TX-0401 is eligible for a dispute.\n\n**Reference data (knowledge base, disputes.md):**\n- Reason codes and windows (days from transaction date): fraud_card_not_present 120; goods_not_received 90; duplicate_charge 60; service_not_rendered 90; unauthorized_debit 56.\n- Card dispute review target: 10 business days. Foreign-acquirer complex cases may take up to 45 calendar days, and the customer is notified if so.\n- Withdrawal is allowed any time before resolution, but it is final. The same transaction cannot be disputed again under the same reason code.\n- Dispute notifications are sent on every state change and name the state, not the internal reason for a decision.\n\n**Eligibility check result (TX-0401):**\n- Reason code: duplicate_charge\n- Amount: 240.00 EUR\n- Transaction date: 2026-07-20\n- Window: 60 days\n- As-of date: 2026-09-15\n- Deadline to open: **2026-09-18**\n- Checks: reason_code pass, tx_status pass, window pass, compliance_hold pass\n- Result: eligible\n\n**Current status:** The dispute has **not** been opened. Awaiting customer confirmation of:\n1. Opening a duplicate_charge dispute for TX-0401.\n2. Disputing the full 240.00 EUR. The customer has not said otherwise.\n\n**Commitment made:** Once confirmed, the agent will open the dispute and send the customer the reference number.\n\n**Gaps:** No customer ID or account ID has been recorded in this conversation. Confirm the account that TX-0401 belongs to before opening the dispute.",
+          "summary.replaced_messages": 8
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "733e789a537f4bed",
+        "started_at": 1792354913.9179854,
+        "ended_at": 1792354917.1519437,
+        "duration_ms": 3234.0,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3240,
+          "gen_ai.usage.output_tokens": 491
+        },
+        "children": []
+      }
+    ]
+  }
+}

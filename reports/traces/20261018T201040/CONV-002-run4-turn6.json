@@ -1,0 +1,44 @@
+{
+  "case": "CONV-002",
+  "run": 4,
+  "turn": 6,
+  "user": "Amount 240 euro, as I said at the start.",
+  "answer": "I've noted the amount: EUR 240.00 for TX-0401. I still need the reason for the dispute before I can check eligibility. Your earlier messages didn't say why you are disputing this charge.\n\nWhich of these applies?\n\n- **Duplicate charge:** you were charged twice for the same purchase. TX-0402 (EUR 240.00, TechMart Online, 2026-07-14) has the same amount and merchant.\n- **Unauthorized debit:** you did not make or approve this payment.\n- **Fraud, card not present:** an online payment was made with your card details without your permission.\n- **Goods not received:** you paid but did not receive the item.\n- **Service not rendered:** you paid for a service that was not provided.",
+  "trace": {
+    "request_id": "48a72636c32d41e9",
+    "name": "agent.request",
+    "span_id": "7a1ef40d858c4431",
+    "started_at": 1792354376.8049788,
+    "ended_at": 1792354379.007981,
+    "duration_ms": 2203.0,
+    "attributes": {
+      "session.id": "e01ce94d8f3c",
+      "dialog.step_number": 6,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 4604,
+      "gen_ai.usage.total_output_tokens": 334
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "911043e75d8b4dca",
+        "started_at": 1792354376.8050945,
+        "ended_at": 1792354379.0079443,
+        "duration_ms": 2202.8,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 4604,
+          "gen_ai.usage.output_tokens": 334
+        },
+        "children": []
+      }
+    ]
+  }
+}

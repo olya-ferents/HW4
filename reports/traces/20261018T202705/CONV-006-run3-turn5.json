@@ -1,0 +1,47 @@
+{
+  "case": "CONV-006",
+  "run": 3,
+  "turn": 5,
+  "user": "Fine. Back to that charge — what do I do next?",
+  "answer": "Here's where things stand on the TechMart Online charge (TX-0401):\n\n- **Eligibility:** The dispute eligibility check passed for this transaction under the reason code **service_not_rendered**.\n- **Not filed yet:** No dispute has been opened.\n\nBefore I file, I need two things from you:\n\n1. **Confirm the purchase:** Please check that the earlier payment to TechMart Online was for the same purchase as TX-0401 and not a separate order. If it was a separate order, let me know, because the reason code may need to change.\n2. **Explicit go-ahead:** Once you've checked, reply \"yes, file it\" (or tell me to change the reason code), and I'll open the dispute.\n\nFiling a dispute can't be undone, so I won't submit it until you confirm.",
+  "trace": {
+    "request_id": "23fa980c549c4f92",
+    "name": "agent.request",
+    "span_id": "90d382a151e04ec0",
+    "started_at": 1792356056.3999186,
+    "ended_at": 1792356059.3190649,
+    "duration_ms": 2919.1,
+    "attributes": {
+      "session.id": "ff106fecff0b",
+      "dialog.step_number": 5,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 4496,
+      "gen_ai.usage.total_output_tokens": 488
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "f97996f3014c419f",
+        "started_at": 1792356056.4002256,
+        "ended_at": 1792356059.3190243,
+        "duration_ms": 2918.8,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 4496,
+          "gen_ai.usage.output_tokens": 488
+        },
+        "children": []
+      }
+    ]
+  }
+}

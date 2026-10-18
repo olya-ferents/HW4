@@ -1,0 +1,131 @@
+{
+  "case": "CONV-004",
+  "run": 2,
+  "turn": 8,
+  "user": "How will I receive updates about a dispute?",
+  "answer": "I couldn't find information in our documentation about how dispute updates are delivered, such as email, app notifications, or letters, so I can't tell you the channel or timing.\n\nWhat I could find is that provisional credit (a temporary refund while a dispute is reviewed) applies to fraud reason codes over EUR 50. A duplicate-charge dispute is not a fraud code, so that rule would not apply to this one.\n\nFor details on update notifications, I can either:\n- Run a more specific search of the documentation, or\n- Escalate to a human agent, who can confirm how you'll be updated.\n\nSeparately, the dispute still needs your confirmation before I file it: which charge to dispute (TX-0401 or TX-0402) and that both were for the same TechMart purchase. The deadline is 18 September 2026.",
+  "trace": {
+    "request_id": "9de19f9e31c84e53",
+    "name": "agent.request",
+    "span_id": "393b0b72e0184b02",
+    "started_at": 1792355646.0417552,
+    "ended_at": 1792355650.7435825,
+    "duration_ms": 4701.8,
+    "attributes": {
+      "session.id": "1288c50abf77",
+      "dialog.step_number": 8,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 12216,
+      "gen_ai.usage.total_output_tokens": 653
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "a8547ad8141a4106",
+        "started_at": 1792355646.0421484,
+        "ended_at": 1792355647.477456,
+        "duration_ms": 1435.3,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 5782,
+          "gen_ai.usage.output_tokens": 118
+        },
+        "children": []
+      },
+      {
+        "name": "tool.search_knowledge_base",
+        "span_id": "85ffbce3f71e4ca9",
+        "started_at": 1792355647.4778838,
+        "ended_at": 1792355647.478672,
+        "duration_ms": 0.8,
+        "attributes": {
+          "tool.name": "search_knowledge_base",
+          "tool.arguments": {
+            "query": "dispute status updates notifications how customer is informed"
+          },
+          "tool.result": {
+            "index": "kb_clean",
+            "top_k": 4,
+            "query": "dispute status updates notifications how customer is informed",
+            "fragments": [
+              {
+                "id": "disputes.md#s2",
+                "doc": "disputes.md",
+                "score": 1.016,
+                "text": "Payment dispute rules\n## Eligibility conditions\nA dispute is eligible only if all of the following hold: the reason code is\nvalid; the transaction status is settled; the transaction date is within the\nreason code's window relative to the current date; and no customer-level\nrestriction applies (for example, an account under compliance review cannot\nopen new disputes until the review concludes)."
+              },
+              {
+                "id": "disputes-process.md#s1",
+                "doc": "disputes-process.md",
+                "score": 1.0,
+                "text": "Dispute handling process\n## Raising a dispute\nA dispute is raised against a single settled transaction. The customer supplies\nthe transaction reference and a reason code. The agent verifies eligibility\nbefore the case is opened; an ineligible request is refused with the failing\ncondition named, except where confidentiality rules apply."
+              },
+              {
+                "id": "disputes-process.md#s3",
+                "doc": "disputes-process.md",
+                "score": 0.9608,
+                "text": "Dispute handling process\n## Provisional credit\nWhere the disputed amount exceeds EUR 50 and the reason code is a fraud code, a\nprovisional credit is applied within two business days. Provisional credit is\nreversed if the dispute is later declined."
+              },
+              {
+                "id": "glossary.md#s7",
+                "doc": "glossary.md",
+                "score": 0.9428,
+                "text": "Glossary\n## Provisional credit\nA temporary refund applied while a dispute is reviewed; reversed if the dispute\nis declined."
+              }
+            ]
+          },
+          "retrieval.query": "dispute status updates notifications how customer is informed",
+          "retrieval.index": "kb_clean",
+          "retrieval.top_k": 4,
+          "retrieval.fragments": [
+            {
+              "id": "disputes.md#s2",
+              "score": 1.016,
+              "text": "Payment dispute rules\n## Eligibility conditions\nA dispute is eligible only if all of the following hold: the reason code is\nvalid; the transaction status is set"
+            },
+            {
+              "id": "disputes-process.md#s1",
+              "score": 1.0,
+              "text": "Dispute handling process\n## Raising a dispute\nA dispute is raised against a single settled transaction. The customer supplies\nthe transaction reference and a re"
+            },
+            {
+              "id": "disputes-process.md#s3",
+              "score": 0.9608,
+              "text": "Dispute handling process\n## Provisional credit\nWhere the disputed amount exceeds EUR 50 and the reason code is a fraud code, a\nprovisional credit is applied wit"
+            },
+            {
+              "id": "glossary.md#s7",
+              "score": 0.9428,
+              "text": "Glossary\n## Provisional credit\nA temporary refund applied while a dispute is reviewed; reversed if the dispute\nis declined."
+            }
+          ]
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "513542a5f2974c72",
+        "started_at": 1792355647.478753,
+        "ended_at": 1792355650.7435641,
+        "duration_ms": 3264.8,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 6434,
+          "gen_ai.usage.output_tokens": 535
+        },
+        "children": []
+      }
+    ]
+  }
+}

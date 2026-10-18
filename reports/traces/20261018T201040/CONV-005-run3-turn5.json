@@ -1,0 +1,44 @@
+{
+  "case": "CONV-005",
+  "run": 3,
+  "turn": 5,
+  "user": "What amount and reason code would you use for TX-0401?",
+  "answer": "For TX-0401, I would file:\n\n- **Reason code:** `duplicate_charge`\n- **Amount:** EUR 240.00, the full transaction amount\n- **Transaction:** TX-0401, the EUR 240.00 card payment to TechMart Online on 2026-07-20\n\nThe eligibility check for this reason code passed as of 2026-09-15. Before filing, I'll run the check again, and I won't open the dispute until you confirm. The deadline is 2026-09-18.",
+  "trace": {
+    "request_id": "97024041a29c4596",
+    "name": "agent.request",
+    "span_id": "ab4b1b89ac2e4a14",
+    "started_at": 1792354886.9533968,
+    "ended_at": 1792354890.6898055,
+    "duration_ms": 3736.4,
+    "attributes": {
+      "session.id": "9484a36f6336",
+      "dialog.step_number": 5,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 3869,
+      "gen_ai.usage.total_output_tokens": 667
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "6656dba9c84f44fb",
+        "started_at": 1792354886.9536135,
+        "ended_at": 1792354890.689775,
+        "duration_ms": 3736.2,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3869,
+          "gen_ai.usage.output_tokens": 667
+        },
+        "children": []
+      }
+    ]
+  }
+}

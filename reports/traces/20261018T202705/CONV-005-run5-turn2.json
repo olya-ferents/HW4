@@ -1,0 +1,47 @@
+{
+  "case": "CONV-005",
+  "run": 5,
+  "turn": 2,
+  "user": "I was charged twice for the same purchase. Can you check whether TX-0401 is eligible?",
+  "answer": "Yes, TX-0401 is eligible for a **duplicate_charge** dispute. I ran the check earlier in this conversation, and the result still applies:\n\n- **Reason code:** duplicate_charge (60-day window)\n- **Transaction:** TX-0401, EUR 240.00, TechMart Online, 2026-07-20, settled\n- **Checks:** reason code, transaction status, window, and compliance hold all pass\n- **Deadline:** 2026-09-18\n\nThe matching payment is TX-0402, also EUR 240.00 to TechMart Online, dated 2026-07-14. A dispute can only be filed against one transaction, so I'm assuming TX-0401 is the extra charge. If you meant TX-0402 instead, tell me and I'll run the eligibility check for that one.\n\nI haven't filed anything yet. Should I open the duplicate_charge dispute for TX-0401 for EUR 240.00? Reply \"yes\" to proceed.",
+  "trace": {
+    "request_id": "2630413429cd4501",
+    "name": "agent.request",
+    "span_id": "1ca188b3c7c2411d",
+    "started_at": 1792355930.7374454,
+    "ended_at": 1792355934.0119069,
+    "duration_ms": 3274.5,
+    "attributes": {
+      "session.id": "1dbe44da7aa0",
+      "dialog.step_number": 2,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 4503,
+      "gen_ai.usage.total_output_tokens": 564
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "cfa8f359726a4c14",
+        "started_at": 1792355930.7377088,
+        "ended_at": 1792355934.0118747,
+        "duration_ms": 3274.2,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 4503,
+          "gen_ai.usage.output_tokens": 564
+        },
+        "children": []
+      }
+    ]
+  }
+}

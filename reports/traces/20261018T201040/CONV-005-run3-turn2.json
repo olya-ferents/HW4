@@ -1,0 +1,87 @@
+{
+  "case": "CONV-005",
+  "run": 3,
+  "turn": 2,
+  "user": "I was charged twice for the same purchase. Can you check whether TX-0401 is eligible?",
+  "answer": "TX-0401 is eligible for a **duplicate_charge** dispute.\n\n- **Transaction:** EUR 240.00 card payment to TechMart Online, 2026-07-20, settled\n- **Window:** 60 days from the transaction date\n- **Deadline:** 2026-09-18 (as of today, 2026-09-15, that leaves 3 days)\n\nI haven't opened a dispute. If you want me to file it, confirm and I'll submit it under duplicate_charge for EUR 240.00. Please note that the other identical payment, TX-0402 (EUR 240.00, TechMart Online, 2026-07-14), is the one that would be the duplicate. Disputes are reviewed within 10 business days for card transactions.",
+  "trace": {
+    "request_id": "2ed5edd77f7b4102",
+    "name": "agent.request",
+    "span_id": "372a8db64d084462",
+    "started_at": 1792354870.073501,
+    "ended_at": 1792354873.413561,
+    "duration_ms": 3340.1,
+    "attributes": {
+      "session.id": "9484a36f6336",
+      "dialog.step_number": 2,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 8790,
+      "gen_ai.usage.total_output_tokens": 431
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "e6eca48e35cb47ba",
+        "started_at": 1792354870.0736885,
+        "ended_at": 1792354871.176082,
+        "duration_ms": 1102.4,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 4288,
+          "gen_ai.usage.output_tokens": 92
+        },
+        "children": []
+      },
+      {
+        "name": "tool.check_dispute_eligibility",
+        "span_id": "b5c8438618ca4177",
+        "started_at": 1792354871.1762042,
+        "ended_at": 1792354871.1778655,
+        "duration_ms": 1.7,
+        "attributes": {
+          "tool.name": "check_dispute_eligibility",
+          "tool.arguments": {
+            "transaction_id": "TX-0401",
+            "reason_code": "duplicate_charge"
+          },
+          "tool.result": {
+            "eligible": true,
+            "reason_code": "duplicate_charge",
+            "window_days": 60,
+            "tx_date": "2026-07-20",
+            "as_of": "2026-09-15",
+            "deadline": "2026-09-18",
+            "checks": {
+              "reason_code": "pass",
+              "tx_status": "pass",
+              "window": "pass",
+              "compliance_hold": "pass"
+            }
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "a72971e738fb486b",
+        "started_at": 1792354871.1779423,
+        "ended_at": 1792354873.413503,
+        "duration_ms": 2235.6,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 4502,
+          "gen_ai.usage.output_tokens": 339
+        },
+        "children": []
+      }
+    ]
+  }
+}

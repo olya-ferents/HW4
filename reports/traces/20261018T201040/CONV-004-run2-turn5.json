@@ -1,0 +1,44 @@
+{
+  "case": "CONV-004",
+  "run": 2,
+  "turn": 5,
+  "user": "Fine. Back to that charge — what do I do next?",
+  "answer": "Your account is ACC-1005, the only account on file for you, so I'll apply the dispute to TX-0401 (EUR 240.00, 2026-07-20). No dispute has been filed yet. I need you to choose the reason that fits what happened:\n\n| Reason | What it means | Eligible | Open by |\n|---|---|---|---|\n| **duplicate_charge** | You were charged twice for the same purchase | Yes | **2026-09-18** |\n| **fraud_card_not_present** | Your card was used online or by phone without your involvement | Yes | 2026-11-17 |\n| **goods_not_received** | You paid but did not receive the goods | Yes | 2026-10-18 |\n| **service_not_rendered** | You paid but the service was not provided | Yes | 2026-10-18 |\n| **unauthorized_debit** | The debit was not authorised | **No**, the window closed on 2026-09-14 | n/a |\n\nPlease tell me which reason applies. If it is duplicate_charge, act soon, because that deadline is 2026-09-18.\n\nBefore I open anything, I'll re-check eligibility for the code you choose. Once a dispute is filed, the decision is not reversible: if you withdraw it, you cannot dispute the same transaction again under the same reason code.",
+  "trace": {
+    "request_id": "7e17cf8257434e97",
+    "name": "agent.request",
+    "span_id": "d67b77eaf1994153",
+    "started_at": 1792354644.5507658,
+    "ended_at": 1792354649.484391,
+    "duration_ms": 4933.6,
+    "attributes": {
+      "session.id": "b04cba37aec3",
+      "dialog.step_number": 5,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 4818,
+      "gen_ai.usage.total_output_tokens": 925
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "a2e06292cb774622",
+        "started_at": 1792354644.550979,
+        "ended_at": 1792354649.4843438,
+        "duration_ms": 4933.4,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 4818,
+          "gen_ai.usage.output_tokens": 925
+        },
+        "children": []
+      }
+    ]
+  }
+}

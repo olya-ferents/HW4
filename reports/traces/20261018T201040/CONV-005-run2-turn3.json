@@ -1,0 +1,56 @@
+{
+  "case": "CONV-005",
+  "run": 2,
+  "turn": 3,
+  "user": "What is the filing deadline for TX-0401?",
+  "answer": "The filing deadline for TX-0401 is **2026-09-18**.\n\nThis comes from the duplicate_charge window, which is 60 days from the transaction date. TX-0401 is dated 2026-07-20, and 60 days from that date is 2026-09-18. The eligibility check I ran as of 2026-09-15 passed. Once the window closes, the dispute can no longer be opened.\n\nNo dispute has been filed yet. I'm waiting for your explicit confirmation before I file the duplicate_charge dispute for TX-0401 (EUR 240.00). Filing is irreversible.",
+  "trace": {
+    "request_id": "862e2f58e10f44a4",
+    "name": "agent.request",
+    "span_id": "b29727aeba684e3a",
+    "started_at": 1792354837.7369788,
+    "ended_at": 1792354846.6037593,
+    "duration_ms": 8866.8,
+    "attributes": {
+      "session.id": "30492d617185",
+      "dialog.step_number": 3,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 3249,
+      "gen_ai.usage.total_output_tokens": 777
+    },
+    "children": [
+      {
+        "name": "agent.summarize",
+        "span_id": "d68b744525924440",
+        "started_at": 1792354837.7371328,
+        "ended_at": 1792354842.225457,
+        "duration_ms": 4488.3,
+        "attributes": {
+          "summary.text": "**Case summary: TX-0401 duplicate charge inquiry**\n\n**Customer:** CUS-0004, Danylo Kovalenko, tier1\n**Account:** ACC-1005, EUR, balance 1310.20, tier1\n\n**Disputed transaction:** TX-0401, EUR 240.00 card payment to TechMart Online, dated 2026-07-20, direction out, status settled.\n\n**Possible duplicate:** TX-0402, EUR 240.00 card payment to TechMart Online, dated 2026-07-14, status settled.\n\n**Other account activity:** TX-0403, EUR 35.50 card payment to CityParking, dated 2026-09-01, settled. Not related to the dispute.\n\n**Eligibility check (as of 2026-09-15):**\n- Reason code: duplicate_charge (60-day window), pass\n- Transaction status: settled, pass\n- Window: pass\n- Compliance hold: pass\n- Eligible. Deadline: **2026-09-18**\n\n**Knowledge base references:**\n- Reason code windows are measured from the transaction date. A dispute opened after the window closes is not eligible.\n- Card reason codes have a 10 business day review target. Complex cases with a foreign acquirer may take up to 45 calendar days, and the customer is notified if so.\n- Customers receive a notification on every dispute state change. Notifications name the state but not the internal decision reason.\n- Withdrawal is final. The same transaction cannot be disputed again under the same reason code.\n\n**Status:** No dispute has been opened. I told the customer that filing is irreversible and asked for explicit confirmation to file a duplicate_charge dispute for TX-0401 (EUR 240.00). I have not made any commitment about the outcome.\n\n**Next step:** Wait for the customer's confirmation. If confirmed, file the duplicate_charge dispute for TX-0401 before 2026-09-18.",
+          "summary.replaced_messages": 12
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "6c76677f80884bf7",
+        "started_at": 1792354842.2255173,
+        "ended_at": 1792354846.6037295,
+        "duration_ms": 4378.2,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3249,
+          "gen_ai.usage.output_tokens": 777
+        },
+        "children": []
+      }
+    ]
+  }
+}

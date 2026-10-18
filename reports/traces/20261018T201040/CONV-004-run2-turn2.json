@@ -1,0 +1,203 @@
+{
+  "case": "CONV-004",
+  "run": 2,
+  "turn": 2,
+  "user": "Can I dispute it?",
+  "answer": "Yes, TX-0401 (EUR 240.00, dated 20 July 2026) is eligible under four of the five reason codes:\n\n| Reason code | Eligible | Deadline to open |\n|---|---|---|\n| duplicate_charge | Yes | 18 September 2026 |\n| fraud_card_not_present | Yes | 17 November 2026 |\n| goods_not_received | Yes | 18 October 2026 |\n| service_not_rendered | Yes | 18 October 2026 |\n| unauthorized_debit | No | Window closed 14 September 2026 |\n\nunauthorized_debit can't be used because its 56-day window has closed.\n\nIf this is a duplicate charge, it has the earliest deadline, so act soon. Which reason applies? Tell me and I'll open the dispute. I won't file anything until you confirm.",
+  "trace": {
+    "request_id": "d57f2707b7f94734",
+    "name": "agent.request",
+    "span_id": "9a545920b2ab42ba",
+    "started_at": 1792354625.5540497,
+    "ended_at": 1792354630.844546,
+    "duration_ms": 5290.5,
+    "attributes": {
+      "session.id": "b04cba37aec3",
+      "dialog.step_number": 2,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 8614,
+      "gen_ai.usage.total_output_tokens": 1065
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "c2db9aded5a14180",
+        "started_at": 1792354625.5542326,
+        "ended_at": 1792354628.486017,
+        "duration_ms": 2931.8,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3697,
+          "gen_ai.usage.output_tokens": 643
+        },
+        "children": []
+      },
+      {
+        "name": "tool.check_dispute_eligibility",
+        "span_id": "e74a397298e147a9",
+        "started_at": 1792354628.4860847,
+        "ended_at": 1792354628.4869823,
+        "duration_ms": 0.9,
+        "attributes": {
+          "tool.name": "check_dispute_eligibility",
+          "tool.arguments": {
+            "transaction_id": "TX-0401",
+            "reason_code": "duplicate_charge"
+          },
+          "tool.result": {
+            "eligible": true,
+            "reason_code": "duplicate_charge",
+            "window_days": 60,
+            "tx_date": "2026-07-20",
+            "as_of": "2026-09-15",
+            "deadline": "2026-09-18",
+            "checks": {
+              "reason_code": "pass",
+              "tx_status": "pass",
+              "window": "pass",
+              "compliance_hold": "pass"
+            }
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "tool.check_dispute_eligibility",
+        "span_id": "c4101be45d0a4100",
+        "started_at": 1792354628.4870186,
+        "ended_at": 1792354628.487366,
+        "duration_ms": 0.3,
+        "attributes": {
+          "tool.name": "check_dispute_eligibility",
+          "tool.arguments": {
+            "transaction_id": "TX-0401",
+            "reason_code": "fraud_card_not_present"
+          },
+          "tool.result": {
+            "eligible": true,
+            "reason_code": "fraud_card_not_present",
+            "window_days": 120,
+            "tx_date": "2026-07-20",
+            "as_of": "2026-09-15",
+            "deadline": "2026-11-17",
+            "checks": {
+              "reason_code": "pass",
+              "tx_status": "pass",
+              "window": "pass",
+              "compliance_hold": "pass"
+            }
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "tool.check_dispute_eligibility",
+        "span_id": "383257c8288b44e4",
+        "started_at": 1792354628.4873855,
+        "ended_at": 1792354628.4876952,
+        "duration_ms": 0.3,
+        "attributes": {
+          "tool.name": "check_dispute_eligibility",
+          "tool.arguments": {
+            "transaction_id": "TX-0401",
+            "reason_code": "goods_not_received"
+          },
+          "tool.result": {
+            "eligible": true,
+            "reason_code": "goods_not_received",
+            "window_days": 90,
+            "tx_date": "2026-07-20",
+            "as_of": "2026-09-15",
+            "deadline": "2026-10-18",
+            "checks": {
+              "reason_code": "pass",
+              "tx_status": "pass",
+              "window": "pass",
+              "compliance_hold": "pass"
+            }
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "tool.check_dispute_eligibility",
+        "span_id": "89949437de0848fa",
+        "started_at": 1792354628.4877105,
+        "ended_at": 1792354628.4880164,
+        "duration_ms": 0.3,
+        "attributes": {
+          "tool.name": "check_dispute_eligibility",
+          "tool.arguments": {
+            "transaction_id": "TX-0401",
+            "reason_code": "service_not_rendered"
+          },
+          "tool.result": {
+            "eligible": true,
+            "reason_code": "service_not_rendered",
+            "window_days": 90,
+            "tx_date": "2026-07-20",
+            "as_of": "2026-09-15",
+            "deadline": "2026-10-18",
+            "checks": {
+              "reason_code": "pass",
+              "tx_status": "pass",
+              "window": "pass",
+              "compliance_hold": "pass"
+            }
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "tool.check_dispute_eligibility",
+        "span_id": "b3924e0feac34279",
+        "started_at": 1792354628.4880311,
+        "ended_at": 1792354628.4883173,
+        "duration_ms": 0.3,
+        "attributes": {
+          "tool.name": "check_dispute_eligibility",
+          "tool.arguments": {
+            "transaction_id": "TX-0401",
+            "reason_code": "unauthorized_debit"
+          },
+          "tool.result": {
+            "eligible": false,
+            "reason_code": "unauthorized_debit",
+            "window_days": 56,
+            "tx_date": "2026-07-20",
+            "as_of": "2026-09-15",
+            "deadline": "2026-09-14",
+            "checks": {
+              "reason_code": "pass",
+              "tx_status": "pass",
+              "window": "fail: window of 56 days expired on 2026-09-14",
+              "compliance_hold": "pass"
+            }
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "80f548c3c6dd47f1",
+        "started_at": 1792354628.488331,
+        "ended_at": 1792354630.8444521,
+        "duration_ms": 2356.1,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 4917,
+          "gen_ai.usage.output_tokens": 422
+        },
+        "children": []
+      }
+    ]
+  }
+}

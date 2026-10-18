@@ -1,0 +1,44 @@
+{
+  "case": "CONV-005",
+  "run": 1,
+  "turn": 5,
+  "user": "What amount and reason code would you use for TX-0401?",
+  "answer": "I would use:\n\n- **Reason code:** `duplicate_charge`, which passed the eligibility check.\n- **Amount:** EUR 240.00, the full amount of TX-0401. This is the transaction amount by default.\n- **Currency:** EUR, the transaction currency.\n\nI haven't filed anything yet. Please confirm that TX-0402 (EUR 240.00 to TechMart Online on 2026-07-14) is the same purchase charged twice, and that you want the full EUR 240.00 disputed. Once you confirm, I'll open the dispute before the 2026-09-18 deadline.",
+  "trace": {
+    "request_id": "d8ebd962e7544b2f",
+    "name": "agent.request",
+    "span_id": "a2ab3e9acacb401d",
+    "started_at": 1792354817.0911937,
+    "ended_at": 1792354819.567747,
+    "duration_ms": 2476.6,
+    "attributes": {
+      "session.id": "81fee3c9051e",
+      "dialog.step_number": 5,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 3607,
+      "gen_ai.usage.total_output_tokens": 339
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "5f776658b7ec4880",
+        "started_at": 1792354817.0914161,
+        "ended_at": 1792354819.5677104,
+        "duration_ms": 2476.3,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3607,
+          "gen_ai.usage.output_tokens": 339
+        },
+        "children": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "case": "CONV-006",
+  "run": 3,
+  "turn": 5,
+  "user": "Fine. Back to that charge — what do I do next?",
+  "answer": "To open the dispute, I need your confirmation. Here's what I'd file:\n\n- **Transaction:** TX-0401, TechMart Online, EUR 240.00, 2026-07-20, settled\n- **Reason code:** duplicate_charge\n- **Amount:** EUR 240.00 (the full transaction)\n- **Matching charge:** TX-0402, TechMart Online, EUR 240.00, 2026-07-14, settled\n\nPlease confirm that TX-0402 is the original charge you're disputing against, and that TX-0401 is the duplicate. If so, reply **\"yes\"** and I'll run the final eligibility check and open the dispute.\n\nThe dispute window closes on **2026-09-18**, so please reply before then. Once opened, a dispute can't be undone. Under the policy notes I've retrieved, the review target for card reason codes is 10 business days.",
+  "trace": {
+    "request_id": "d424ffb004784fac",
+    "name": "agent.request",
+    "span_id": "4be4fd3c80f746b4",
+    "started_at": 1792355059.8157508,
+    "ended_at": 1792355064.1532838,
+    "duration_ms": 4337.5,
+    "attributes": {
+      "session.id": "9a58b97e4454",
+      "dialog.step_number": 5,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 4986,
+      "gen_ai.usage.total_output_tokens": 784
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "5116919d114a4df6",
+        "started_at": 1792355059.8158774,
+        "ended_at": 1792355064.1532538,
+        "duration_ms": 4337.4,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 4986,
+          "gen_ai.usage.output_tokens": 784
+        },
+        "children": []
+      }
+    ]
+  }
+}
