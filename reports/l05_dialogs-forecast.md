@@ -27,7 +27,10 @@
 
 ## Команди запланованих прогонів
 
+Ці команди потребують локальної копії evaluator-а, якої немає в репозиторії
+HW4; їх залишено як запис плану, а не як готову інструкцію для чистого клону.
+
 ```bash
-docker compose run --rm eval --set l05_dialogs --profile clean --traces
-docker compose run --rm eval --set l05_dialogs --profile lesson-05 --traces
+docker compose -f evaluator/docker-compose.yml run --rm eval --set l05_dialogs --profile clean --traces
+docker compose -f evaluator/docker-compose.yml run --rm eval --set l05_dialogs --profile lesson-05 --traces
 ```
