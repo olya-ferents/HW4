@@ -1,0 +1,47 @@
+{
+  "case": "CONV-005",
+  "run": 3,
+  "turn": 6,
+  "user": "Is that the full transaction amount?",
+  "answer": "Yes. TX-0401 is a card payment to TechMart Online for **€240.00** on 20 July 2026, and the transaction record shows that full amount. The dispute would cover the full €240.00 unless you ask for a smaller figure.\n\nDo you want me to file the dispute for TX-0401 at €240.00 under `duplicate_charge`?",
+  "trace": {
+    "request_id": "7e88bbe902f446ed",
+    "name": "agent.request",
+    "span_id": "3ecaa75aee704442",
+    "started_at": 1792429957.951861,
+    "ended_at": 1792429959.7682319,
+    "duration_ms": 1816.4,
+    "attributes": {
+      "session.id": "03e255d27ebf",
+      "dialog.step_number": 6,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 5130,
+      "gen_ai.usage.total_output_tokens": 219
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "71feb515ed834a50",
+        "started_at": 1792429957.9526098,
+        "ended_at": 1792429959.768185,
+        "duration_ms": 1815.6,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 5130,
+          "gen_ai.usage.output_tokens": 219
+        },
+        "children": []
+      }
+    ]
+  }
+}

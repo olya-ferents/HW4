@@ -1,0 +1,110 @@
+{
+  "case": "CONV-005",
+  "run": 3,
+  "turn": 6,
+  "user": "Is that the full transaction amount?",
+  "answer": "Yes. The transaction record for TX-0401 shows an amount of EUR 240.00, which is the full amount of the charge. Nothing has been filed yet. If you'd like me to open the duplicate_charge dispute for the full EUR 240.00, reply \"yes.\"",
+  "trace": {
+    "request_id": "ae0e049db59d4ce0",
+    "name": "agent.request",
+    "span_id": "4451e552d9074f1c",
+    "started_at": 1792428840.1007276,
+    "ended_at": 1792428842.877532,
+    "duration_ms": 2776.8,
+    "attributes": {
+      "session.id": "60b9c14666d5",
+      "dialog.step_number": 6,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 7919,
+      "gen_ai.usage.total_output_tokens": 280
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "57fd8fd79832466e",
+        "started_at": 1792428840.100874,
+        "ended_at": 1792428841.6267922,
+        "duration_ms": 1525.9,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3777,
+          "gen_ai.usage.output_tokens": 190
+        },
+        "children": []
+      },
+      {
+        "name": "tool.get_transactions",
+        "span_id": "5afdc39582344a0f",
+        "started_at": 1792428841.6269393,
+        "ended_at": 1792428841.628171,
+        "duration_ms": 1.2,
+        "attributes": {
+          "tool.name": "get_transactions",
+          "tool.arguments": {
+            "account_id": "ACC-1005",
+            "limit": 20
+          },
+          "tool.result": {
+            "transactions": [
+              {
+                "id": "TX-0403",
+                "account_id": "ACC-1005",
+                "date": "2026-09-01",
+                "amount": 35.5,
+                "currency": "EUR",
+                "merchant": "CityParking",
+                "direction": "out",
+                "transfer_type": "card",
+                "status": "settled"
+              },
+              {
+                "id": "TX-0401",
+                "account_id": "ACC-1005",
+                "date": "2026-07-20",
+                "amount": 240.0,
+                "currency": "EUR",
+                "merchant": "TechMart Online",
+                "direction": "out",
+                "transfer_type": "card",
+                "status": "settled"
+              },
+              {
+                "id": "TX-0402",
+                "account_id": "ACC-1005",
+                "date": "2026-07-14",
+                "amount": 240.0,
+                "currency": "EUR",
+                "merchant": "TechMart Online",
+                "direction": "out",
+                "transfer_type": "card",
+                "status": "settled"
+              }
+            ]
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "04f00d563c264aca",
+        "started_at": 1792428841.6282918,
+        "ended_at": 1792428842.8774915,
+        "duration_ms": 1249.2,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 4142,
+          "gen_ai.usage.output_tokens": 90
+        },
+        "children": []
+      }
+    ]
+  }
+}

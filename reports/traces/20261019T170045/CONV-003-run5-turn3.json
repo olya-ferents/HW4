@@ -1,0 +1,59 @@
+{
+  "case": "CONV-003",
+  "run": 5,
+  "turn": 3,
+  "user": "Fine. Back to that charge — what do I do next?",
+  "answer": "Before we open anything, I need you to confirm what happened with the charge. A dispute is irreversible, so the reason code has to match the facts:\n\n- **Duplicate charge:** the same purchase was billed to you more than once.\n- **Unauthorized debit:** you did not make or approve this payment.\n- **Card-not-present fraud:** someone used your card details online without your permission.\n- **Goods not received or service not rendered:** you paid, but the item or service never arrived or was not provided.\n\nPlease also tell me the merchant, the amount, and roughly when the charge posted, so I can locate the exact transaction in your account.\n\nOnce you confirm, I will re-run the eligibility check for that transaction and the reason code. I will open the dispute only if the check passes, and I will tell you the deadline it returns. If it does not pass, I'll explain why and suggest the next step.",
+  "trace": {
+    "request_id": "b2294d075843463f",
+    "name": "agent.request",
+    "span_id": "9853b1b9b1bb4eb7",
+    "started_at": 1792429583.8384042,
+    "ended_at": 1792429591.2573886,
+    "duration_ms": 7419.0,
+    "attributes": {
+      "session.id": "4df4b2c2881b",
+      "dialog.step_number": 3,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 2933,
+      "gen_ai.usage.total_output_tokens": 770
+    },
+    "children": [
+      {
+        "name": "agent.summarize",
+        "span_id": "63dd30ccf9614454",
+        "started_at": 1792429583.83871,
+        "ended_at": 1792429586.3617618,
+        "duration_ms": 2523.1,
+        "attributes": {
+          "summary.text": "The customer asked me to verify a card transaction at an online merchant and asked which dispute reason codes might apply. I listed the possible codes and checked eligibility for a duplicate-charge dispute, which passed with a deadline a few days away. The customer has not yet confirmed what happened, and no dispute has been opened. Next step: await confirmation of the situation before opening anything.",
+          "summary.replaced_messages": 12
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "aac52c5fc9894e9e",
+        "started_at": 1792429586.3618653,
+        "ended_at": 1792429591.2571952,
+        "duration_ms": 4895.3,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 2933,
+          "gen_ai.usage.output_tokens": 770
+        },
+        "children": []
+      }
+    ]
+  }
+}

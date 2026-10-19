@@ -1,0 +1,47 @@
+{
+  "case": "CONV-002",
+  "run": 3,
+  "turn": 5,
+  "user": "Fine. Back to that charge — what do I do next?",
+  "answer": "Before I can open a dispute, I need to know what went wrong with the payment. Please tell me:\n\n1. **Which charge it is**: the merchant name, the approximate date, and the amount, if you have them. I can look up your recent transactions to match it.\n2. **What happened**, in your own words. The category depends on the problem:\n   - **Duplicate charge**: you were billed more than once for the same purchase.\n   - **Unauthorized or card-not-present fraud**: you did not make or authorize the payment.\n   - **Goods not received**: you paid, but nothing arrived.\n   - **Service not rendered**: you paid for a service that was not provided.\n\nOnce you describe the issue, I'll check whether the transaction is eligible under the matching reason code. I'll only open a dispute if the check passes, and I'll confirm with you before submitting anything.",
+  "trace": {
+    "request_id": "a2d11569b42b49c3",
+    "name": "agent.request",
+    "span_id": "62e187243f69448c",
+    "started_at": 1792429342.662187,
+    "ended_at": 1792429345.8491151,
+    "duration_ms": 3186.9,
+    "attributes": {
+      "session.id": "1d119721115b",
+      "dialog.step_number": 5,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 4540,
+      "gen_ai.usage.total_output_tokens": 490
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "6a61966ddb8f4644",
+        "started_at": 1792429342.6629143,
+        "ended_at": 1792429345.8490977,
+        "duration_ms": 3186.2,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 4540,
+          "gen_ai.usage.output_tokens": 490
+        },
+        "children": []
+      }
+    ]
+  }
+}

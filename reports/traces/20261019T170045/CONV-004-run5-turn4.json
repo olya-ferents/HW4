@@ -1,0 +1,47 @@
+{
+  "case": "CONV-004",
+  "run": 5,
+  "turn": 4,
+  "user": "And the FX spread if I pay in USD?",
+  "answer": "I can get the exact spread for you, but I need the amount you plan to pay. Please tell me how much, and whether you want to convert from EUR (your account currency) to USD. The quote will show the mid rate, your tier spread, any free allowance, and the final amount.",
+  "trace": {
+    "request_id": "e02ab55aa87e4aa4",
+    "name": "agent.request",
+    "span_id": "45f6be36a1524e67",
+    "started_at": 1792429831.8926985,
+    "ended_at": 1792429834.1274695,
+    "duration_ms": 2234.8,
+    "attributes": {
+      "session.id": "46bd0376697e",
+      "dialog.step_number": 4,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 3464,
+      "gen_ai.usage.total_output_tokens": 280
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "d927ae793e0542b3",
+        "started_at": 1792429831.8932257,
+        "ended_at": 1792429834.1272416,
+        "duration_ms": 2234.0,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3464,
+          "gen_ai.usage.output_tokens": 280
+        },
+        "children": []
+      }
+    ]
+  }
+}

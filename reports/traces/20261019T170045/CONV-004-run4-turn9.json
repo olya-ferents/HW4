@@ -1,0 +1,47 @@
+{
+  "case": "CONV-004",
+  "run": 4,
+  "turn": 9,
+  "user": "Back to that charge: which transaction, amount, and reason code are we discussing?",
+  "answer": "We're discussing:\n\n- **Transaction:** TX-0401, TechMart Online, 20 July 2026\n- **Amount:** EUR 240.00\n- **Proposed reason code:** duplicate_charge (eligibility confirmed; deadline 18 September 2026)\n\nNo dispute has been opened yet. Reply \"yes\" if you want me to file it.",
+  "trace": {
+    "request_id": "74cfdcf91bf749aa",
+    "name": "agent.request",
+    "span_id": "e3b3118079744134",
+    "started_at": 1792429807.1966195,
+    "ended_at": 1792429809.0418425,
+    "duration_ms": 1845.2,
+    "attributes": {
+      "session.id": "ffc07b3748fc",
+      "dialog.step_number": 9,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 6945,
+      "gen_ai.usage.total_output_tokens": 238
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "2051f9be9b964aec",
+        "started_at": 1792429807.1969304,
+        "ended_at": 1792429809.0417762,
+        "duration_ms": 1844.8,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 6945,
+          "gen_ai.usage.output_tokens": 238
+        },
+        "children": []
+      }
+    ]
+  }
+}

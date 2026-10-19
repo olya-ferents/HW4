@@ -1,0 +1,44 @@
+{
+  "case": "CONV-003",
+  "run": 1,
+  "turn": 4,
+  "user": "Amount 240 euro, as I said at the start.",
+  "answer": "Thanks, that matches the records. Both TechMart Online charges are EUR 240.00:\n- **TX-0402**, 14 July 2026\n- **TX-0401**, 20 July 2026\n\nI still need to know what happened with the payments before I can check whether a dispute is possible. Which of these applies?\n\n1. **Duplicate charge:** you were charged twice for the same order. This would most likely be TX-0402.\n2. **Unauthorised debit:** you did not make or approve one of the payments.\n3. **Card fraud (card not present):** a payment was made with your card details without your permission.\n4. **Goods not received or service not rendered:** you paid, but did not receive what you paid for.\n\nTell me which one fits and whether the two payments were for the same purchase, and I'll run the eligibility check.",
+  "trace": {
+    "request_id": "289116fc01cb4abc",
+    "name": "agent.request",
+    "span_id": "262a579517b046af",
+    "started_at": 1792428433.796919,
+    "ended_at": 1792428436.296552,
+    "duration_ms": 2499.6,
+    "attributes": {
+      "session.id": "d8d26e883ff4",
+      "dialog.step_number": 4,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 3968,
+      "gen_ai.usage.total_output_tokens": 388
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "fca5f40f34224968",
+        "started_at": 1792428433.7970445,
+        "ended_at": 1792428436.2965183,
+        "duration_ms": 2499.5,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3968,
+          "gen_ai.usage.output_tokens": 388
+        },
+        "children": []
+      }
+    ]
+  }
+}

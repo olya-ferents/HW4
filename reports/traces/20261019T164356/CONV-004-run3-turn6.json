@@ -1,0 +1,44 @@
+{
+  "case": "CONV-004",
+  "run": 3,
+  "turn": 6,
+  "user": "Amount 240 euro, as I said at the start.",
+  "answer": "Thanks, the amount is confirmed: **EUR 240.00** on TX-0401 (TechMart Online, 20 July 2026), which matches your account record.\n\nI still need you to choose the reason before I can file anything:\n\n- **Duplicate charge** (deadline **18 September 2026**): you were charged twice for the same purchase. TX-0402 is another EUR 240.00 payment to TechMart Online on 14 July 2026.\n- **Card-not-present fraud** (deadline **17 November 2026**): you did not make or authorise this payment.\n\nWhich applies? Once you tell me, I'll run the eligibility check again and confirm the details with you before I open the dispute.",
+  "trace": {
+    "request_id": "a4d1a4b5d5684ecb",
+    "name": "agent.request",
+    "span_id": "1beec59ae3af4b8b",
+    "started_at": 1792428666.9447732,
+    "ended_at": 1792428669.5957124,
+    "duration_ms": 2650.9,
+    "attributes": {
+      "session.id": "422e5c2c9c27",
+      "dialog.step_number": 6,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 4926,
+      "gen_ai.usage.total_output_tokens": 453
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "391448f3edf04e3f",
+        "started_at": 1792428666.94501,
+        "ended_at": 1792428669.5954173,
+        "duration_ms": 2650.4,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 4926,
+          "gen_ai.usage.output_tokens": 453
+        },
+        "children": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "case": "CONV-004",
+  "run": 1,
+  "turn": 6,
+  "user": "Amount 240 euro, as I said at the start.",
+  "answer": "Thanks, that narrows it down. Both TechMart Online charges are EUR 240.00:\n\n- **TX-0402**, 14 Jul 2026, settled\n- **TX-0401**, 20 Jul 2026, settled\n\nMy notes from earlier don't include what went wrong, so I can't tell which charge you mean or which dispute reason applies. If you were charged twice for one purchase, the reason is \"duplicate charge,\" and the two TechMart payments would fit that. Please confirm:\n\n1. Which charge you're disputing: TX-0401, TX-0402, or both.\n2. What happened: a duplicate charge, an unauthorised payment, goods not received, or a service not provided.\n\nOnce you answer, I'll run the eligibility check for that transaction and reason. I won't open a dispute until you confirm. If you'd prefer a human agent, I can escalate this instead.",
+  "trace": {
+    "request_id": "1a590efee9184fbb",
+    "name": "agent.request",
+    "span_id": "022dbe3114714e0c",
+    "started_at": 1792429631.7920508,
+    "ended_at": 1792429635.7735722,
+    "duration_ms": 3981.5,
+    "attributes": {
+      "session.id": "15792d96d1b0",
+      "dialog.step_number": 6,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 5145,
+      "gen_ai.usage.total_output_tokens": 633
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "1317ad48af6a4f0b",
+        "started_at": 1792429631.792662,
+        "ended_at": 1792429635.7735324,
+        "duration_ms": 3980.9,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 5145,
+          "gen_ai.usage.output_tokens": 633
+        },
+        "children": []
+      }
+    ]
+  }
+}

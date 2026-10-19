@@ -1,0 +1,44 @@
+{
+  "case": "CONV-003",
+  "run": 2,
+  "turn": 4,
+  "user": "Amount 240 euro, as I said at the start.",
+  "answer": "Yes, the disputed amount is EUR 240.00 on TX-0401. I need one more detail before I can file: **why** you are disputing it.\n\n- **If TX-0401 is a second charge for the same TechMart Online purchase as TX-0402 (14 July, EUR 240.00)**, reply \"duplicate\" and I will file a duplicate charge dispute for EUR 240.00.\n- **If it is a different situation**, such as a purchase you did not make, tell me what happened. A different reason code may apply, and I will check its eligibility before doing anything.\n\nI have not opened a dispute. The deadline is 18 September 2026.",
+  "trace": {
+    "request_id": "f548a95240044145",
+    "name": "agent.request",
+    "span_id": "e0570867a1eb44ce",
+    "started_at": 1792428466.974971,
+    "ended_at": 1792428469.6548715,
+    "duration_ms": 2679.9,
+    "attributes": {
+      "session.id": "2c8e8cb99eb5",
+      "dialog.step_number": 4,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 3562,
+      "gen_ai.usage.total_output_tokens": 372
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "48598dae8e4f4aa4",
+        "started_at": 1792428466.975211,
+        "ended_at": 1792428469.6548324,
+        "duration_ms": 2679.6,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3562,
+          "gen_ai.usage.output_tokens": 372
+        },
+        "children": []
+      }
+    ]
+  }
+}

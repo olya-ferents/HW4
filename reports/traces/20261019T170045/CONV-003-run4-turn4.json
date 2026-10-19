@@ -1,0 +1,47 @@
+{
+  "case": "CONV-003",
+  "run": 4,
+  "turn": 4,
+  "user": "Amount 240 euro, as I said at the start.",
+  "answer": "Both TechMart Online charges are €240.00, so the amount doesn't tell me which one you mean. My notes from earlier don't record what went wrong with the payment, so I can't go further without it.\n\nPlease tell me:\n\n1. **Which charge:** TX-0402 (14 Jul 2026) or TX-0401 (20 Jul 2026).\n2. **What happened:**\n   - You were charged twice for the same purchase (duplicate charge).\n   - You didn't authorise the payment (unauthorised debit).\n   - You paid but never received the goods (goods not received).\n   - You paid for a service that wasn't provided (service not rendered).\n\nOnce you answer, I'll run the eligibility check. I'll open a dispute only if it passes and you confirm you want it filed.",
+  "trace": {
+    "request_id": "b573ff33efd74376",
+    "name": "agent.request",
+    "span_id": "22e12a1cbb374ce4",
+    "started_at": 1792429556.4979527,
+    "ended_at": 1792429559.9631722,
+    "duration_ms": 3465.2,
+    "attributes": {
+      "session.id": "6cd51e59d34a",
+      "dialog.step_number": 4,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 3824,
+      "gen_ai.usage.total_output_tokens": 537
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "32ada8871b6a48f3",
+        "started_at": 1792429556.4983792,
+        "ended_at": 1792429559.9631538,
+        "duration_ms": 3464.8,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3824,
+          "gen_ai.usage.output_tokens": 537
+        },
+        "children": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "case": "CONV-004",
+  "run": 2,
+  "turn": 4,
+  "user": "And the FX spread if I pay in USD?",
+  "answer": "For a EUR 240.00 conversion to USD on your tier1 account:\n\n- **Mid rate:** 1.086957 USD per EUR\n- **Tier spread:** 0.00%\n- **Free allowance:** EUR 500.00 total, EUR 0.00 used before this, so the full conversion is covered\n- **Spread charge:** EUR 0.00\n- **Final amount:** **USD 260.87**\n\nThe quote covers the conversion only. It does not change your account or pay any merchant in USD.",
+  "trace": {
+    "request_id": "0b270308ef7442a1",
+    "name": "agent.request",
+    "span_id": "44b35278e3df4b48",
+    "started_at": 1792428610.7089107,
+    "ended_at": 1792428616.2905233,
+    "duration_ms": 5581.6,
+    "attributes": {
+      "session.id": "cfd5147832fe",
+      "dialog.step_number": 4,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 7303,
+      "gen_ai.usage.total_output_tokens": 825
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "dd3bd6e9dff54d1a",
+        "started_at": 1792428610.7090166,
+        "ended_at": 1792428613.273603,
+        "duration_ms": 2564.6,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3514,
+          "gen_ai.usage.output_tokens": 451
+        },
+        "children": []
+      },
+      {
+        "name": "tool.quote_fx",
+        "span_id": "d71a2ef1ff4f4720",
+        "started_at": 1792428613.2736669,
+        "ended_at": 1792428613.2747052,
+        "duration_ms": 1.0,
+        "attributes": {
+          "tool.name": "quote_fx",
+          "tool.arguments": {
+            "customer_id": "CUS-0004",
+            "amount": 240,
+            "from_currency": "EUR",
+            "to_currency": "USD"
+          },
+          "tool.result": {
+            "from_currency": "EUR",
+            "to_currency": "USD",
+            "amount": 240,
+            "mid_rate": 1.086957,
+            "tier": "tier1",
+            "spread_pct": 0.0,
+            "allowance_total_eur": 500,
+            "allowance_used_before_eur": 0.0,
+            "allowance_applied": true,
+            "gross_amount": 260.869565,
+            "spread_amount": 0.0,
+            "final_amount": 260.869565
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "4d2e8fe4d43d40cf",
+        "started_at": 1792428613.274782,
+        "ended_at": 1792428616.290448,
+        "duration_ms": 3015.7,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3789,
+          "gen_ai.usage.output_tokens": 374
+        },
+        "children": []
+      }
+    ]
+  }
+}

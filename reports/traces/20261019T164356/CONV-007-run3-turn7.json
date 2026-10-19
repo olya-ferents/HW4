@@ -1,0 +1,44 @@
+{
+  "case": "CONV-007",
+  "run": 3,
+  "turn": 7,
+  "user": "And I still have time to file, right?",
+  "answer": "Yes, for now. Eligibility was checked as of 2026-09-15, and these deadlines remain open:\n\n- **Duplicate charge:** 2026-09-18 (three days)\n- **Goods not received:** 2026-10-18\n- **Service not provided:** 2026-10-18\n- **Card used fraudulently online or by phone:** 2026-11-17\n\nUnauthorized debit has closed. If the charge was a duplicate, file before 2026-09-18.\n\nI haven't opened a dispute. Tell me which reason code applies and I'll run the eligibility check again and confirm the details with you before filing.",
+  "trace": {
+    "request_id": "70d69fd888ef43ae",
+    "name": "agent.request",
+    "span_id": "246b18b4a5a64d06",
+    "started_at": 1792429162.478254,
+    "ended_at": 1792429164.5911348,
+    "duration_ms": 2112.9,
+    "attributes": {
+      "session.id": "8746c1ee8570",
+      "dialog.step_number": 7,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 8100,
+      "gen_ai.usage.total_output_tokens": 330
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "d6bc4fb04d58450c",
+        "started_at": 1792429162.4786365,
+        "ended_at": 1792429164.5910914,
+        "duration_ms": 2112.5,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 8100,
+          "gen_ai.usage.output_tokens": 330
+        },
+        "children": []
+      }
+    ]
+  }
+}

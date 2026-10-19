@@ -1,0 +1,128 @@
+{
+  "case": "CONV-006",
+  "run": 4,
+  "turn": 6,
+  "user": "Will the dispute cover the full charge?",
+  "answer": "The knowledge base doesn't say whether a dispute can cover part of a transaction. It only says a dispute is raised against a single settled transaction, and the reason code and transaction reference are required. The dispute tool defaults to the full transaction amount, but I can't confirm from the documentation that a partial amount is accepted.\n\nThe eligibility check will show whether a dispute can be opened for the amount you choose. Before I file anything, I'll confirm the amount and the reason with you.\n\nIf it's a duplicate charge, the dispute would most likely concern one of the two EUR 240.00 TechMart Online payments (TX-0401 or TX-0402), not both. Tell me which situation applies and I'll run the check.",
+  "trace": {
+    "request_id": "9f8f79e733c44dd9",
+    "name": "agent.request",
+    "span_id": "ca49bbc0d17f469a",
+    "started_at": 1792429033.2359166,
+    "ended_at": 1792429037.418055,
+    "duration_ms": 4182.1,
+    "attributes": {
+      "session.id": "c07565179405",
+      "dialog.step_number": 6,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 10525,
+      "gen_ai.usage.total_output_tokens": 542
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "f26e993d070f4e9a",
+        "started_at": 1792429033.2361016,
+        "ended_at": 1792429034.6527295,
+        "duration_ms": 1416.6,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 4953,
+          "gen_ai.usage.output_tokens": 144
+        },
+        "children": []
+      },
+      {
+        "name": "tool.search_knowledge_base",
+        "span_id": "8dfaa49a4303435f",
+        "started_at": 1792429034.6528506,
+        "ended_at": 1792429034.6538842,
+        "duration_ms": 1.0,
+        "attributes": {
+          "tool.name": "search_knowledge_base",
+          "tool.arguments": {
+            "query": "dispute partial amount full transaction amount refund"
+          },
+          "tool.result": {
+            "index": "kb_clean",
+            "top_k": 4,
+            "query": "dispute partial amount full transaction amount refund",
+            "fragments": [
+              {
+                "id": "fx-guide.md#s2",
+                "doc": "fx-guide.md",
+                "score": 0.9045,
+                "text": "Currency conversion guide\n## Reading a quote\nA complete quote lists: mid rate, spread percentage applied, allowance total\nand allowance used before this conversion, gross converted amount, spread\namount, and the final credited amount. The final amount equals the gross\namount minus the spread amount."
+              },
+              {
+                "id": "disputes-process.md#s1",
+                "doc": "disputes-process.md",
+                "score": 0.7143,
+                "text": "Dispute handling process\n## Raising a dispute\nA dispute is raised against a single settled transaction. The customer supplies\nthe transaction reference and a reason code. The agent verifies eligibility\nbefore the case is opened; an ineligible request is refused with the failing\ncondition named, except where confidentiality rules apply."
+              },
+              {
+                "id": "glossary.md#s7",
+                "doc": "glossary.md",
+                "score": 0.7071,
+                "text": "Glossary\n## Provisional credit\nA temporary refund applied while a dispute is reviewed; reversed if the dispute\nis declined."
+              },
+              {
+                "id": "disputes-process.md#s6",
+                "doc": "disputes-process.md",
+                "score": 0.7071,
+                "text": "Dispute handling process\n## Withdrawing a dispute\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\nfinal; the same transaction cannot be disputed again under the same reason code."
+              }
+            ]
+          },
+          "retrieval.query": "dispute partial amount full transaction amount refund",
+          "retrieval.index": "kb_clean",
+          "retrieval.top_k": 4,
+          "retrieval.fragments": [
+            {
+              "id": "fx-guide.md#s2",
+              "score": 0.9045,
+              "text": "Currency conversion guide\n## Reading a quote\nA complete quote lists: mid rate, spread percentage applied, allowance total\nand allowance used before this convers"
+            },
+            {
+              "id": "disputes-process.md#s1",
+              "score": 0.7143,
+              "text": "Dispute handling process\n## Raising a dispute\nA dispute is raised against a single settled transaction. The customer supplies\nthe transaction reference and a re"
+            },
+            {
+              "id": "glossary.md#s7",
+              "score": 0.7071,
+              "text": "Glossary\n## Provisional credit\nA temporary refund applied while a dispute is reviewed; reversed if the dispute\nis declined."
+            },
+            {
+              "id": "disputes-process.md#s6",
+              "score": 0.7071,
+              "text": "Dispute handling process\n## Withdrawing a dispute\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\nfinal; the same transaction can"
+            }
+          ]
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "f54d245ec2104984",
+        "started_at": 1792429034.6539912,
+        "ended_at": 1792429037.4179974,
+        "duration_ms": 2764.0,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 5572,
+          "gen_ai.usage.output_tokens": 398
+        },
+        "children": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "case": "CONV-006",
+  "run": 3,
+  "turn": 2,
+  "user": "Can I dispute it?",
+  "answer": "I can check eligibility, but I need to know what happened first. A dispute has to be filed under the reason code that matches the facts, and eligibility is checked against that code.\n\nPlease tell me what happened with TX-0401 (EUR 240.00, TechMart Online, 2026-07-20). For example:\n\n- Did you authorize this payment, or was it made without your permission?\n- Were you charged twice for the same purchase? TX-0402 is a matching EUR 240.00 payment to the same merchant on 2026-07-14.\n- Did you pay for goods that didn't arrive, or a service that wasn't provided?\n\nOnce I know, I'll check eligibility for the matching reason code. I won't file anything until that check passes and you confirm.",
+  "trace": {
+    "request_id": "0120fa3ab04d4124",
+    "name": "agent.request",
+    "span_id": "ba62d937807f481b",
+    "started_at": 1792430118.9161406,
+    "ended_at": 1792430122.2811944,
+    "duration_ms": 3365.1,
+    "attributes": {
+      "session.id": "0defaf0acffc",
+      "dialog.step_number": 2,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 3740,
+      "gen_ai.usage.total_output_tokens": 487
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "1e2d5d6177264e97",
+        "started_at": 1792430118.9165077,
+        "ended_at": 1792430122.2811127,
+        "duration_ms": 3364.6,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3740,
+          "gen_ai.usage.output_tokens": 487
+        },
+        "children": []
+      }
+    ]
+  }
+}

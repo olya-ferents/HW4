@@ -1,0 +1,44 @@
+{
+  "case": "CONV-004",
+  "run": 3,
+  "turn": 7,
+  "user": "And I still have time to file, right?",
+  "answer": "Yes, based on the eligibility check I ran on 15 September 2026:\n\n- **Duplicate charge:** eligible, with a deadline of **18 September 2026**.\n- **Card-not-present fraud:** eligible, with a deadline of **17 November 2026**.\n\nThe duplicate-charge deadline is the closer one, so if it applies, decide soon. Nothing has been filed yet. Tell me which reason applies and I'll re-check eligibility and confirm the details with you before opening the dispute.",
+  "trace": {
+    "request_id": "98f85cf4c609420d",
+    "name": "agent.request",
+    "span_id": "0e35c22bba40490c",
+    "started_at": 1792428669.6030388,
+    "ended_at": 1792428672.2663696,
+    "duration_ms": 2663.3,
+    "attributes": {
+      "session.id": "422e5c2c9c27",
+      "dialog.step_number": 7,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 5160,
+      "gen_ai.usage.total_output_tokens": 397
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "2c8bb53211f84ed2",
+        "started_at": 1792428669.6032202,
+        "ended_at": 1792428672.2663293,
+        "duration_ms": 2663.1,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 5160,
+          "gen_ai.usage.output_tokens": 397
+        },
+        "children": []
+      }
+    ]
+  }
+}

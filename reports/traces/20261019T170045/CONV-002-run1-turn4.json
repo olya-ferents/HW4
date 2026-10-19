@@ -1,0 +1,131 @@
+{
+  "case": "CONV-002",
+  "run": 1,
+  "turn": 4,
+  "user": "And the FX spread if I pay in USD?",
+  "answer": "For a Tier 1 account, the FX spread is **1.5%** over the mid-market rate. Each calendar month includes a **EUR 500 free conversion allowance**, and the spread applies only after that allowance is used up. If a conversion fits within your remaining allowance, no spread is charged. If it crosses the boundary, the spread applies to the whole conversion.\n\nI can't see how much of this month's conversion allowance you have left, so I can't say whether a USD payment would be charged the spread. If you tell me an amount in EUR, I can run a full quote showing the mid rate, spread, allowance and final USD amount.",
+  "trace": {
+    "request_id": "75958a4a65ab4f18",
+    "name": "agent.request",
+    "span_id": "670043b4bc2a4e52",
+    "started_at": 1792429264.9082522,
+    "ended_at": 1792429269.4148817,
+    "duration_ms": 4506.6,
+    "attributes": {
+      "session.id": "46cff8d22ef2",
+      "dialog.step_number": 4,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 7751,
+      "gen_ai.usage.total_output_tokens": 567
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "f9275deddfbf4ccd",
+        "started_at": 1792429264.9087298,
+        "ended_at": 1792429266.6086388,
+        "duration_ms": 1699.9,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3468,
+          "gen_ai.usage.output_tokens": 185
+        },
+        "children": []
+      },
+      {
+        "name": "tool.search_knowledge_base",
+        "span_id": "7a734428e0684dc2",
+        "started_at": 1792429266.6086993,
+        "ended_at": 1792429266.6110756,
+        "duration_ms": 2.4,
+        "attributes": {
+          "tool.name": "search_knowledge_base",
+          "tool.arguments": {
+            "query": "FX spread tier1 EUR to USD currency conversion fee"
+          },
+          "tool.result": {
+            "index": "kb_clean",
+            "top_k": 4,
+            "query": "FX spread tier1 EUR to USD currency conversion fee",
+            "fragments": [
+              {
+                "id": "fx-guide.md#s1",
+                "doc": "fx-guide.md",
+                "score": 1.4552,
+                "text": "Currency conversion guide\n## How a conversion is priced\nA conversion quote has these components, in order: the mid-market rate for the\ncurrency pair; the tier spread (a percentage of the gross converted amount);\nthe free monthly conversion allowance. If the whole conversion fits within the\ncustomer's remaining monthly allowance, no spread is charged. Once the\nallowance is exhausted, the full tier spread applies to the conversion."
+              },
+              {
+                "id": "tariffs.md#s2",
+                "doc": "tariffs.md",
+                "score": 1.2481,
+                "text": "Verta tariff schedule\n## FX spreads by tier\nThe spread is applied over the mid-market rate only after the free monthly\nconversion allowance is exhausted.\n\n| Tier | FX spread | Free monthly conversion allowance |\n|---|---|---|\n| Tier 1 | 1.5% | EUR 500 |\n| Tier 2 | 0.9% | EUR 1,000 |\n| Tier 3 | 0.5% | EUR 5,000 |"
+              },
+              {
+                "id": "fx-operations.md#s1",
+                "doc": "fx-operations.md",
+                "score": 1.2374,
+                "text": "Currency conversion operations\n## When a conversion happens\nA conversion happens when the payment currency differs from the currency of the\naccount being debited. The conversion is applied at settlement, not at\nauthorisation."
+              },
+              {
+                "id": "fx-operations.md#s3",
+                "doc": "fx-operations.md",
+                "score": 1.2027,
+                "text": "Currency conversion operations\n## Allowance accounting\nThe free monthly conversion allowance is counted in EUR equivalent and resets on\nthe first calendar day of each month. Allowance consumption is recorded at\nsettlement. A conversion that would cross the allowance boundary has the tier\nspread applied to the entire conversion, not only to the portion above the\nboundary."
+              }
+            ]
+          },
+          "retrieval.query": "FX spread tier1 EUR to USD currency conversion fee",
+          "retrieval.index": "kb_clean",
+          "retrieval.top_k": 4,
+          "retrieval.fragments": [
+            {
+              "id": "fx-guide.md#s1",
+              "score": 1.4552,
+              "text": "Currency conversion guide\n## How a conversion is priced\nA conversion quote has these components, in order: the mid-market rate for the\ncurrency pair; the tier s"
+            },
+            {
+              "id": "tariffs.md#s2",
+              "score": 1.2481,
+              "text": "Verta tariff schedule\n## FX spreads by tier\nThe spread is applied over the mid-market rate only after the free monthly\nconversion allowance is exhausted.\n\n| Tie"
+            },
+            {
+              "id": "fx-operations.md#s1",
+              "score": 1.2374,
+              "text": "Currency conversion operations\n## When a conversion happens\nA conversion happens when the payment currency differs from the currency of the\naccount being debite"
+            },
+            {
+              "id": "fx-operations.md#s3",
+              "score": 1.2027,
+              "text": "Currency conversion operations\n## Allowance accounting\nThe free monthly conversion allowance is counted in EUR equivalent and resets on\nthe first calendar day o"
+            }
+          ]
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "f1465a19cf8844b0",
+        "started_at": 1792429266.6113033,
+        "ended_at": 1792429269.414852,
+        "duration_ms": 2803.5,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 4283,
+          "gen_ai.usage.output_tokens": 382
+        },
+        "children": []
+      }
+    ]
+  }
+}

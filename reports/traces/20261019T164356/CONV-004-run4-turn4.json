@@ -1,0 +1,128 @@
+{
+  "case": "CONV-004",
+  "run": 4,
+  "turn": 4,
+  "user": "And the FX spread if I pay in USD?",
+  "answer": "For Tier 1, the FX spread is **1.5%** over the mid-market rate. It applies only after your free monthly conversion allowance of **EUR 500** is used up.\n\nCard payments also carry a separate **1.2% card payment fee**, calculated on the EUR equivalent of the amount, with no flat fee.\n\nI can't give you the exact USD cost yet because I don't have the mid-market rate or your remaining monthly allowance. Your allowance usage isn't in the data I have. If you tell me the amount you plan to pay in USD, I can run a full quote showing the mid rate, spread, allowance, and final amount.",
+  "trace": {
+    "request_id": "eb7c888fd1d9483e",
+    "name": "agent.request",
+    "span_id": "b43ed3827fb04f4a",
+    "started_at": 1792428700.3257365,
+    "ended_at": 1792428704.8270926,
+    "duration_ms": 4501.4,
+    "attributes": {
+      "session.id": "cccd0a8e47d0",
+      "dialog.step_number": 4,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 8001,
+      "gen_ai.usage.total_output_tokens": 613
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "fbefe11dba8a4958",
+        "started_at": 1792428700.3258443,
+        "ended_at": 1792428701.8987966,
+        "duration_ms": 1573.0,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3553,
+          "gen_ai.usage.output_tokens": 188
+        },
+        "children": []
+      },
+      {
+        "name": "tool.search_knowledge_base",
+        "span_id": "32669d10bbdd49fb",
+        "started_at": 1792428701.898931,
+        "ended_at": 1792428701.9003854,
+        "duration_ms": 1.5,
+        "attributes": {
+          "tool.name": "search_knowledge_base",
+          "tool.arguments": {
+            "query": "FX spread tier1 EUR to USD card payments"
+          },
+          "tool.result": {
+            "index": "kb_clean",
+            "top_k": 4,
+            "query": "FX spread tier1 EUR to USD card payments",
+            "fragments": [
+              {
+                "id": "tariffs.md#s2",
+                "doc": "tariffs.md",
+                "score": 0.9707,
+                "text": "Verta tariff schedule\n## FX spreads by tier\nThe spread is applied over the mid-market rate only after the free monthly\nconversion allowance is exhausted.\n\n| Tier | FX spread | Free monthly conversion allowance |\n|---|---|---|\n| Tier 1 | 1.5% | EUR 500 |\n| Tier 2 | 0.9% | EUR 1,000 |\n| Tier 3 | 0.5% | EUR 5,000 |"
+              },
+              {
+                "id": "fees-detail.md#s2",
+                "doc": "fees-detail.md",
+                "score": 0.9177,
+                "text": "Fee details\n## Card payment fee\nCard payments carry a percentage fee on the EUR equivalent. No flat fee\napplies."
+              },
+              {
+                "id": "tariffs.md#s3",
+                "doc": "tariffs.md",
+                "score": 0.8571,
+                "text": "Verta tariff schedule\n## Transfer fees by type\n| Transfer type | Flat fee | Percentage fee |\n|---|---|---|\n| Internal | EUR 0.00 | 0% |\n| SEPA | EUR 0.35 | 0% |\n| SWIFT | EUR 15.00 | 0.3% |\n| Card payment | EUR 0.00 | 1.2% |\n\nThe percentage fee is calculated on the EUR equivalent of the transfer amount."
+              },
+              {
+                "id": "limits.md#s1",
+                "doc": "limits.md",
+                "score": 0.8083,
+                "text": "Transfer limits\n## Daily and monthly limits by tier\nOutgoing transfer limits are tracked in EUR equivalent, separately per day and\nper calendar month. The daily and the monthly remainder are different numbers:\nboth are computed from the same settled-transactions source, but over\ndifferent windows.\n\n| Tier | Daily limit | Monthly limit |\n|---|---|---|\n| Tier 1 | EUR 5,000 | EUR 50,000 |\n| Tier 2 | EUR 20,000 | EUR 200,000 |\n| Tier 3 | EUR 100,000 | EUR 1,000,000 |"
+              }
+            ]
+          },
+          "retrieval.query": "FX spread tier1 EUR to USD card payments",
+          "retrieval.index": "kb_clean",
+          "retrieval.top_k": 4,
+          "retrieval.fragments": [
+            {
+              "id": "tariffs.md#s2",
+              "score": 0.9707,
+              "text": "Verta tariff schedule\n## FX spreads by tier\nThe spread is applied over the mid-market rate only after the free monthly\nconversion allowance is exhausted.\n\n| Tie"
+            },
+            {
+              "id": "fees-detail.md#s2",
+              "score": 0.9177,
+              "text": "Fee details\n## Card payment fee\nCard payments carry a percentage fee on the EUR equivalent. No flat fee\napplies."
+            },
+            {
+              "id": "tariffs.md#s3",
+              "score": 0.8571,
+              "text": "Verta tariff schedule\n## Transfer fees by type\n| Transfer type | Flat fee | Percentage fee |\n|---|---|---|\n| Internal | EUR 0.00 | 0% |\n| SEPA | EUR 0.35 | 0% |"
+            },
+            {
+              "id": "limits.md#s1",
+              "score": 0.8083,
+              "text": "Transfer limits\n## Daily and monthly limits by tier\nOutgoing transfer limits are tracked in EUR equivalent, separately per day and\nper calendar month. The daily"
+            }
+          ]
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "fde178441d1f44e6",
+        "started_at": 1792428701.900498,
+        "ended_at": 1792428704.8270454,
+        "duration_ms": 2926.5,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 4448,
+          "gen_ai.usage.output_tokens": 425
+        },
+        "children": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "case": "CONV-002",
+  "run": 2,
+  "turn": 2,
+  "user": "Can I dispute it?",
+  "answer": "I can check that, but I need to know which reason applies first, because eligibility is checked against a specific reason code. Which of these matches what happened?\n\n1. **Duplicate charge**: you were billed twice for the same purchase. This would be the EUR 240.00 TechMart Online payment on 2026-07-20 (TX-0401) compared with the one on 2026-07-14 (TX-0402).\n2. **Unauthorized debit**: you did not make or approve this payment.\n3. **Card-not-present fraud**: your card details were used without permission for an online or phone payment.\n4. **Goods not received**: you paid for an item that was never delivered.\n5. **Service not rendered**: you paid for a service that was not provided.\n\nOnce you choose, I'll run the eligibility check. I won't open a dispute unless the check passes and you confirm.",
+  "trace": {
+    "request_id": "07a35268aa21427b",
+    "name": "agent.request",
+    "span_id": "4af7ac58aab14b97",
+    "started_at": 1792428273.8927116,
+    "ended_at": 1792428276.6087773,
+    "duration_ms": 2716.1,
+    "attributes": {
+      "session.id": "79891c88d46e",
+      "dialog.step_number": 2,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 3558,
+      "gen_ai.usage.total_output_tokens": 386
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "41abbd392f6c4ed6",
+        "started_at": 1792428273.8929346,
+        "ended_at": 1792428276.6087468,
+        "duration_ms": 2715.8,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3558,
+          "gen_ai.usage.output_tokens": 386
+        },
+        "children": []
+      }
+    ]
+  }
+}

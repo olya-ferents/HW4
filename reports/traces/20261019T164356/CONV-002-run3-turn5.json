@@ -1,0 +1,44 @@
+{
+  "case": "CONV-002",
+  "run": 3,
+  "turn": 5,
+  "user": "Fine. Back to that charge — what do I do next?",
+  "answer": "To check the TechMart Online charge of EUR 240.00 (TX-0401, 2026-07-20), I need to know which of these matches what happened:\n\n1. **Duplicate charge:** You were charged twice for the same order. Your account shows a second EUR 240.00 TechMart Online charge (TX-0402) on 2026-07-14. If that was for the same purchase, this reason fits.\n2. **Unauthorized debit:** You did not make or approve this payment.\n3. **Card-not-present fraud:** Your card details were used without your authorization for an online purchase.\n4. **Goods not received:** You paid for an order that was never delivered.\n5. **Service not rendered:** You paid for a service that was not provided.\n\nOnce you tell me which applies, I'll run an eligibility check for TX-0401 under that reason. I won't open a dispute until the check confirms it is eligible, and I'll confirm the details with you before filing, since a dispute cannot be reversed.",
+  "trace": {
+    "request_id": "3c3191a62fbb45cd",
+    "name": "agent.request",
+    "span_id": "4cbad17f615740b3",
+    "started_at": 1792428324.6689832,
+    "ended_at": 1792428327.3371387,
+    "duration_ms": 2668.2,
+    "attributes": {
+      "session.id": "c43398df778b",
+      "dialog.step_number": 5,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 4654,
+      "gen_ai.usage.total_output_tokens": 414
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "c4ebdb5874754e42",
+        "started_at": 1792428324.6692789,
+        "ended_at": 1792428327.3370607,
+        "duration_ms": 2667.8,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 4654,
+          "gen_ai.usage.output_tokens": 414
+        },
+        "children": []
+      }
+    ]
+  }
+}

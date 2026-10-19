@@ -1,0 +1,131 @@
+{
+  "case": "CONV-002",
+  "run": 1,
+  "turn": 7,
+  "user": "And I still have time to file, right?",
+  "answer": "Whether you still have time depends on the reason code, because each one has a different window counted from the transaction date (20 July 2026). Today is 15 September 2026, based on the date in my account data, which is 57 days after TX-0401.\n\n| Reason code | Window | Status for TX-0401 |\n|---|---|---|\n| Duplicate charge | 60 days | Open, about 3 days left |\n| Unauthorized debit | 56 days | Closed, 1 day past |\n| Goods not received | 90 days | Open, about 33 days left |\n| Service not rendered | 90 days | Open, about 33 days left |\n| Card-not-present fraud | 120 days | Open, about 63 days left |\n\nThe duplicate-charge window is the most urgent if TX-0402 is the same purchase. Tell me which situation applies and I'll run the eligibility check on TX-0401 right away. I won't open anything until you confirm.",
+  "trace": {
+    "request_id": "2c50a27ad7aa455b",
+    "name": "agent.request",
+    "span_id": "92aeb4532a61422b",
+    "started_at": 1792429279.751416,
+    "ended_at": 1792429284.3701599,
+    "duration_ms": 4618.7,
+    "attributes": {
+      "session.id": "46cff8d22ef2",
+      "dialog.step_number": 7,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 11587,
+      "gen_ai.usage.total_output_tokens": 677
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "bf2954e725674c87",
+        "started_at": 1792429279.7519398,
+        "ended_at": 1792429281.2770648,
+        "duration_ms": 1525.1,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 5466,
+          "gen_ai.usage.output_tokens": 134
+        },
+        "children": []
+      },
+      {
+        "name": "tool.search_knowledge_base",
+        "span_id": "9abd261cb4994d65",
+        "started_at": 1792429281.2771134,
+        "ended_at": 1792429281.2777147,
+        "duration_ms": 0.6,
+        "attributes": {
+          "tool.name": "search_knowledge_base",
+          "tool.arguments": {
+            "query": "dispute filing window deadline days transaction"
+          },
+          "tool.result": {
+            "index": "kb_clean",
+            "top_k": 4,
+            "query": "dispute filing window deadline days transaction",
+            "fragments": [
+              {
+                "id": "disputes.md#s1",
+                "doc": "disputes.md",
+                "score": 1.206,
+                "text": "Payment dispute rules\n## Reason codes and chargeback windows\nEach reason code has a window in days from the transaction date. A dispute opened after the window closes is not eligible.\n\n| Reason code | Window (days) |\n|---|---|\n| fraud_card_not_present | 120 |\n| goods_not_received | 90 |\n| duplicate_charge | 60 |\n| service_not_rendered | 90 |\n| unauthorized_debit | 56 |"
+              },
+              {
+                "id": "glossary.md#s3",
+                "doc": "glossary.md",
+                "score": 0.8165,
+                "text": "Glossary\n## Chargeback window\nThe number of days, counted from the transaction date, during which a dispute\nmay be raised under a given reason code."
+              },
+              {
+                "id": "limits-operations.md#s5",
+                "doc": "limits-operations.md",
+                "score": 0.8165,
+                "text": "Limit operations\n## Window definition\nLimits are tracked on calendar days, not business days. The daily window runs\nfrom 00:00 to 23:59 CET."
+              },
+              {
+                "id": "disputes-process.md#s1",
+                "doc": "disputes-process.md",
+                "score": 0.7143,
+                "text": "Dispute handling process\n## Raising a dispute\nA dispute is raised against a single settled transaction. The customer supplies\nthe transaction reference and a reason code. The agent verifies eligibility\nbefore the case is opened; an ineligible request is refused with the failing\ncondition named, except where confidentiality rules apply."
+              }
+            ]
+          },
+          "retrieval.query": "dispute filing window deadline days transaction",
+          "retrieval.index": "kb_clean",
+          "retrieval.top_k": 4,
+          "retrieval.fragments": [
+            {
+              "id": "disputes.md#s1",
+              "score": 1.206,
+              "text": "Payment dispute rules\n## Reason codes and chargeback windows\nEach reason code has a window in days from the transaction date. A dispute opened after the window "
+            },
+            {
+              "id": "glossary.md#s3",
+              "score": 0.8165,
+              "text": "Glossary\n## Chargeback window\nThe number of days, counted from the transaction date, during which a dispute\nmay be raised under a given reason code."
+            },
+            {
+              "id": "limits-operations.md#s5",
+              "score": 0.8165,
+              "text": "Limit operations\n## Window definition\nLimits are tracked on calendar days, not business days. The daily window runs\nfrom 00:00 to 23:59 CET."
+            },
+            {
+              "id": "disputes-process.md#s1",
+              "score": 0.7143,
+              "text": "Dispute handling process\n## Raising a dispute\nA dispute is raised against a single settled transaction. The customer supplies\nthe transaction reference and a re"
+            }
+          ]
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "42943da8a65b489b",
+        "started_at": 1792429281.2777886,
+        "ended_at": 1792429284.3701248,
+        "duration_ms": 3092.3,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 6121,
+          "gen_ai.usage.output_tokens": 543
+        },
+        "children": []
+      }
+    ]
+  }
+}

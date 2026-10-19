@@ -1,0 +1,44 @@
+{
+  "case": "CONV-005",
+  "run": 3,
+  "turn": 4,
+  "user": "What information do you need before filing the dispute?",
+  "answer": "To file the dispute, I need only one thing from you: your explicit confirmation. I already have everything else:\n\n- **Transaction:** TX-0401, TechMart Online, EUR 240.00, 2026-07-20\n- **Reason:** duplicate_charge, since this charge duplicates TX-0402 (TechMart Online, EUR 240.00, 2026-07-14)\n- **Amount:** EUR 240.00, the full transaction amount\n- **Eligibility:** passed the earlier check, with a deadline of 2026-09-18\n\nPlease reply \"yes\" to confirm you want me to open this dispute. A dispute cannot be reversed once filed. If it's been a while since the eligibility check, I'll re-run it before filing to make sure the deadline still applies.",
+  "trace": {
+    "request_id": "c010b5fdcb294618",
+    "name": "agent.request",
+    "span_id": "f522ed939fd042b7",
+    "started_at": 1792428834.405381,
+    "ended_at": 1792428838.1396616,
+    "duration_ms": 3734.3,
+    "attributes": {
+      "session.id": "60b9c14666d5",
+      "dialog.step_number": 4,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 3372,
+      "gen_ai.usage.total_output_tokens": 580
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "11927adafaf541ab",
+        "started_at": 1792428834.405601,
+        "ended_at": 1792428838.139593,
+        "duration_ms": 3734.0,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3372,
+          "gen_ai.usage.output_tokens": 580
+        },
+        "children": []
+      }
+    ]
+  }
+}

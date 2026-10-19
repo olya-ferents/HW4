@@ -1,0 +1,44 @@
+{
+  "case": "CONV-005",
+  "run": 1,
+  "turn": 5,
+  "user": "What amount and reason code would you use for TX-0401?",
+  "answer": "For TX-0401, I would use:\n\n- **Reason code:** duplicate_charge. This is the code the eligibility check ran against, and it passed.\n- **Amount:** EUR 240.00, the full transaction amount. This is the default if no amount is specified.\n\nNothing has been filed yet. Please confirm that TX-0401 is the duplicate charge and that you want me to proceed with EUR 240.00 under duplicate_charge. I will open the dispute once you confirm.",
+  "trace": {
+    "request_id": "3d3869c21b45439e",
+    "name": "agent.request",
+    "span_id": "9ad5f7e3c46f41d9",
+    "started_at": 1792428786.584128,
+    "ended_at": 1792428788.1800961,
+    "duration_ms": 1596.0,
+    "attributes": {
+      "session.id": "3d408bdfbe0b",
+      "dialog.step_number": 5,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 4506,
+      "gen_ai.usage.total_output_tokens": 157
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "589cc6acc20041fe",
+        "started_at": 1792428786.5844316,
+        "ended_at": 1792428788.1800625,
+        "duration_ms": 1595.6,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 4506,
+          "gen_ai.usage.output_tokens": 157
+        },
+        "children": []
+      }
+    ]
+  }
+}

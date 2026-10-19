@@ -1,0 +1,47 @@
+{
+  "case": "CONV-002",
+  "run": 5,
+  "turn": 6,
+  "user": "Amount 240 euro, as I said at the start.",
+  "answer": "The amount matches two charges: **TX-0402** (14 Jul 2026) and **TX-0401** (20 Jul 2026), both EUR 240.00 to TechMart Online. I can't tell from the records which one you mean, and I don't have a note of what happened that would point to a reason.\n\nPlease tell me:\n1. **Which charge:** TX-0402 or TX-0401.\n2. **What happened:**\n   - Charged twice for the same purchase (duplicate charge)\n   - You didn't make the purchase (card not present fraud, or unauthorised debit)\n   - You paid but didn't receive the goods (goods not received)\n   - You paid for a service that wasn't provided (service not rendered)\n\nOnce you answer, I'll check eligibility for that transaction and reason. I'll open the dispute only if the check passes and you confirm.",
+  "trace": {
+    "request_id": "00279ac4abc34db4",
+    "name": "agent.request",
+    "span_id": "a37cc15627cf4379",
+    "started_at": 1792429422.6464503,
+    "ended_at": 1792429425.7180023,
+    "duration_ms": 3071.6,
+    "attributes": {
+      "session.id": "c55f02f57fb1",
+      "dialog.step_number": 6,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 5183,
+      "gen_ai.usage.total_output_tokens": 475
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "444cdb7bafb6457a",
+        "started_at": 1792429422.6468015,
+        "ended_at": 1792429425.717754,
+        "duration_ms": 3071.0,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 5183,
+          "gen_ai.usage.output_tokens": 475
+        },
+        "children": []
+      }
+    ]
+  }
+}

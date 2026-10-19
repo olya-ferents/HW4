@@ -1,0 +1,128 @@
+{
+  "case": "CONV-006",
+  "run": 5,
+  "turn": 5,
+  "user": "Fine. Back to that charge — what do I do next?",
+  "answer": "Here's what to do next on TX-0401 (EUR 240.00, TechMart Online, 2026-07-20, settled).\n\n**Filing windows** (counted from the transaction date, per the dispute rules):\n\n| Reason code | Window | Status for TX-0401 |\n|---|---|---|\n| duplicate_charge | 60 days | Open until 2026-09-18 |\n| unauthorized_debit | 56 days | Closed on 2026-09-14 |\n| fraud_card_not_present | 120 days | Open |\n| goods_not_received | 90 days | Open |\n| service_not_rendered | 90 days | Open |\n\nToday is 2026-09-15, so the duplicate_charge window closes in three days. Only that code is still open for a duplicate charge, and unauthorized_debit has already expired.\n\n**Next steps:**\n1. Tell me which situation applies. If TX-0401 is a second charge for the same purchase as TX-0402 (EUR 240.00, TechMart Online, 2026-07-14), that is duplicate_charge. Other situations would be fraud_card_not_present (you didn't authorise the card payment), goods_not_received, or service_not_rendered.\n2. I'll run the eligibility check for TX-0401 under that code.\n3. If it's eligible, I'll show you the result and wait for your explicit confirmation before opening anything. Nothing is filed until you confirm.",
+  "trace": {
+    "request_id": "5f540ca93c3c4c0b",
+    "name": "agent.request",
+    "span_id": "e789f7bdd4584d9a",
+    "started_at": 1792429059.8291042,
+    "ended_at": 1792429066.8079693,
+    "duration_ms": 6978.9,
+    "attributes": {
+      "session.id": "0290fc899b82",
+      "dialog.step_number": 5,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 8010,
+      "gen_ai.usage.total_output_tokens": 1145
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "3a6f987216e54881",
+        "started_at": 1792429059.8292305,
+        "ended_at": 1792429061.7853692,
+        "duration_ms": 1956.1,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3620,
+          "gen_ai.usage.output_tokens": 232
+        },
+        "children": []
+      },
+      {
+        "name": "tool.search_knowledge_base",
+        "span_id": "f2fe8950fb3d47cf",
+        "started_at": 1792429061.7854998,
+        "ended_at": 1792429061.7871168,
+        "duration_ms": 1.6,
+        "attributes": {
+          "tool.name": "search_knowledge_base",
+          "tool.arguments": {
+            "query": "dispute window deadline card transaction duplicate charge unauthorized debit"
+          },
+          "tool.result": {
+            "index": "kb_clean",
+            "top_k": 4,
+            "query": "dispute window deadline card transaction duplicate charge unauthorized debit",
+            "fragments": [
+              {
+                "id": "disputes.md#s1",
+                "doc": "disputes.md",
+                "score": 0.9045,
+                "text": "Payment dispute rules\n## Reason codes and chargeback windows\nEach reason code has a window in days from the transaction date. A dispute opened after the window closes is not eligible.\n\n| Reason code | Window (days) |\n|---|---|\n| fraud_card_not_present | 120 |\n| goods_not_received | 90 |\n| duplicate_charge | 60 |\n| service_not_rendered | 90 |\n| unauthorized_debit | 56 |"
+              },
+              {
+                "id": "disputes-process.md#s1",
+                "doc": "disputes-process.md",
+                "score": 0.7143,
+                "text": "Dispute handling process\n## Raising a dispute\nA dispute is raised against a single settled transaction. The customer supplies\nthe transaction reference and a reason code. The agent verifies eligibility\nbefore the case is opened; an ineligible request is refused with the failing\ncondition named, except where confidentiality rules apply."
+              },
+              {
+                "id": "disputes-process.md#s6",
+                "doc": "disputes-process.md",
+                "score": 0.7071,
+                "text": "Dispute handling process\n## Withdrawing a dispute\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\nfinal; the same transaction cannot be disputed again under the same reason code."
+              },
+              {
+                "id": "disputes.md#s2",
+                "doc": "disputes.md",
+                "score": 0.635,
+                "text": "Payment dispute rules\n## Eligibility conditions\nA dispute is eligible only if all of the following hold: the reason code is\nvalid; the transaction status is settled; the transaction date is within the\nreason code's window relative to the current date; and no customer-level\nrestriction applies (for example, an account under compliance review cannot\nopen new disputes until the review concludes)."
+              }
+            ]
+          },
+          "retrieval.query": "dispute window deadline card transaction duplicate charge unauthorized debit",
+          "retrieval.index": "kb_clean",
+          "retrieval.top_k": 4,
+          "retrieval.fragments": [
+            {
+              "id": "disputes.md#s1",
+              "score": 0.9045,
+              "text": "Payment dispute rules\n## Reason codes and chargeback windows\nEach reason code has a window in days from the transaction date. A dispute opened after the window "
+            },
+            {
+              "id": "disputes-process.md#s1",
+              "score": 0.7143,
+              "text": "Dispute handling process\n## Raising a dispute\nA dispute is raised against a single settled transaction. The customer supplies\nthe transaction reference and a re"
+            },
+            {
+              "id": "disputes-process.md#s6",
+              "score": 0.7071,
+              "text": "Dispute handling process\n## Withdrawing a dispute\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\nfinal; the same transaction can"
+            },
+            {
+              "id": "disputes.md#s2",
+              "score": 0.635,
+              "text": "Payment dispute rules\n## Eligibility conditions\nA dispute is eligible only if all of the following hold: the reason code is\nvalid; the transaction status is set"
+            }
+          ]
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "3c9ad4119d174f32",
+        "started_at": 1792429061.787224,
+        "ended_at": 1792429066.8078778,
+        "duration_ms": 5020.7,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 4390,
+          "gen_ai.usage.output_tokens": 913
+        },
+        "children": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "case": "CONV-002",
+  "run": 2,
+  "turn": 5,
+  "user": "Fine. Back to that charge — what do I do next?",
+  "answer": "To move forward with TechMart Online (TX-0401, EUR 240.00, 2026-07-20), I need to know which of these describes what happened:\n\n- **Duplicate charge:** you were billed more than once for the same purchase. (TX-0402 is also EUR 240.00 to TechMart Online, dated 2026-07-14. Is that the same purchase?)\n- **Unauthorized debit:** you did not make or approve this payment.\n- **Card-not-present fraud:** someone used your card details online without your permission.\n- **Goods not received:** you paid but did not receive the item.\n- **Service not rendered:** you paid for a service that was not provided.\n\nOnce you choose one, I'll run the eligibility check for that reason on TX-0401. I won't open a dispute unless the check passes and you confirm.",
+  "trace": {
+    "request_id": "f2fb505909394ccf",
+    "name": "agent.request",
+    "span_id": "f0cc83105d5b4d34",
+    "started_at": 1792428289.8177485,
+    "ended_at": 1792428292.7784839,
+    "duration_ms": 2960.7,
+    "attributes": {
+      "session.id": "79891c88d46e",
+      "dialog.step_number": 5,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 4855,
+      "gen_ai.usage.total_output_tokens": 372
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "3a7332bb073b44fb",
+        "started_at": 1792428289.8179781,
+        "ended_at": 1792428292.7784665,
+        "duration_ms": 2960.5,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 4855,
+          "gen_ai.usage.output_tokens": 372
+        },
+        "children": []
+      }
+    ]
+  }
+}

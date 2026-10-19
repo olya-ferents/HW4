@@ -1,0 +1,44 @@
+{
+  "case": "CONV-005",
+  "run": 3,
+  "turn": 5,
+  "user": "What amount and reason code would you use for TX-0401?",
+  "answer": "For TX-0401, I would use:\n\n- **Amount:** EUR 240.00, the full transaction amount\n- **Reason code:** `duplicate_charge`\n\nThis matches TX-0402, another TechMart Online card payment of EUR 240.00 on 2026-07-14. No dispute has been filed yet. Reply \"yes\" to confirm and I will open it.",
+  "trace": {
+    "request_id": "2e3aa223db59477b",
+    "name": "agent.request",
+    "span_id": "fdace96ff2c94f47",
+    "started_at": 1792428838.1486368,
+    "ended_at": 1792428840.0956209,
+    "duration_ms": 1947.0,
+    "attributes": {
+      "session.id": "60b9c14666d5",
+      "dialog.step_number": 5,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 3644,
+      "gen_ai.usage.total_output_tokens": 261
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "cb66b3e85d2d4c0d",
+        "started_at": 1792428838.1489105,
+        "ended_at": 1792428840.0955954,
+        "duration_ms": 1946.7,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3644,
+          "gen_ai.usage.output_tokens": 261
+        },
+        "children": []
+      }
+    ]
+  }
+}

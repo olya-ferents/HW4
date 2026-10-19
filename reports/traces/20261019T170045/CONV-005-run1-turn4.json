@@ -1,0 +1,47 @@
+{
+  "case": "CONV-005",
+  "run": 1,
+  "turn": 4,
+  "user": "What information do you need before filing the dispute?",
+  "answer": "To open the dispute I need only what's already settled:\n\n- **Transaction:** TX-0401\n- **Reason code:** service_not_rendered (eligibility check passed)\n- **Amount:** the full transaction amount by default. Tell me if you want a different amount.\n- **Your explicit confirmation** to file. This is irreversible, so I won't proceed without it.\n\nI haven't checked the knowledge base for any supporting evidence the dispute process may require, so I can't say whether you need to provide documents. I can search for that if you'd like. Once you confirm, I'll open the dispute.",
+  "trace": {
+    "request_id": "5a17cf2c88f041df",
+    "name": "agent.request",
+    "span_id": "696f3d144cf64460",
+    "started_at": 1792429878.3486006,
+    "ended_at": 1792429881.2255251,
+    "duration_ms": 2876.9,
+    "attributes": {
+      "session.id": "b05a8f177d46",
+      "dialog.step_number": 4,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 4014,
+      "gen_ai.usage.total_output_tokens": 445
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "793764eaaa10406b",
+        "started_at": 1792429878.3489509,
+        "ended_at": 1792429881.2254398,
+        "duration_ms": 2876.5,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 4014,
+          "gen_ai.usage.output_tokens": 445
+        },
+        "children": []
+      }
+    ]
+  }
+}

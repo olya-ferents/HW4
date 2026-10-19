@@ -1,0 +1,59 @@
+{
+  "case": "CONV-003",
+  "run": 1,
+  "turn": 3,
+  "user": "Fine. Back to that charge — what do I do next?",
+  "answer": "Here's what happens next:\n\n1. **Tell me what happened with TX-0401** (EUR 180.00, TechMart Online, ACC-1005). The reason code depends on the answer:\n   - **Duplicate charge:** you meant to pay TechMart once, and TX-0402 (also EUR 180.00) is the second payment.\n   - **Goods or service not received:** you paid, but nothing arrived or the service wasn't provided.\n   - **Unauthorised debit:** you did not make or approve this payment.\n   - **Card-not-present fraud:** someone used your card details online without your permission.\n\n2. **I'll check eligibility** with that reason code before anything is filed. If the check passes, I'll confirm the details with you and then open the dispute. If it doesn't, I'll tell you why and what the alternatives are.\n\n3. **Nothing has been filed yet.** A dispute is only opened after you confirm the reason and the details.\n\nWhich of these situations applies?",
+  "trace": {
+    "request_id": "7fec3f47e0a044c9",
+    "name": "agent.request",
+    "span_id": "9d33406edf634c2e",
+    "started_at": 1792429442.9444008,
+    "ended_at": 1792429449.701322,
+    "duration_ms": 6756.9,
+    "attributes": {
+      "session.id": "08283cc97cc8",
+      "dialog.step_number": 3,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 3033,
+      "gen_ai.usage.total_output_tokens": 852
+    },
+    "children": [
+      {
+        "name": "agent.summarize",
+        "span_id": "b0ad89c877194005",
+        "started_at": 1792429442.9449081,
+        "ended_at": 1792429444.5641408,
+        "duration_ms": 1619.2,
+        "attributes": {
+          "summary.text": "Customer Danylo Kovalenko (CUS-0004, tier1) asked me to verify transaction TX-0401 on account ACC-1005. The transaction is a settled card payment of EUR 180.00 to TechMart Online. A similar EUR 180.00 payment to the same merchant appears earlier (TX-0402). I listed possible dispute reason codes (service_not_rendered, unauthorised debit, card-not-present fraud, service_not_rendered, service_not_rendered) and explained that I cannot run an eligibility check or open a dispute until the customer says which situation applies and confirms. The customer has not yet described what happened, so no dispute has been opened.",
+          "summary.replaced_messages": 8
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "510df89e93a24368",
+        "started_at": 1792429444.5642083,
+        "ended_at": 1792429449.7012813,
+        "duration_ms": 5137.1,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3033,
+          "gen_ai.usage.output_tokens": 852
+        },
+        "children": []
+      }
+    ]
+  }
+}

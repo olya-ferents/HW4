@@ -1,0 +1,44 @@
+{
+  "case": "CONV-004",
+  "run": 4,
+  "turn": 7,
+  "user": "And I still have time to file, right?",
+  "answer": "Yes. As of 2026-09-15, these deadlines are still open for TX-0401:\n\n- **Duplicate charge:** 2026-09-18 (three days left)\n- **Goods not received:** 2026-10-18\n- **Service not rendered:** 2026-10-18\n- **Card payment you did not authorize:** 2026-11-17\n\nThe unauthorized debit option has already closed, as of 2026-09-14.\n\nTell me which situation applies and I'll run the eligibility check for that reason before anything is filed. I won't open a dispute without your confirmation.",
+  "trace": {
+    "request_id": "ea8c946e75634c72",
+    "name": "agent.request",
+    "span_id": "336c474da4f642cd",
+    "started_at": 1792428711.2822988,
+    "ended_at": 1792428713.8695924,
+    "duration_ms": 2587.3,
+    "attributes": {
+      "session.id": "cccd0a8e47d0",
+      "dialog.step_number": 7,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 5390,
+      "gen_ai.usage.total_output_tokens": 415
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "e72b5d485cd841b6",
+        "started_at": 1792428711.2825363,
+        "ended_at": 1792428713.8695405,
+        "duration_ms": 2587.0,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 5390,
+          "gen_ai.usage.output_tokens": 415
+        },
+        "children": []
+      }
+    ]
+  }
+}

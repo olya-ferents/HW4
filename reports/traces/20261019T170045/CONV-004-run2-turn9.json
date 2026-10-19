@@ -1,0 +1,47 @@
+{
+  "case": "CONV-004",
+  "run": 2,
+  "turn": 9,
+  "user": "Back to that charge: which transaction, amount, and reason code are we discussing?",
+  "answer": "We haven't confirmed the transaction or the reason code yet.\n\n- **Amount:** EUR 240.00, as you said.\n- **Transaction:** Two settled card payments to TechMart Online match that amount: **TX-0401** (2026-07-20) and **TX-0402** (2026-07-14). I need you to say which one.\n- **Reason code:** Not chosen. The options are duplicate charge, unauthorised debit, card-not-present fraud, goods not received, and service not rendered.\n\nI also can't see any eligibility results from earlier in this conversation, so I won't rely on them. I'll run a fresh check once you pick a transaction and reason. Nothing will be filed until you confirm the details.",
+  "trace": {
+    "request_id": "ca893b92da894174",
+    "name": "agent.request",
+    "span_id": "179975db983145d3",
+    "started_at": 1792429703.269151,
+    "ended_at": 1792429706.639748,
+    "duration_ms": 3370.6,
+    "attributes": {
+      "session.id": "b855d63d0555",
+      "dialog.step_number": 9,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 7349,
+      "gen_ai.usage.total_output_tokens": 543
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "ca8e116176074ca0",
+        "started_at": 1792429703.2693746,
+        "ended_at": 1792429706.6396809,
+        "duration_ms": 3370.3,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 7349,
+          "gen_ai.usage.output_tokens": 543
+        },
+        "children": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "case": "CONV-006",
+  "run": 3,
+  "turn": 3,
+  "user": "What is my daily card limit?",
+  "answer": "Your daily transfer limit is EUR 5,000.00 on your tier1 account. As of 15 September 2026, you have not used any of it today, so the full EUR 5,000.00 remains available.\n\nFor reference, your monthly limit is EUR 50,000.00, with EUR 35.50 used so far this month and EUR 49,964.50 remaining.",
+  "trace": {
+    "request_id": "fa9002ba27394b62",
+    "name": "agent.request",
+    "span_id": "4a079268fe2a4395",
+    "started_at": 1792428983.8100104,
+    "ended_at": 1792428994.5016909,
+    "duration_ms": 10691.7,
+    "attributes": {
+      "session.id": "1f9728cf71a7",
+      "dialog.step_number": 3,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 9982,
+      "gen_ai.usage.total_output_tokens": 353
+    },
+    "children": [
+      {
+        "name": "agent.summarize",
+        "span_id": "04e149a0fd224f51",
+        "started_at": 1792428983.8102224,
+        "ended_at": 1792428990.5166905,
+        "duration_ms": 6706.5,
+        "attributes": {
+          "summary.text": "**Case summary (for future reference)**\n\n**Customer:** CUS-0004, Danylo Kovalenko, tier1\n**Account:** ACC-1005, EUR, balance 1,310.20\n\n**Transactions retrieved (all card, outgoing, settled):**\n- **TX-0401:** 2026-07-20, EUR 240.00, TechMart Online. This is the transaction the customer asked about, and the amount was verified.\n- **TX-0402:** 2026-07-14, EUR 240.00, TechMart Online. Same merchant and amount as TX-0401. Possible duplicate; not yet confirmed.\n- **TX-0403:** 2026-09-01, EUR 35.50, CityParking. Not part of the dispute so far.\n\n**Reason codes discussed (none selected yet):**\n- duplicate_charge (applies if TX-0401 and TX-0402 are the same purchase)\n- fraud_card_not_present\n- unauthorized_debit\n- goods_not_received\n- service_not_rendered\n\n**Dispute windows:** Not discussed or verified in this conversation.\n\n**Customer's situation:** Not yet described. The customer asked whether TX-0401 can be disputed but has not said what happened.\n\n**Commitments made:**\n- No dispute will be opened without the customer's explicit confirmation.\n- An eligibility check will be run for the chosen reason code before any filing.\n- A dispute will be opened only if it is eligible and the customer has confirmed.\n\n**Next step:** Ask the customer which scenario applies (duplicate charge, unauthorized/fraud, or goods/service not delivered), or have them describe what happened, then run the eligibility check for that reason code.",
+          "summary.replaced_messages": 8
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "87ae5f48fcd94a67",
+        "started_at": 1792428990.5167289,
+        "ended_at": 1792428992.2610028,
+        "duration_ms": 1744.3,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3167,
+          "gen_ai.usage.output_tokens": 180
+        },
+        "children": []
+      },
+      {
+        "name": "tool.get_account",
+        "span_id": "ccbd319b56b44d5d",
+        "started_at": 1792428992.2611713,
+        "ended_at": 1792428992.261761,
+        "duration_ms": 0.6,
+        "attributes": {
+          "tool.name": "get_account",
+          "tool.arguments": {},
+          "tool.result": {
+            "customer": {
+              "id": "CUS-0004",
+              "name": "Danylo Kovalenko",
+              "tier": "tier1"
+            },
+            "accounts": [
+              {
+                "id": "ACC-1005",
+                "customer_id": "CUS-0004",
+                "currency": "EUR",
+                "balance": 1310.2,
+                "tier": "tier1",
+                "holder": "Danylo Kovalenko"
+              }
+            ]
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "4d09ea8109b74bea",
+        "started_at": 1792428992.261854,
+        "ended_at": 1792428993.2060087,
+        "duration_ms": 944.2,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3320,
+          "gen_ai.usage.output_tokens": 56
+        },
+        "children": []
+      },
+      {
+        "name": "tool.check_limits",
+        "span_id": "c6b16ce992f04588",
+        "started_at": 1792428993.2060885,
+        "ended_at": 1792428993.2070544,
+        "duration_ms": 1.0,
+        "attributes": {
+          "tool.name": "check_limits",
+          "tool.arguments": {
+            "customer_id": "CUS-0004"
+          },
+          "tool.result": {
+            "tier": "tier1",
+            "as_of": "2026-09-15",
+            "daily_limit_eur": 5000,
+            "daily_spent_eur": 0,
+            "daily_remaining_eur": 5000,
+            "monthly_limit_eur": 50000,
+            "monthly_spent_eur": 35.5,
+            "monthly_remaining_eur": 49964.5
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "e8c1612bd5604972",
+        "started_at": 1792428993.207115,
+        "ended_at": 1792428994.5016556,
+        "duration_ms": 1294.5,
+        "attributes": {
+          "agent.loop_step": 2,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3495,
+          "gen_ai.usage.output_tokens": 117
+        },
+        "children": []
+      }
+    ]
+  }
+}

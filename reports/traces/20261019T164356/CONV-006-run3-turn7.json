@@ -1,0 +1,44 @@
+{
+  "case": "CONV-006",
+  "run": 3,
+  "turn": 7,
+  "user": "What amount will be disputed for TX-0401?",
+  "answer": "For TX-0401, the dispute would default to the full transaction amount of **EUR 240.00**. Nothing has been filed yet. I'll open a dispute only after you choose a reason, I've checked eligibility, and you've confirmed.\n\nWhich situation applies?\n1. Duplicate charge (the 14 July TechMart Online charge of EUR 240.00 is the same purchase)\n2. Unauthorized or fraudulent\n3. Goods not received\n4. Service not rendered",
+  "trace": {
+    "request_id": "a95288f5da384234",
+    "name": "agent.request",
+    "span_id": "09e8c8b0ded4497b",
+    "started_at": 1792429005.3763046,
+    "ended_at": 1792429007.1072438,
+    "duration_ms": 1730.9,
+    "attributes": {
+      "session.id": "1f9728cf71a7",
+      "dialog.step_number": 7,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 5731,
+      "gen_ai.usage.total_output_tokens": 212
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "366eff93e3a14c99",
+        "started_at": 1792429005.3765829,
+        "ended_at": 1792429007.1071982,
+        "duration_ms": 1730.6,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 5731,
+          "gen_ai.usage.output_tokens": 212
+        },
+        "children": []
+      }
+    ]
+  }
+}

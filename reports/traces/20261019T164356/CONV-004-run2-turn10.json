@@ -1,0 +1,44 @@
+{
+  "case": "CONV-004",
+  "run": 2,
+  "turn": 10,
+  "user": "What is the filing deadline for that dispute, and has it been opened?",
+  "answer": "No dispute has been opened for TX-0401. Nothing has been filed, and no eligibility check has been run, because you haven't chosen a reason code yet.\n\nThe filing deadline depends on the reason code, measured from the transaction date of 2026-07-20:\n\n- **Duplicate charge** (60 days): closes 2026-09-18, three days from today.\n- **Unauthorized debit** (56 days): closed 2026-09-14.\n- **Card-not-present fraud** (120 days): open until 2026-11-17.\n- **Goods not received** or **service not rendered** (90 days): open until 2026-10-18.\n\nThese windows come from the dispute rules. The eligibility check is the final word on whether a dispute can be opened.\n\nIf this was a duplicate charge, tell me that and I'll run the check now. If it was one of the other situations, tell me which one.",
+  "trace": {
+    "request_id": "b5c8d1e1abdf4463",
+    "name": "agent.request",
+    "span_id": "82da36e0fcfb48a0",
+    "started_at": 1792428634.4508295,
+    "ended_at": 1792428637.0352392,
+    "duration_ms": 2584.4,
+    "attributes": {
+      "session.id": "cfd5147832fe",
+      "dialog.step_number": 10,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 6643,
+      "gen_ai.usage.total_output_tokens": 476
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "38f78ef7bcb34777",
+        "started_at": 1792428634.4509442,
+        "ended_at": 1792428637.035206,
+        "duration_ms": 2584.3,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 6643,
+          "gen_ai.usage.output_tokens": 476
+        },
+        "children": []
+      }
+    ]
+  }
+}

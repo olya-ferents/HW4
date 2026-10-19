@@ -1,0 +1,47 @@
+{
+  "case": "CONV-006",
+  "run": 1,
+  "turn": 7,
+  "user": "What amount will be disputed for TX-0401?",
+  "answer": "For TX-0401 (TechMart Online, 20 July 2026), the transaction amount is **EUR 240.00**. If a dispute is opened without a different amount specified, it covers that full EUR 240.00. I can't confirm a partial amount, since my knowledge base doesn't say whether one is possible.\n\nI haven't opened anything. To check eligibility, I need you to tell me which situation applies (duplicate charge, service not rendered, goods not received, unauthorized debit, or card-not-present fraud). If you say it's the duplicate charge, I'll check TX-0401 and TX-0402 and report the result before filing anything.",
+  "trace": {
+    "request_id": "d78db22dd7d04db2",
+    "name": "agent.request",
+    "span_id": "7ab68058bb31402f",
+    "started_at": 1792430067.4570332,
+    "ended_at": 1792430070.357454,
+    "duration_ms": 2900.4,
+    "attributes": {
+      "session.id": "536b446ef3ba",
+      "dialog.step_number": 7,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 6011,
+      "gen_ai.usage.total_output_tokens": 417
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "e7179030d8fa46e1",
+        "started_at": 1792430067.4574978,
+        "ended_at": 1792430070.3574085,
+        "duration_ms": 2899.9,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 6011,
+          "gen_ai.usage.output_tokens": 417
+        },
+        "children": []
+      }
+    ]
+  }
+}

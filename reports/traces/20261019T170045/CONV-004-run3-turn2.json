@@ -1,0 +1,47 @@
+{
+  "case": "CONV-004",
+  "run": 3,
+  "turn": 2,
+  "user": "Can I dispute it?",
+  "answer": "I can't tell yet. Eligibility depends on the reason, and you haven't said what happened with TX-0401 (EUR 240.00, TechMart Online, 2026-07-20, settled).\n\nTell me which situation applies and I'll check eligibility for that reason code before doing anything:\n\n- **Duplicate charge:** you were billed twice for one purchase (TX-0402 is also EUR 240.00 to TechMart Online).\n- **Unauthorised debit:** you did not authorise the payment.\n- **Card-not-present fraud:** someone used your card details online without your involvement.\n- **Goods not received:** you paid and did not receive the item.\n- **Service not rendered:** you paid for a service that was not provided.\n\nIf you're not sure which fits, describe what happened and I'll help you choose. I won't open a dispute until you confirm the reason.",
+  "trace": {
+    "request_id": "50fd4e7ca8b2443e",
+    "name": "agent.request",
+    "span_id": "ff08b78d7acc4b7f",
+    "started_at": 1792429719.2485437,
+    "ended_at": 1792429722.188903,
+    "duration_ms": 2940.4,
+    "attributes": {
+      "session.id": "eddf543628e0",
+      "dialog.step_number": 2,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 3734,
+      "gen_ai.usage.total_output_tokens": 423
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "e5d442e682734182",
+        "started_at": 1792429719.249141,
+        "ended_at": 1792429722.1888626,
+        "duration_ms": 2939.7,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3734,
+          "gen_ai.usage.output_tokens": 423
+        },
+        "children": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "case": "CONV-007",
+  "run": 1,
+  "turn": 7,
+  "user": "And I still have time to file, right?",
+  "answer": "Probably, but it depends on the reason code. Dispute windows run from the transaction date, which for TX-0401 is 2026-07-20. Today's date in our system is 2026-09-15, which is 57 days after that. Measured from that date:\n\n| Reason code | Window | Days left for TX-0401 |\n|---|---|---|\n| duplicate_charge | 60 days | 3 |\n| unauthorized_debit | 56 days | Closed (ended 1 day ago) |\n| fraud_card_not_present | 120 days | 63 |\n| goods_not_received | 90 days | 33 |\n| service_not_rendered | 90 days | 33 |\n\nIf the issue is an unauthorized debit, the window has already closed, so that code isn't available for this payment. For a duplicate charge, you have 3 days left. TX-0402 (2026-07-14) is 63 days old, so its duplicate_charge window has already closed.\n\nThese are the windows from the knowledge base, and I haven't run an eligibility check yet. The check will confirm whether a dispute can be opened.\n\nWhich situation applies? If it's a duplicate charge, tell me soon, because that window closes in 3 days.",
+  "trace": {
+    "request_id": "5b96f74214d54210",
+    "name": "agent.request",
+    "span_id": "114c30b846f14d4f",
+    "started_at": 1792429101.7425392,
+    "ended_at": 1792429105.623007,
+    "duration_ms": 3880.5,
+    "attributes": {
+      "session.id": "5736ce022573",
+      "dialog.step_number": 7,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 6607,
+      "gen_ai.usage.total_output_tokens": 652
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "9b47842b1daf4159",
+        "started_at": 1792429101.742838,
+        "ended_at": 1792429105.6229815,
+        "duration_ms": 3880.1,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 6607,
+          "gen_ai.usage.output_tokens": 652
+        },
+        "children": []
+      }
+    ]
+  }
+}

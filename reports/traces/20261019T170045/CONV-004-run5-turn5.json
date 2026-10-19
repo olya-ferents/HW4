@@ -1,0 +1,47 @@
+{
+  "case": "CONV-004",
+  "run": 5,
+  "turn": 5,
+  "user": "Fine. Back to that charge — what do I do next?",
+  "answer": "Nothing has been filed yet. To move forward, I need you to choose the reason that best matches what happened:\n\n- **Duplicate charge:** you were billed twice for the same purchase. The earlier similar TechMart charge may fit this.\n- **Unauthorized debit:** you did not make or approve this payment.\n- **Fraud, card not present:** the payment was made online without your authorization.\n- **Goods not received:** you paid for something that was never delivered.\n- **Service not rendered:** you paid for a service that was never provided.\n\nOnce you pick one, I'll check its eligibility first. I'll only open the dispute if that check passes, and I'll confirm the details with you before filing, since a dispute can't be undone.",
+  "trace": {
+    "request_id": "add53f16f51e49b2",
+    "name": "agent.request",
+    "span_id": "e75d9dddd6224b92",
+    "started_at": 1792429834.1367347,
+    "ended_at": 1792429838.3787847,
+    "duration_ms": 4242.0,
+    "attributes": {
+      "session.id": "46bd0376697e",
+      "dialog.step_number": 5,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 3568,
+      "gen_ai.usage.total_output_tokens": 729
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "1ace2dd6d2a746c7",
+        "started_at": 1792429834.13732,
+        "ended_at": 1792429838.378635,
+        "duration_ms": 4241.3,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3568,
+          "gen_ai.usage.output_tokens": 729
+        },
+        "children": []
+      }
+    ]
+  }
+}

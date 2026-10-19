@@ -1,0 +1,44 @@
+{
+  "case": "CONV-006",
+  "run": 1,
+  "turn": 5,
+  "user": "Fine. Back to that charge — what do I do next?",
+  "answer": "Here's what happens next. I need one thing from you: which of these situations matches what happened with the TechMart Online charge of EUR 240.00 on 2026-07-20 (TX-0401)?\n\n1. **Duplicate charge:** You were charged twice for the same order. TX-0402 is also a EUR 240.00 TechMart Online payment, from 2026-07-14. If both were for one order, this may apply.\n2. **Not recognised:** You don't recognise this payment at all.\n3. **Unauthorised:** You did not authorise this payment.\n4. **Goods not received:** You paid, but the item never arrived.\n5. **Service not provided:** You paid for a service that was not delivered.\n\nOnce you choose, I'll check whether a dispute is eligible under that reason. I won't open anything until you confirm. If it is eligible, I'll tell you what I'm about to file and wait for your go-ahead. If it isn't, I'll explain why and suggest the next step.",
+  "trace": {
+    "request_id": "1e09423e83544b76",
+    "name": "agent.request",
+    "span_id": "5f45c912e8d94840",
+    "started_at": 1792428929.6049721,
+    "ended_at": 1792428933.1551738,
+    "duration_ms": 3550.2,
+    "attributes": {
+      "session.id": "5b89f66bed0d",
+      "dialog.step_number": 5,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 4670,
+      "gen_ai.usage.total_output_tokens": 555
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "de1d90a1b4964c44",
+        "started_at": 1792428929.605097,
+        "ended_at": 1792428933.1550865,
+        "duration_ms": 3550.0,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 4670,
+          "gen_ai.usage.output_tokens": 555
+        },
+        "children": []
+      }
+    ]
+  }
+}

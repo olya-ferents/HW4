@@ -1,0 +1,131 @@
+{
+  "case": "CONV-007",
+  "run": 1,
+  "turn": 4,
+  "user": "And the FX spread if I pay in USD?",
+  "answer": "For a Tier 1 account, the FX spread is **1.5%** over the mid-market rate. Your monthly free conversion allowance is **EUR 500**. If a conversion fits within your remaining allowance, no spread is charged. Once the allowance is used up, the full 1.5% applies.\n\nCard payments also carry a **1.2%** percentage fee on the EUR equivalent, with no flat fee.\n\nThe knowledge base does not give a USD-specific rate, and I don't have your remaining conversion allowance, so I can't calculate the exact cost. If you tell me an amount in EUR or USD, I can run a full quote showing the mid rate, spread, allowance and final amount.",
+  "trace": {
+    "request_id": "47544bab431448be",
+    "name": "agent.request",
+    "span_id": "8b7ba7bed7d04ccc",
+    "started_at": 1792430251.7149763,
+    "ended_at": 1792430256.2361257,
+    "duration_ms": 4521.1,
+    "attributes": {
+      "session.id": "9f1e81c5abc2",
+      "dialog.step_number": 4,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 9491,
+      "gen_ai.usage.total_output_tokens": 563
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "b2d6961c166b464d",
+        "started_at": 1792430251.7184806,
+        "ended_at": 1792430253.4545846,
+        "duration_ms": 1736.1,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 4328,
+          "gen_ai.usage.output_tokens": 143
+        },
+        "children": []
+      },
+      {
+        "name": "tool.search_knowledge_base",
+        "span_id": "95c1204f171e4282",
+        "started_at": 1792430253.4546287,
+        "ended_at": 1792430253.4558687,
+        "duration_ms": 1.2,
+        "attributes": {
+          "tool.name": "search_knowledge_base",
+          "tool.arguments": {
+            "query": "FX spread tier1 EUR USD card payment conversion fee"
+          },
+          "tool.result": {
+            "index": "kb_clean",
+            "top_k": 4,
+            "query": "FX spread tier1 EUR USD card payment conversion fee",
+            "fragments": [
+              {
+                "id": "fees-detail.md#s2",
+                "doc": "fees-detail.md",
+                "score": 1.8353,
+                "text": "Fee details\n## Card payment fee\nCard payments carry a percentage fee on the EUR equivalent. No flat fee\napplies."
+              },
+              {
+                "id": "tariffs.md#s3",
+                "doc": "tariffs.md",
+                "score": 1.4286,
+                "text": "Verta tariff schedule\n## Transfer fees by type\n| Transfer type | Flat fee | Percentage fee |\n|---|---|---|\n| Internal | EUR 0.00 | 0% |\n| SEPA | EUR 0.35 | 0% |\n| SWIFT | EUR 15.00 | 0.3% |\n| Card payment | EUR 0.00 | 1.2% |\n\nThe percentage fee is calculated on the EUR equivalent of the transfer amount."
+              },
+              {
+                "id": "tariffs.md#s2",
+                "doc": "tariffs.md",
+                "score": 1.2481,
+                "text": "Verta tariff schedule\n## FX spreads by tier\nThe spread is applied over the mid-market rate only after the free monthly\nconversion allowance is exhausted.\n\n| Tier | FX spread | Free monthly conversion allowance |\n|---|---|---|\n| Tier 1 | 1.5% | EUR 500 |\n| Tier 2 | 0.9% | EUR 1,000 |\n| Tier 3 | 0.5% | EUR 5,000 |"
+              },
+              {
+                "id": "fx-guide.md#s1",
+                "doc": "fx-guide.md",
+                "score": 1.0914,
+                "text": "Currency conversion guide\n## How a conversion is priced\nA conversion quote has these components, in order: the mid-market rate for the\ncurrency pair; the tier spread (a percentage of the gross converted amount);\nthe free monthly conversion allowance. If the whole conversion fits within the\ncustomer's remaining monthly allowance, no spread is charged. Once the\nallowance is exhausted, the full tier spread applies to the conversion."
+              }
+            ]
+          },
+          "retrieval.query": "FX spread tier1 EUR USD card payment conversion fee",
+          "retrieval.index": "kb_clean",
+          "retrieval.top_k": 4,
+          "retrieval.fragments": [
+            {
+              "id": "fees-detail.md#s2",
+              "score": 1.8353,
+              "text": "Fee details\n## Card payment fee\nCard payments carry a percentage fee on the EUR equivalent. No flat fee\napplies."
+            },
+            {
+              "id": "tariffs.md#s3",
+              "score": 1.4286,
+              "text": "Verta tariff schedule\n## Transfer fees by type\n| Transfer type | Flat fee | Percentage fee |\n|---|---|---|\n| Internal | EUR 0.00 | 0% |\n| SEPA | EUR 0.35 | 0% |"
+            },
+            {
+              "id": "tariffs.md#s2",
+              "score": 1.2481,
+              "text": "Verta tariff schedule\n## FX spreads by tier\nThe spread is applied over the mid-market rate only after the free monthly\nconversion allowance is exhausted.\n\n| Tie"
+            },
+            {
+              "id": "fx-guide.md#s1",
+              "score": 1.0914,
+              "text": "Currency conversion guide\n## How a conversion is priced\nA conversion quote has these components, in order: the mid-market rate for the\ncurrency pair; the tier s"
+            }
+          ]
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "ac21610f2c294123",
+        "started_at": 1792430253.4559596,
+        "ended_at": 1792430256.2360077,
+        "duration_ms": 2780.0,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 5163,
+          "gen_ai.usage.output_tokens": 420
+        },
+        "children": []
+      }
+    ]
+  }
+}

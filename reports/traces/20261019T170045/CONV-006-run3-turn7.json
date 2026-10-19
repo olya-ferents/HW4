@@ -1,0 +1,47 @@
+{
+  "case": "CONV-006",
+  "run": 3,
+  "turn": 7,
+  "user": "What amount will be disputed for TX-0401?",
+  "answer": "If a dispute is opened on TX-0401 without a different amount, it defaults to the full transaction amount: **EUR 240.00**. Nothing has been filed, and I haven't checked eligibility yet. That check needs the reason code, so I still need to know what happened with that charge. I can't confirm a partial amount with the tools I have.",
+  "trace": {
+    "request_id": "68741ef95c3a40ba",
+    "name": "agent.request",
+    "span_id": "3879434bf1f94a5f",
+    "started_at": 1792430144.7306693,
+    "ended_at": 1792430146.5498633,
+    "duration_ms": 1819.2,
+    "attributes": {
+      "session.id": "0defaf0acffc",
+      "dialog.step_number": 7,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 6055,
+      "gen_ai.usage.total_output_tokens": 211
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "45d510e33642441a",
+        "started_at": 1792430144.7318356,
+        "ended_at": 1792430146.5498297,
+        "duration_ms": 1818.0,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 6055,
+          "gen_ai.usage.output_tokens": 211
+        },
+        "children": []
+      }
+    ]
+  }
+}

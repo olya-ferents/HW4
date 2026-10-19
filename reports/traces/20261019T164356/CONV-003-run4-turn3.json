@@ -1,0 +1,56 @@
+{
+  "case": "CONV-003",
+  "run": 4,
+  "turn": 3,
+  "user": "Fine. Back to that charge — what do I do next?",
+  "answer": "To dispute TX-0401 (EUR 240.00, TechMart Online, 2026-07-20), I first need to know what happened so I can pick the right reason code. Eligibility depends on that code.\n\nWhich of these describes your situation?\n\n1. **Duplicate charge:** You were charged more than once for the same purchase. TX-0402 (EUR 240.00, TechMart Online, 2026-07-14) has the same amount and merchant, so this may apply if you only made one purchase.\n2. **Unauthorized debit:** You did not make or approve this payment.\n3. **Card-not-present fraud:** Someone used your card details online without your permission.\n4. **Goods not received:** You paid for something that was never delivered.\n5. **Service not rendered:** You paid for a service that was never provided.\n\nOnce you tell me which applies, I will run the eligibility check, including the dispute window, and report the result. I will open a dispute only if it is eligible and you explicitly confirm.",
+  "trace": {
+    "request_id": "744e284ccc7b4c3d",
+    "name": "agent.request",
+    "span_id": "6e06bfc2c1db4723",
+    "started_at": 1792428505.8727827,
+    "ended_at": 1792428513.475736,
+    "duration_ms": 7603.0,
+    "attributes": {
+      "session.id": "acfb6c57332b",
+      "dialog.step_number": 3,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 3208,
+      "gen_ai.usage.total_output_tokens": 578
+    },
+    "children": [
+      {
+        "name": "agent.summarize",
+        "span_id": "eda9e1df3704453d",
+        "started_at": 1792428505.8730743,
+        "ended_at": 1792428510.234715,
+        "duration_ms": 4361.6,
+        "attributes": {
+          "summary.text": "**Support conversation summary: Customer CUS-0004 (Danylo Kovalenko, tier1)**\n\n**Account:** ACC-1005, EUR, balance 1,310.20 EUR, holder Danylo Kovalenko.\n\n**Transactions discussed (all card, direction out, status settled):**\n- **TX-0401:** 2026-07-20, **EUR 240.00**, merchant TechMart Online. This is the transaction the customer asked me to verify. Amount confirmed.\n- **TX-0402:** 2026-07-14, **EUR 240.00**, merchant TechMart Online. Same amount and merchant as TX-0401, 6 days earlier. I raised this as a possible duplicate, without assuming anything.\n- **TX-0403:** 2026-09-01, EUR 35.50, merchant CityParking. In the records but not part of the dispute discussion.\n\n**Reason codes presented to the customer (none selected yet):**\n- duplicate_charge\n- unauthorized_debit\n- fraud_card_not_present\n- goods_not_received\n- service_not_rendered\n\n**Status:**\n- The customer has not yet said what happened. They asked whether TX-0401 can be disputed.\n- No eligibility check has been run. Dispute eligibility depends on the reason code, so I asked the customer to choose the situation that matches.\n- No dispute has been opened.\n- No dispute window or eligibility rules were checked or quoted in this conversation.\n\n**Commitments made:**\n- I will run the eligibility check for the reason code the customer selects and report the result.\n- I will not open a dispute without the customer's explicit confirmation.\n\n**Next step:** Get the customer's reason, run the eligibility check for that code (including the dispute window), and open a dispute only after explicit confirmation.",
+          "summary.replaced_messages": 8
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "b7635d6f317b4c4e",
+        "started_at": 1792428510.2347713,
+        "ended_at": 1792428513.4757113,
+        "duration_ms": 3240.9,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3208,
+          "gen_ai.usage.output_tokens": 578
+        },
+        "children": []
+      }
+    ]
+  }
+}

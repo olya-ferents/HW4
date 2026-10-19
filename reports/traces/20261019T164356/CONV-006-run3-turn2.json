@@ -1,0 +1,44 @@
+{
+  "case": "CONV-006",
+  "run": 3,
+  "turn": 2,
+  "user": "Can I dispute it?",
+  "answer": "Possibly. Whether TX-0401 can be disputed depends on the reason, and I need to know what happened before I check. The reason determines the eligibility rules, so I can't say yet.\n\nPlease tell me which of these fits, or describe what happened:\n\n- **Duplicate charge:** TX-0401 and TX-0402 are both EUR 240.00 to TechMart Online, and you were charged twice for one purchase.\n- **Unauthorized debit or fraud (card not present):** you did not make or authorize this payment.\n- **Goods not received or service not rendered:** you paid for something TechMart Online did not deliver or provide.\n\nOnce you choose, I'll run the eligibility check first. I will only open the dispute if it is eligible, and only after you confirm.",
+  "trace": {
+    "request_id": "caa12e2216e04526",
+    "name": "agent.request",
+    "span_id": "bccdb94a63dc40d2",
+    "started_at": 1792428980.8498845,
+    "ended_at": 1792428983.8022852,
+    "duration_ms": 2952.4,
+    "attributes": {
+      "session.id": "1f9728cf71a7",
+      "dialog.step_number": 2,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 3570,
+      "gen_ai.usage.total_output_tokens": 431
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "392b442501864a35",
+        "started_at": 1792428980.850093,
+        "ended_at": 1792428983.8022554,
+        "duration_ms": 2952.2,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3570,
+          "gen_ai.usage.output_tokens": 431
+        },
+        "children": []
+      }
+    ]
+  }
+}

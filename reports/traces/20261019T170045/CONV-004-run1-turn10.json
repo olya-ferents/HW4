@@ -1,0 +1,47 @@
+{
+  "case": "CONV-004",
+  "run": 1,
+  "turn": 10,
+  "user": "What is the filing deadline for that dispute, and has it been opened?",
+  "answer": "**No dispute has been opened.** Nothing has been filed, and I won't file anything until you confirm the transaction and reason.\n\nThe deadline depends on the transaction and reason code. Counted from today, 15 Sep 2026:\n\n| Transaction | Reason code | Window ends | Time left |\n|---|---|---|---|\n| TX-0401 (20 Jul, EUR 240.00) | Duplicate charge (60 days) | 18 Sep 2026 | 3 days |\n| TX-0401 (20 Jul, EUR 240.00) | Goods not received / service not rendered (90 days) | 18 Oct 2026 | 33 days |\n| TX-0402 (14 Jul, EUR 240.00) | Goods not received / service not rendered (90 days) | 12 Oct 2026 | 27 days |\n\nDuplicate charge is no longer open for TX-0402, and unauthorised debit is closed for both transactions.\n\nTell me which transaction and what happened, and I'll run the eligibility check before any filing. If you'd rather have a human agent handle it, I can escalate now.",
+  "trace": {
+    "request_id": "53bdaef68956413c",
+    "name": "agent.request",
+    "span_id": "47556c47aba94662",
+    "started_at": 1792429646.9828694,
+    "ended_at": 1792429650.633761,
+    "duration_ms": 3650.9,
+    "attributes": {
+      "session.id": "15792d96d1b0",
+      "dialog.step_number": 10,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 7451,
+      "gen_ai.usage.total_output_tokens": 785
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "71fbda008db54cb9",
+        "started_at": 1792429646.9833143,
+        "ended_at": 1792429650.633736,
+        "duration_ms": 3650.4,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 7451,
+          "gen_ai.usage.output_tokens": 785
+        },
+        "children": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "case": "CONV-006",
+  "run": 2,
+  "turn": 6,
+  "user": "Will the dispute cover the full charge?",
+  "answer": "The default amount is the full transaction amount, **EUR 240.00** per payment. I couldn't find a rule in the knowledge base on whether a dispute can cover less than the full charge, so I can't confirm a partial amount is accepted.\n\nIf you pick a payment, I'll run the eligibility check for it first. If you want a partial amount, I can ask the system to validate that amount too, but I won't submit anything until you've confirmed the amount and the payment.",
+  "trace": {
+    "request_id": "9a11184bb6674ec4",
+    "name": "agent.request",
+    "span_id": "19fd044694244931",
+    "started_at": 1792430103.5531118,
+    "ended_at": 1792430107.7443006,
+    "duration_ms": 4191.2,
+    "attributes": {
+      "session.id": "1361f2c73183",
+      "dialog.step_number": 6,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 11158,
+      "gen_ai.usage.total_output_tokens": 464
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "59fca014961f4e2d",
+        "started_at": 1792430103.5623667,
+        "ended_at": 1792430105.1852942,
+        "duration_ms": 1622.9,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 5252,
+          "gen_ai.usage.output_tokens": 119
+        },
+        "children": []
+      },
+      {
+        "name": "tool.search_knowledge_base",
+        "span_id": "520e00ff9edb422d",
+        "started_at": 1792430105.1854153,
+        "ended_at": 1792430105.1863468,
+        "duration_ms": 0.9,
+        "attributes": {
+          "tool.name": "search_knowledge_base",
+          "tool.arguments": {
+            "query": "duplicate charge dispute partial amount full transaction amount"
+          },
+          "tool.result": {
+            "index": "kb_clean",
+            "top_k": 4,
+            "query": "duplicate charge dispute partial amount full transaction amount",
+            "fragments": [
+              {
+                "id": "fx-guide.md#s2",
+                "doc": "fx-guide.md",
+                "score": 0.9045,
+                "text": "Currency conversion guide\n## Reading a quote\nA complete quote lists: mid rate, spread percentage applied, allowance total\nand allowance used before this conversion, gross converted amount, spread\namount, and the final credited amount. The final amount equals the gross\namount minus the spread amount."
+              },
+              {
+                "id": "disputes-process.md#s1",
+                "doc": "disputes-process.md",
+                "score": 0.7143,
+                "text": "Dispute handling process\n## Raising a dispute\nA dispute is raised against a single settled transaction. The customer supplies\nthe transaction reference and a reason code. The agent verifies eligibility\nbefore the case is opened; an ineligible request is refused with the failing\ncondition named, except where confidentiality rules apply."
+              },
+              {
+                "id": "disputes-process.md#s6",
+                "doc": "disputes-process.md",
+                "score": 0.7071,
+                "text": "Dispute handling process\n## Withdrawing a dispute\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\nfinal; the same transaction cannot be disputed again under the same reason code."
+              },
+              {
+                "id": "complaints.md#s1",
+                "doc": "complaints.md",
+                "score": 0.5303,
+                "text": "Complaints\n## Difference from a dispute\nA dispute concerns a specific transaction. A complaint concerns the service\nitself: a delay, an error, or the conduct of an agent. The two follow separate\nprocesses."
+              }
+            ]
+          },
+          "retrieval.query": "duplicate charge dispute partial amount full transaction amount",
+          "retrieval.index": "kb_clean",
+          "retrieval.top_k": 4,
+          "retrieval.fragments": [
+            {
+              "id": "fx-guide.md#s2",
+              "score": 0.9045,
+              "text": "Currency conversion guide\n## Reading a quote\nA complete quote lists: mid rate, spread percentage applied, allowance total\nand allowance used before this convers"
+            },
+            {
+              "id": "disputes-process.md#s1",
+              "score": 0.7143,
+              "text": "Dispute handling process\n## Raising a dispute\nA dispute is raised against a single settled transaction. The customer supplies\nthe transaction reference and a re"
+            },
+            {
+              "id": "disputes-process.md#s6",
+              "score": 0.7071,
+              "text": "Dispute handling process\n## Withdrawing a dispute\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\nfinal; the same transaction can"
+            },
+            {
+              "id": "complaints.md#s1",
+              "score": 0.5303,
+              "text": "Complaints\n## Difference from a dispute\nA dispute concerns a specific transaction. A complaint concerns the service\nitself: a delay, an error, or the conduct of"
+            }
+          ]
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "913f6a5bd85045e6",
+        "started_at": 1792430105.186438,
+        "ended_at": 1792430107.7439096,
+        "duration_ms": 2557.5,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 5906,
+          "gen_ai.usage.output_tokens": 345
+        },
+        "children": []
+      }
+    ]
+  }
+}

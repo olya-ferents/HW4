@@ -1,0 +1,131 @@
+{
+  "case": "CONV-006",
+  "run": 4,
+  "turn": 4,
+  "user": "And the FX spread if I pay in USD?",
+  "answer": "For a Tier 1 account, the spread on EUR to USD conversions is **1.5%** of the converted amount, and it applies only after the free monthly conversion allowance is used up.\n\n- **Free monthly conversion allowance:** EUR 500, counted in EUR equivalent and reset on the 1st of each month. If a conversion fits entirely within what's left of the allowance, no spread is charged.\n- **Once the allowance is exhausted:** the 1.5% spread applies to the full conversion amount, not just the part above the allowance.\n\nI can't see how much of your EUR 500 allowance you've used this month, and my tools don't return the current mid-market rate. If you tell me the amount you'd like to convert, I can run a full quote showing the mid rate, spread, remaining allowance, and final USD amount.\n\nBack on the card dispute: once you tell me which reason applies, I'll run the eligibility check before filing anything.",
+  "trace": {
+    "request_id": "ad12ad37dd064957",
+    "name": "agent.request",
+    "span_id": "33a44d6ba2cd41fd",
+    "started_at": 1792430180.3673663,
+    "ended_at": 1792430184.6263123,
+    "duration_ms": 4258.9,
+    "attributes": {
+      "session.id": "4d0cf15089c0",
+      "dialog.step_number": 4,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 7871,
+      "gen_ai.usage.total_output_tokens": 625
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "7cc9889c52c94bba",
+        "started_at": 1792430180.3678944,
+        "ended_at": 1792430181.7904882,
+        "duration_ms": 1422.6,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3528,
+          "gen_ai.usage.output_tokens": 160
+        },
+        "children": []
+      },
+      {
+        "name": "tool.search_knowledge_base",
+        "span_id": "0bf1c365d2a447a6",
+        "started_at": 1792430181.7905724,
+        "ended_at": 1792430181.7918184,
+        "duration_ms": 1.2,
+        "attributes": {
+          "tool.name": "search_knowledge_base",
+          "tool.arguments": {
+            "query": "FX spread EUR to USD tier1 currency conversion fee"
+          },
+          "tool.result": {
+            "index": "kb_clean",
+            "top_k": 4,
+            "query": "FX spread EUR to USD tier1 currency conversion fee",
+            "fragments": [
+              {
+                "id": "fx-guide.md#s1",
+                "doc": "fx-guide.md",
+                "score": 1.4552,
+                "text": "Currency conversion guide\n## How a conversion is priced\nA conversion quote has these components, in order: the mid-market rate for the\ncurrency pair; the tier spread (a percentage of the gross converted amount);\nthe free monthly conversion allowance. If the whole conversion fits within the\ncustomer's remaining monthly allowance, no spread is charged. Once the\nallowance is exhausted, the full tier spread applies to the conversion."
+              },
+              {
+                "id": "tariffs.md#s2",
+                "doc": "tariffs.md",
+                "score": 1.2481,
+                "text": "Verta tariff schedule\n## FX spreads by tier\nThe spread is applied over the mid-market rate only after the free monthly\nconversion allowance is exhausted.\n\n| Tier | FX spread | Free monthly conversion allowance |\n|---|---|---|\n| Tier 1 | 1.5% | EUR 500 |\n| Tier 2 | 0.9% | EUR 1,000 |\n| Tier 3 | 0.5% | EUR 5,000 |"
+              },
+              {
+                "id": "fx-operations.md#s1",
+                "doc": "fx-operations.md",
+                "score": 1.2374,
+                "text": "Currency conversion operations\n## When a conversion happens\nA conversion happens when the payment currency differs from the currency of the\naccount being debited. The conversion is applied at settlement, not at\nauthorisation."
+              },
+              {
+                "id": "fx-operations.md#s3",
+                "doc": "fx-operations.md",
+                "score": 1.2027,
+                "text": "Currency conversion operations\n## Allowance accounting\nThe free monthly conversion allowance is counted in EUR equivalent and resets on\nthe first calendar day of each month. Allowance consumption is recorded at\nsettlement. A conversion that would cross the allowance boundary has the tier\nspread applied to the entire conversion, not only to the portion above the\nboundary."
+              }
+            ]
+          },
+          "retrieval.query": "FX spread EUR to USD tier1 currency conversion fee",
+          "retrieval.index": "kb_clean",
+          "retrieval.top_k": 4,
+          "retrieval.fragments": [
+            {
+              "id": "fx-guide.md#s1",
+              "score": 1.4552,
+              "text": "Currency conversion guide\n## How a conversion is priced\nA conversion quote has these components, in order: the mid-market rate for the\ncurrency pair; the tier s"
+            },
+            {
+              "id": "tariffs.md#s2",
+              "score": 1.2481,
+              "text": "Verta tariff schedule\n## FX spreads by tier\nThe spread is applied over the mid-market rate only after the free monthly\nconversion allowance is exhausted.\n\n| Tie"
+            },
+            {
+              "id": "fx-operations.md#s1",
+              "score": 1.2374,
+              "text": "Currency conversion operations\n## When a conversion happens\nA conversion happens when the payment currency differs from the currency of the\naccount being debite"
+            },
+            {
+              "id": "fx-operations.md#s3",
+              "score": 1.2027,
+              "text": "Currency conversion operations\n## Allowance accounting\nThe free monthly conversion allowance is counted in EUR equivalent and resets on\nthe first calendar day o"
+            }
+          ]
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "e357cfd4018444ca",
+        "started_at": 1792430181.791912,
+        "ended_at": 1792430184.626175,
+        "duration_ms": 2834.3,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 4343,
+          "gen_ai.usage.output_tokens": 465
+        },
+        "children": []
+      }
+    ]
+  }
+}

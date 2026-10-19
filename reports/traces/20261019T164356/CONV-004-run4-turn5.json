@@ -1,0 +1,44 @@
+{
+  "case": "CONV-004",
+  "run": 4,
+  "turn": 5,
+  "user": "Fine. Back to that charge — what do I do next?",
+  "answer": "To move forward, I need to know what happened with the TechMart Online charge of **EUR 240.00** on 2026-07-20 (TX-0401). Based on what you describe, one of these reason codes will fit:\n\n| What happened | Reason code | Deadline to open |\n|---|---|---|\n| You were charged twice for the same purchase. There is a second TechMart Online charge of EUR 240.00 on 2026-07-14 (TX-0402). | duplicate_charge | **2026-09-18** |\n| You paid for something and didn't receive it. | goods_not_received | 2026-10-18 |\n| You paid for a service that wasn't provided. | service_not_rendered | 2026-10-18 |\n| You didn't make the card payment and it was done without your authorization. | fraud_card_not_present | 2026-11-17 |\n\nThe unauthorized_debit code is no longer available for this transaction because its window closed on 2026-09-14.\n\nPlease tell me which situation applies. I'll check eligibility for that code before anything is filed, and I won't open a dispute without your confirmation. If the charge is a duplicate, the earliest deadline is 2026-09-18, so that is the most time-sensitive option.",
+  "trace": {
+    "request_id": "d13cfd184ac346b9",
+    "name": "agent.request",
+    "span_id": "67935d28829e461a",
+    "started_at": 1792428704.8365328,
+    "ended_at": 1792428708.4171033,
+    "duration_ms": 3580.6,
+    "attributes": {
+      "session.id": "cccd0a8e47d0",
+      "dialog.step_number": 5,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 4674,
+      "gen_ai.usage.total_output_tokens": 642
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "0a82ec2e7ce049aa",
+        "started_at": 1792428704.8368282,
+        "ended_at": 1792428708.4170594,
+        "duration_ms": 3580.2,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 4674,
+          "gen_ai.usage.output_tokens": 642
+        },
+        "children": []
+      }
+    ]
+  }
+}

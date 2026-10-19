@@ -1,0 +1,44 @@
+{
+  "case": "CONV-006",
+  "run": 2,
+  "turn": 4,
+  "user": "And the FX spread if I pay in USD?",
+  "answer": "I can work that out, but I need the amount first. How much would you like to pay in USD? Once you tell me, I'll run a full quote for your account showing the mid rate, the tier spread, any free allowance, and the final amount.",
+  "trace": {
+    "request_id": "d0d1e206e95c4a31",
+    "name": "agent.request",
+    "span_id": "8c7c448223ab4e98",
+    "started_at": 1792428961.651354,
+    "ended_at": 1792428963.8761861,
+    "duration_ms": 2224.8,
+    "attributes": {
+      "session.id": "894177c762ca",
+      "dialog.step_number": 4,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 3233,
+      "gen_ai.usage.total_output_tokens": 287
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "1d09b470326d47d5",
+        "started_at": 1792428961.651609,
+        "ended_at": 1792428963.8760905,
+        "duration_ms": 2224.5,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 3233,
+          "gen_ai.usage.output_tokens": 287
+        },
+        "children": []
+      }
+    ]
+  }
+}

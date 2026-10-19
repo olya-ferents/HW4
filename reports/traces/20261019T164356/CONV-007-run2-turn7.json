@@ -1,0 +1,128 @@
+{
+  "case": "CONV-007",
+  "run": 2,
+  "turn": 7,
+  "user": "And I still have time to file, right?",
+  "answer": "It depends on the reason code, because each one has a different window counted from the transaction date (2026-07-20). Based on today's date of 2026-09-15 from your limits record, 57 days have passed:\n\n| Reason code | Window | Status for TX-0401 |\n|---|---|---|\n| duplicate_charge | 60 days | Open, but only about 3 days left |\n| unauthorized_debit | 56 days | Closed, 1 day past the window |\n| goods_not_received | 90 days | Open, about 33 days left |\n| service_not_rendered | 90 days | Open, about 33 days left |\n| fraud_card_not_present | 120 days | Open, about 63 days left |\n\nIf you think you were charged twice, act now. Tell me what happened and I'll run the eligibility check straight away. If the transaction was not authorised, unauthorized_debit is no longer available, so fraud_card_not_present may be the relevant code, and it is still open.",
+  "trace": {
+    "request_id": "b692d1f135704d3a",
+    "name": "agent.request",
+    "span_id": "08646a1e44b14a92",
+    "started_at": 1792429127.028242,
+    "ended_at": 1792429132.038036,
+    "duration_ms": 5009.8,
+    "attributes": {
+      "session.id": "ea0762dfcf36",
+      "dialog.step_number": 7,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 12387,
+      "gen_ai.usage.total_output_tokens": 700
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "5dd9472106df4f1c",
+        "started_at": 1792429127.0285556,
+        "ended_at": 1792429128.4010618,
+        "duration_ms": 1372.5,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 5879,
+          "gen_ai.usage.output_tokens": 137
+        },
+        "children": []
+      },
+      {
+        "name": "tool.search_knowledge_base",
+        "span_id": "6ad1182e07c14ec7",
+        "started_at": 1792429128.4011464,
+        "ended_at": 1792429128.4020748,
+        "duration_ms": 0.9,
+        "attributes": {
+          "tool.name": "search_knowledge_base",
+          "tool.arguments": {
+            "query": "dispute time window deadline days after transaction card dispute"
+          },
+          "tool.result": {
+            "index": "kb_clean",
+            "top_k": 4,
+            "query": "dispute time window deadline days after transaction card dispute",
+            "fragments": [
+              {
+                "id": "disputes.md#s1",
+                "doc": "disputes.md",
+                "score": 1.3568,
+                "text": "Payment dispute rules\n## Reason codes and chargeback windows\nEach reason code has a window in days from the transaction date. A dispute opened after the window closes is not eligible.\n\n| Reason code | Window (days) |\n|---|---|\n| fraud_card_not_present | 120 |\n| goods_not_received | 90 |\n| duplicate_charge | 60 |\n| service_not_rendered | 90 |\n| unauthorized_debit | 56 |"
+              },
+              {
+                "id": "security-policy.md#s2",
+                "doc": "security-policy.md",
+                "score": 0.9806,
+                "text": "Customer security policy\n## Card blocking\nA customer may block a card immediately. Blocking is reversible for 30 days;\nafter that a replacement card must be ordered."
+              },
+              {
+                "id": "disputes-process.md#s6",
+                "doc": "disputes-process.md",
+                "score": 0.8839,
+                "text": "Dispute handling process\n## Withdrawing a dispute\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\nfinal; the same transaction cannot be disputed again under the same reason code."
+              },
+              {
+                "id": "glossary.md#s3",
+                "doc": "glossary.md",
+                "score": 0.8165,
+                "text": "Glossary\n## Chargeback window\nThe number of days, counted from the transaction date, during which a dispute\nmay be raised under a given reason code."
+              }
+            ]
+          },
+          "retrieval.query": "dispute time window deadline days after transaction card dispute",
+          "retrieval.index": "kb_clean",
+          "retrieval.top_k": 4,
+          "retrieval.fragments": [
+            {
+              "id": "disputes.md#s1",
+              "score": 1.3568,
+              "text": "Payment dispute rules\n## Reason codes and chargeback windows\nEach reason code has a window in days from the transaction date. A dispute opened after the window "
+            },
+            {
+              "id": "security-policy.md#s2",
+              "score": 0.9806,
+              "text": "Customer security policy\n## Card blocking\nA customer may block a card immediately. Blocking is reversible for 30 days;\nafter that a replacement card must be ord"
+            },
+            {
+              "id": "disputes-process.md#s6",
+              "score": 0.8839,
+              "text": "Dispute handling process\n## Withdrawing a dispute\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\nfinal; the same transaction can"
+            },
+            {
+              "id": "glossary.md#s3",
+              "score": 0.8165,
+              "text": "Glossary\n## Chargeback window\nThe number of days, counted from the transaction date, during which a dispute\nmay be raised under a given reason code."
+            }
+          ]
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "cc4948b9b8544861",
+        "started_at": 1792429128.4021552,
+        "ended_at": 1792429132.0379925,
+        "duration_ms": 3635.8,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 6508,
+          "gen_ai.usage.output_tokens": 563
+        },
+        "children": []
+      }
+    ]
+  }
+}

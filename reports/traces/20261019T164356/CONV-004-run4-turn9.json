@@ -1,0 +1,44 @@
+{
+  "case": "CONV-004",
+  "run": 4,
+  "turn": 9,
+  "user": "Back to that charge: which transaction, amount, and reason code are we discussing?",
+  "answer": "We are discussing:\n\n- **Transaction:** TX-0401\n- **Merchant:** TechMart Online\n- **Date:** 2026-07-20\n- **Amount:** EUR 240.00 (card payment, settled)\n- **Reason code:** Not yet chosen. Nothing has been filed.\n\nWhich situation applies: a duplicate charge, goods not received, service not rendered, or a card payment you did not authorize?",
+  "trace": {
+    "request_id": "2d4028cec0c44432",
+    "name": "agent.request",
+    "span_id": "1004a6fb1d104587",
+    "started_at": 1792428717.1444628,
+    "ended_at": 1792428719.0556946,
+    "duration_ms": 1911.2,
+    "attributes": {
+      "session.id": "cccd0a8e47d0",
+      "dialog.step_number": 9,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 6536,
+      "gen_ai.usage.total_output_tokens": 243
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "a3ee220bcc694b59",
+        "started_at": 1792428717.1447687,
+        "ended_at": 1792428719.0556548,
+        "duration_ms": 1910.9,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 6536,
+          "gen_ai.usage.output_tokens": 243
+        },
+        "children": []
+      }
+    ]
+  }
+}

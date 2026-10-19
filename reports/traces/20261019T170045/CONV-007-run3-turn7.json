@@ -1,0 +1,47 @@
+{
+  "case": "CONV-007",
+  "run": 3,
+  "turn": 7,
+  "user": "And I still have time to file, right?",
+  "answer": "Yes, for most of the options, but I haven't verified eligibility for TX-0401 yet, and I should correct my last message: I said it was \"still eligible for review,\" but no eligibility check has been run.\n\nBased on today's date of 2026-09-15 and the windows in the knowledge base, these are my calculated deadlines:\n\n- **Duplicate charge:** closes about 2026-09-18, so about three days left.\n- **Goods not received or service not provided:** close about 2026-10-18.\n- **Card details used fraudulently online or by phone:** closes about 2026-11-17.\n- **Unauthorized debit:** closed on 2026-09-14.\n\nThe final decision is made when the eligibility check runs. Tell me which situation applies and I'll check it right away. If you are unsure which applies, or you want a person to review it, I can escalate to a human agent. If the duplicate-charge option applies, I'd suggest choosing it soon.",
+  "trace": {
+    "request_id": "7e3273f59a2f4074",
+    "name": "agent.request",
+    "span_id": "7974f30f9c0c49df",
+    "started_at": 1792430326.7557268,
+    "ended_at": 1792430329.961963,
+    "duration_ms": 3206.2,
+    "attributes": {
+      "session.id": "4b98f5a197eb",
+      "dialog.step_number": 7,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 6203,
+      "gen_ai.usage.total_output_tokens": 477
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "8698fc50454f43a1",
+        "started_at": 1792430326.7560215,
+        "ended_at": 1792430329.9619024,
+        "duration_ms": 3205.9,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 6203,
+          "gen_ai.usage.output_tokens": 477
+        },
+        "children": []
+      }
+    ]
+  }
+}

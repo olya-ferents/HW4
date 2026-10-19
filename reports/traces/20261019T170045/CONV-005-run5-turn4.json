@@ -1,0 +1,47 @@
+{
+  "case": "CONV-005",
+  "run": 5,
+  "turn": 4,
+  "user": "What information do you need before filing the dispute?",
+  "answer": "Before I can file, I need you to confirm:\n\n1. **Which charge to dispute.** Please confirm that TX-0401 is the duplicate charge you want to dispute. If the duplicate is a different transaction, send me its reference and I'll run a new eligibility check on that one.\n2. **The amount.** I'll use the full amount of TX-0401 unless you tell me otherwise.\n3. **That you want to proceed.** Filing is irreversible, so I'll open the dispute only after you explicitly confirm.\n\nThe reason code is already set to duplicate charge. The eligibility check I ran passed, but it is valid only as of 15 September 2026, and the deadline is 18 September 2026, so please confirm soon.",
+  "trace": {
+    "request_id": "c67b624f3c904dcf",
+    "name": "agent.request",
+    "span_id": "3299a02ff2534b1e",
+    "started_at": 1792430020.714944,
+    "ended_at": 1792430024.6034577,
+    "duration_ms": 3888.5,
+    "attributes": {
+      "session.id": "cc41164d42c7",
+      "dialog.step_number": 4,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 4037,
+      "gen_ai.usage.total_output_tokens": 648
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "aba760d95da24769",
+        "started_at": 1792430020.7151644,
+        "ended_at": 1792430024.6034214,
+        "duration_ms": 3888.3,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 4037,
+          "gen_ai.usage.output_tokens": 648
+        },
+        "children": []
+      }
+    ]
+  }
+}

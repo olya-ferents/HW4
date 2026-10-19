@@ -1,0 +1,44 @@
+{
+  "case": "CONV-007",
+  "run": 3,
+  "turn": 5,
+  "user": "Fine. Back to that charge — what do I do next?",
+  "answer": "Here's what to do next for TX-0401:\n\n1. **Tell me what happened.** Choose the option that matches:\n   - **Duplicate charge:** you were billed twice for the same purchase. TX-0402 (EUR 240.00 to TechMart Online, 2026-07-14) is the same amount and merchant, so it may be the other charge. Please confirm it was for the same purchase. **Deadline: 2026-09-18.**\n   - **Card used fraudulently online or by phone:** you didn't make the purchase and your card details were used. **Deadline: 2026-11-17.**\n   - **Goods not received:** you paid but didn't receive the items. **Deadline: 2026-10-18.**\n   - **Service not provided:** you paid but the service wasn't delivered. **Deadline: 2026-10-18.**\n\n2. **Confirm the filing.** Once you choose a reason code, I'll name it back to you and wait for your yes before opening the dispute. I'll also run the eligibility check again first.\n\nIf you're not sure which applies, tell me what you remember about the purchase and I'll help you narrow it down. If the duplicate charge is the issue, act before 2026-09-18.",
+  "trace": {
+    "request_id": "48dc99c378644ba1",
+    "name": "agent.request",
+    "span_id": "48244da0fe5e4468",
+    "started_at": 1792429155.474136,
+    "ended_at": 1792429159.587067,
+    "duration_ms": 4112.9,
+    "attributes": {
+      "session.id": "8746c1ee8570",
+      "dialog.step_number": 5,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 7353,
+      "gen_ai.usage.total_output_tokens": 745
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "8f0fa32fb32345f5",
+        "started_at": 1792429155.474455,
+        "ended_at": 1792429159.5870237,
+        "duration_ms": 4112.6,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 7353,
+          "gen_ai.usage.output_tokens": 745
+        },
+        "children": []
+      }
+    ]
+  }
+}

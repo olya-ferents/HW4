@@ -1,0 +1,131 @@
+{
+  "case": "CONV-004",
+  "run": 3,
+  "turn": 8,
+  "user": "How will I receive updates about a dispute?",
+  "answer": "Once a dispute is opened, you'll receive a notification every time its status changes, such as moving to under review, provisional credit, or a final decision. The notification states the new status but not the internal reason for any decision.\n\nYou can also withdraw a dispute at any time before it is resolved. Withdrawal is final, though: the same transaction can't be disputed again under the same reason code.\n\nI haven't opened a dispute. To start one, tell me which transaction (TX-0401 or TX-0402) and what happened, and I'll run the eligibility check first.",
+  "trace": {
+    "request_id": "1ef4258d55be4a87",
+    "name": "agent.request",
+    "span_id": "6d5b4052e32e4a11",
+    "started_at": 1792429747.6775267,
+    "ended_at": 1792429750.7121317,
+    "duration_ms": 3034.6,
+    "attributes": {
+      "session.id": "eddf543628e0",
+      "dialog.step_number": 8,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 13464,
+      "gen_ai.usage.total_output_tokens": 291
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "cc14659610994f54",
+        "started_at": 1792429747.6780005,
+        "ended_at": 1792429749.2579064,
+        "duration_ms": 1579.9,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 6461,
+          "gen_ai.usage.output_tokens": 118
+        },
+        "children": []
+      },
+      {
+        "name": "tool.search_knowledge_base",
+        "span_id": "a1ad214ade2d461e",
+        "started_at": 1792429749.2580438,
+        "ended_at": 1792429749.258923,
+        "duration_ms": 0.9,
+        "attributes": {
+          "tool.name": "search_knowledge_base",
+          "tool.arguments": {
+            "query": "dispute status updates notifications customer communication"
+          },
+          "tool.result": {
+            "index": "kb_clean",
+            "top_k": 4,
+            "query": "dispute status updates notifications customer communication",
+            "fragments": [
+              {
+                "id": "notifications.md#s2",
+                "doc": "notifications.md",
+                "score": 0.8165,
+                "text": "Notifications\n## Dispute updates\nA dispute generates a notification on every state change. The notification\nnames the state, never the internal reason for a decision."
+              },
+              {
+                "id": "disputes-process.md#s6",
+                "doc": "disputes-process.md",
+                "score": 0.7071,
+                "text": "Dispute handling process\n## Withdrawing a dispute\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\nfinal; the same transaction cannot be disputed again under the same reason code."
+              },
+              {
+                "id": "disputes-process.md#s2",
+                "doc": "disputes-process.md",
+                "score": 0.6,
+                "text": "Dispute handling process\n## Case states\nA dispute moves through: open, under_review, provisional_credit,\nresolved_upheld, resolved_declined. Only open and under_review cases can be\nwithdrawn by the customer."
+              },
+              {
+                "id": "disputes.md#s3",
+                "doc": "disputes.md",
+                "score": 0.5883,
+                "text": "Payment dispute rules\n## Escalation on blocked disputes\nWhen a dispute is blocked by a customer-level restriction, the case must be\nescalated to a human agent."
+              }
+            ]
+          },
+          "retrieval.query": "dispute status updates notifications customer communication",
+          "retrieval.index": "kb_clean",
+          "retrieval.top_k": 4,
+          "retrieval.fragments": [
+            {
+              "id": "notifications.md#s2",
+              "score": 0.8165,
+              "text": "Notifications\n## Dispute updates\nA dispute generates a notification on every state change. The notification\nnames the state, never the internal reason for a dec"
+            },
+            {
+              "id": "disputes-process.md#s6",
+              "score": 0.7071,
+              "text": "Dispute handling process\n## Withdrawing a dispute\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\nfinal; the same transaction can"
+            },
+            {
+              "id": "disputes-process.md#s2",
+              "score": 0.6,
+              "text": "Dispute handling process\n## Case states\nA dispute moves through: open, under_review, provisional_credit,\nresolved_upheld, resolved_declined. Only open and under"
+            },
+            {
+              "id": "disputes.md#s3",
+              "score": 0.5883,
+              "text": "Payment dispute rules\n## Escalation on blocked disputes\nWhen a dispute is blocked by a customer-level restriction, the case must be\nescalated to a human agent."
+            }
+          ]
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "a27352e4ad494c04",
+        "started_at": 1792429749.259017,
+        "ended_at": 1792429750.7120862,
+        "duration_ms": 1453.1,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 7003,
+          "gen_ai.usage.output_tokens": 173
+        },
+        "children": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "case": "CONV-002",
+  "run": 1,
+  "turn": 6,
+  "user": "Amount 240 euro, as I said at the start.",
+  "answer": "I've noted that the amount is EUR 240.00, which matches TX-0401. I still need to know what went wrong with that payment before I can check whether it can be disputed.\n\nPlease tell me which of these applies, or describe what happened in your own words:\n\n- **Duplicate charge:** You were charged twice for the same purchase. TX-0402 (14 July, EUR 240.00, TechMart Online) matches, so please confirm whether it was the same purchase.\n- **Unauthorized debit:** You did not make or approve this payment.\n- **Card-not-present fraud:** Someone used your card details online without your permission.\n- **Goods not received:** You paid, but nothing was delivered.\n- **Service not rendered:** You paid for a service that was not provided.\n\nOnce you choose, I will run the eligibility check and report the result to you before anything is filed.",
+  "trace": {
+    "request_id": "72f4964157404b53",
+    "name": "agent.request",
+    "span_id": "a78ba40a10bd42cf",
+    "started_at": 1792428260.573981,
+    "ended_at": 1792428262.685315,
+    "duration_ms": 2111.3,
+    "attributes": {
+      "session.id": "b1d1ac267f44",
+      "dialog.step_number": 6,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 4989,
+      "gen_ai.usage.total_output_tokens": 360
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "43bc00f38fc14b32",
+        "started_at": 1792428260.5742326,
+        "ended_at": 1792428262.6852999,
+        "duration_ms": 2111.1,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 4989,
+          "gen_ai.usage.output_tokens": 360
+        },
+        "children": []
+      }
+    ]
+  }
+}

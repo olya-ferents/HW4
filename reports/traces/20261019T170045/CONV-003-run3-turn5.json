@@ -1,0 +1,47 @@
+{
+  "case": "CONV-003",
+  "run": 3,
+  "turn": 5,
+  "user": "And I still have time to file, right?",
+  "answer": "Yes. The eligibility check, run as of 15 September 2026, shows TX-0401 can still be disputed under the duplicate-charge reason until **18 September 2026**. That leaves about three days.\n\nI still need you to confirm that TX-0401 (€240.00, TechMart Online, 20 July) is the charge you want to dispute and that duplicate charge is the right reason. Once you confirm, I'll run the check again for that reason and file the dispute if it passes.",
+  "trace": {
+    "request_id": "3ed51c25e2854a8a",
+    "name": "agent.request",
+    "span_id": "89763a5de7a94651",
+    "started_at": 1792429531.6234217,
+    "ended_at": 1792429534.14134,
+    "duration_ms": 2517.9,
+    "attributes": {
+      "session.id": "d1b8eb59dcda",
+      "dialog.step_number": 5,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 4664,
+      "gen_ai.usage.total_output_tokens": 349
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "137d09abb8f049f8",
+        "started_at": 1792429531.6239524,
+        "ended_at": 1792429534.1412966,
+        "duration_ms": 2517.3,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 4664,
+          "gen_ai.usage.output_tokens": 349
+        },
+        "children": []
+      }
+    ]
+  }
+}

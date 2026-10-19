@@ -1,0 +1,44 @@
+{
+  "case": "CONV-004",
+  "run": 5,
+  "turn": 10,
+  "user": "What is the filing deadline for that dispute, and has it been opened?",
+  "answer": "No dispute has been opened for TX-0401. Nothing has been filed, and no eligibility check has been run.\n\nThe filing deadline depends on the reason code, and we haven't chosen one yet:\n\n- **Duplicate charge:** 60 days, so about 18 September 2026 (3 days left)\n- **Unauthorised debit:** 56 days, so about 14 September 2026 (already closed)\n- **Goods not received or service not rendered:** 90 days, so about 18 October 2026\n- **Card-not-present fraud:** 120 days, so about 17 November 2026\n\nThese dates are my calculation from the window lengths in our dispute rules, counted from the transaction date of 20 July 2026.\n\nIf this is a duplicate charge, that's the most urgent option. Tell me what happened and I'll run the eligibility check. I won't open a dispute without your confirmation.",
+  "trace": {
+    "request_id": "7ddc5bed39294a2b",
+    "name": "agent.request",
+    "span_id": "49325e8f03a74aa7",
+    "started_at": 1792428758.8359237,
+    "ended_at": 1792428761.249172,
+    "duration_ms": 2413.2,
+    "attributes": {
+      "session.id": "ebff6cf958b7",
+      "dialog.step_number": 10,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 7370,
+      "gen_ai.usage.total_output_tokens": 416
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "13b74c9020814004",
+        "started_at": 1792428758.8361804,
+        "ended_at": 1792428761.2491388,
+        "duration_ms": 2413.0,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 7370,
+          "gen_ai.usage.output_tokens": 416
+        },
+        "children": []
+      }
+    ]
+  }
+}

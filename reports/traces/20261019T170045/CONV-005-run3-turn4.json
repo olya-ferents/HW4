@@ -1,0 +1,47 @@
+{
+  "case": "CONV-005",
+  "run": 3,
+  "turn": 4,
+  "user": "What information do you need before filing the dispute?",
+  "answer": "Before I file, I need three things from you:\n\n1. **Which charge to dispute.** The check I ran covers TX-0401. If you want to dispute the other charge instead, I need its transaction reference. I can also look up your recent transactions to find both charges if you'd prefer.\n2. **The amount.** I'll use the full transaction amount unless you tell me a different figure.\n3. **Your explicit go-ahead.** The dispute is irreversible once filed.\n\nIf you pick a charge other than TX-0401, I'll re-run the eligibility check for that transaction before filing anything. The filing deadline for TX-0401 is 18 September 2026.",
+  "trace": {
+    "request_id": "dcfad901eb1246b5",
+    "name": "agent.request",
+    "span_id": "b3573994c08d4f66",
+    "started_at": 1792429946.1473627,
+    "ended_at": 1792429949.4555418,
+    "duration_ms": 3308.2,
+    "attributes": {
+      "session.id": "03e255d27ebf",
+      "dialog.step_number": 4,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 4074,
+      "gen_ai.usage.total_output_tokens": 498
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "723386809b39418c",
+        "started_at": 1792429946.1476486,
+        "ended_at": 1792429949.455522,
+        "duration_ms": 3307.9,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 4074,
+          "gen_ai.usage.output_tokens": 498
+        },
+        "children": []
+      }
+    ]
+  }
+}
